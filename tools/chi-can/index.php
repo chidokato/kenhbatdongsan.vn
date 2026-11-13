@@ -57,13 +57,6 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-        .badge-pulse {
-            animation: pulse-border 2s infinite;
-        }
-        @keyframes pulse-border {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-            50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
-        }
     </style>
 </head>
 <body class="min-h-screen text-slate-800 flex flex-col">
@@ -78,9 +71,9 @@
                 <div>
                     <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight flex items-center gap-2">
                         Tool Tạo Phiếu Chỉ Căn BĐS
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">v1.0 Pro</span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Khung Chuẩn 100%</span>
                     </h1>
-                    <p class="text-xs text-slate-500">Kênh Bất Động Sản • Thay ảnh 4 khung & cập nhật thông số căn hộ</p>
+                    <p class="text-xs text-slate-500">Kênh Bất Động Sản • Thay ảnh 4 khung không tràn lề & cập nhật số liệu</p>
                 </div>
             </div>
 
@@ -120,7 +113,7 @@
                             <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Số Liệu Căn Hộ (Khu Vực Đỏ)</h2>
                         </div>
                         <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Live Preview
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Trực tiếp
                         </span>
                     </div>
 
@@ -175,7 +168,7 @@
                         </div>
 
                         <!-- Tùy chọn nâng cao (Tên dự án) -->
-                        <div class="pt-2">
+                        <div class="pt-1">
                             <button type="button" onclick="toggleAdvancedOptions()" class="text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 focus:outline-none">
                                 <svg id="adv_chevron" class="w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 <span>Tùy chọn: Thay tên Dự án / Tiêu đề (Mặc định giữ nguyên)</span>
@@ -197,26 +190,26 @@
                     </div>
                 </div>
 
-                <!-- 2. BỐN KHUNG CHÈN ẢNH -->
+                <!-- 2. BỐN KHUNG CHÈN ẢNH (CHUẨN TỌA ĐỘ PIXEL-PERFECT) -->
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
                     <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
                         <div class="flex items-center gap-2">
                             <span class="w-7 h-7 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">2</span>
                             <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Thay 4 Khung Ảnh</h2>
                         </div>
-                        <span class="text-[11px] text-slate-500">Kéo thả ảnh hoặc Ctrl+V</span>
+                        <span class="text-[11px] text-slate-500">Tự động khóa trong khung 100%</span>
                     </div>
 
                     <div class="space-y-4">
                         
                         <!-- Khung 1: Ảnh Dự Án -->
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200" id="card_frame_1">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 transition" id="card_frame_1">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                                    1. Ảnh Dự Án (Khung trên trái)
+                                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                                    1. Ảnh Phối Cảnh Dự Án (Khung trên trái)
                                 </span>
-                                <div class="flex items-center gap-1.5">
+                                <div class="flex items-center gap-1">
                                     <button type="button" onclick="setFitMode(1, 'cover')" id="fit_btn_1_cover" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Lấp đầy</button>
                                     <button type="button" onclick="setFitMode(1, 'contain')" id="fit_btn_1_contain" class="text-[10px] px-2 py-0.5 rounded font-medium bg-slate-200 text-slate-700">Vừa vặn</button>
                                     <button type="button" onclick="clearImage(1)" class="text-[10px] text-red-500 hover:text-red-700 px-1 font-semibold ml-1">Xóa</button>
@@ -236,21 +229,24 @@
                                             📋 Dán
                                         </button>
                                     </div>
-                                    <p class="text-[10px] text-slate-400 mt-1">Kích thước khung: 279 x 228 px</p>
+                                    <div class="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                                        <span>Khung: 279 × 228 px</span>
+                                        <span class="text-blue-600 font-medium">Khóa khung 100%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Khung 2: Mặt Bằng Tầng -->
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200" id="card_frame_2">
+                        <!-- Khung 2: Mặt Bằng Tầng Điển Hình -->
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 transition" id="card_frame_2">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
                                     2. Mặt Bằng Tầng (Khung giữa)
                                 </span>
-                                <div class="flex items-center gap-1.5">
+                                <div class="flex items-center gap-1">
+                                    <button type="button" onclick="setFitMode(2, 'contain')" id="fit_btn_2_contain" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Vừa vặn (Chuẩn)</button>
                                     <button type="button" onclick="setFitMode(2, 'cover')" id="fit_btn_2_cover" class="text-[10px] px-2 py-0.5 rounded font-medium bg-slate-200 text-slate-700">Lấp đầy</button>
-                                    <button type="button" onclick="setFitMode(2, 'contain')" id="fit_btn_2_contain" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Vừa vặn (Khuyên dùng)</button>
                                     <button type="button" onclick="clearImage(2)" class="text-[10px] text-red-500 hover:text-red-700 px-1 font-semibold ml-1">Xóa</button>
                                 </div>
                             </div>
@@ -268,21 +264,24 @@
                                             📋 Dán
                                         </button>
                                     </div>
-                                    <p class="text-[10px] text-slate-400 mt-1">Kích thước khung: 749 x 290 px</p>
+                                    <div class="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                                        <span>Khung: 749 × 268 px</span>
+                                        <span class="text-indigo-600 font-medium">Không che bảng giá</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Khung 3: Layout Căn Hộ -->
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200" id="card_frame_3">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 transition" id="card_frame_3">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-violet-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-violet-500"></span>
                                     3. Layout Căn Hộ (Khung dưới trái)
                                 </span>
-                                <div class="flex items-center gap-1.5">
+                                <div class="flex items-center gap-1">
+                                    <button type="button" onclick="setFitMode(3, 'contain')" id="fit_btn_3_contain" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Vừa vặn (Chuẩn)</button>
                                     <button type="button" onclick="setFitMode(3, 'cover')" id="fit_btn_3_cover" class="text-[10px] px-2 py-0.5 rounded font-medium bg-slate-200 text-slate-700">Lấp đầy</button>
-                                    <button type="button" onclick="setFitMode(3, 'contain')" id="fit_btn_3_contain" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Vừa vặn (Khuyên dùng)</button>
                                     <button type="button" onclick="clearImage(3)" class="text-[10px] text-red-500 hover:text-red-700 px-1 font-semibold ml-1">Xóa</button>
                                 </div>
                             </div>
@@ -300,19 +299,22 @@
                                             📋 Dán
                                         </button>
                                     </div>
-                                    <p class="text-[10px] text-slate-400 mt-1">Kích thước khung: 475 x 295 px</p>
+                                    <div class="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                                        <span>Khung: 458 × 268 px</span>
+                                        <span class="text-violet-600 font-medium">Giữ nguyên số đo</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Khung 4: Ảnh Tiện Ích -->
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200" id="card_frame_4">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 transition" id="card_frame_4">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                                     4. Ảnh Tiện Ích (Khung dưới phải)
                                 </span>
-                                <div class="flex items-center gap-1.5">
+                                <div class="flex items-center gap-1">
                                     <button type="button" onclick="setFitMode(4, 'cover')" id="fit_btn_4_cover" class="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-600 text-white">Lấp đầy</button>
                                     <button type="button" onclick="setFitMode(4, 'contain')" id="fit_btn_4_contain" class="text-[10px] px-2 py-0.5 rounded font-medium bg-slate-200 text-slate-700">Vừa vặn</button>
                                     <button type="button" onclick="clearImage(4)" class="text-[10px] text-red-500 hover:text-red-700 px-1 font-semibold ml-1">Xóa</button>
@@ -332,7 +334,10 @@
                                             📋 Dán
                                         </button>
                                     </div>
-                                    <p class="text-[10px] text-slate-400 mt-1">Kích thước khung: 284 x 295 px</p>
+                                    <div class="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                                        <span>Khung: 280 × 268 px</span>
+                                        <span class="text-emerald-600 font-medium">Không tràn chân trang</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -344,13 +349,13 @@
                 <div class="p-4 bg-amber-50/80 border border-amber-200 rounded-2xl text-xs text-amber-900 space-y-1.5">
                     <div class="font-bold flex items-center gap-1.5 text-amber-800">
                         <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-                        <span>Mẹo thao tác siêu nhanh cho Sales BĐS:</span>
+                        <span>Cơ chế bảo vệ khung hình (Không tràn lề):</span>
                     </div>
                     <p class="text-amber-800/90 leading-relaxed">
-                        • <strong>Chụp màn hình & Dán:</strong> Nhấn <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">Win + Shift + S</code> để chụp mặt bằng trên file PDF, sau đó bấm nút <strong>📋 Dán</strong> tại khung tương ứng.
+                        • <strong>Ảnh to hơn khung:</strong> Hệ thống tự động cắt và khóa chặt bên trong bo góc của khung. Dù bạn tải ảnh lớn 4K hay tỷ lệ dọc/ngang bất kỳ, ảnh sẽ không bao giờ bị lem hay tràn ra ngoài.
                     </p>
                     <p class="text-amber-800/90 leading-relaxed">
-                        • <strong>Gửi Zalo nhanh:</strong> Sau khi xong, bấm nút <strong class="text-emerald-700">Sao Chép (Gửi Zalo)</strong> ở góc trên rồi chuyển sang cửa sổ chat Zalo bấm <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">Ctrl + V</code> để gửi ngay cho khách hàng!
+                        • <strong>Chế độ "Vừa vặn (Contain)":</strong> Dành cho Mặt bằng tầng và Layout căn hộ để giữ 100% toàn bộ bản vẽ kỹ thuật trên nền trắng sạch đẹp.
                     </p>
                 </div>
 
@@ -382,7 +387,7 @@
                     <!-- Footer Action Bar -->
                     <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
                         <div class="text-xs text-slate-500">
-                            Độ phân giải gốc chuẩn in ấn & gửi mạng xã hội không vỡ nét
+                            Độ phân giải chuẩn nét 100% • Khung hình khớp pixel-perfect với phôi gốc
                         </div>
                         <div class="flex items-center gap-2">
                             <button onclick="copyImageToClipboard()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
@@ -411,16 +416,16 @@
 
     <!-- Application Script -->
     <script>
-        // --- CONSTANTS & COORDINATES ---
+        // --- CONSTANTS & EXACT MEASURED COORDINATES ---
         const CANVAS_WIDTH = 819;
         const CANVAS_HEIGHT = 1024;
 
-        // Exact measured coordinates of the 4 frames
+        // Tọa độ pixel-perfect chính xác 100% của 4 khung trắng trên phôi gốc 819x1024:
         const FRAMES = {
             1: { x: 36,  y: 214, w: 279, h: 228, radius: 12, name: 'Ảnh Dự Án' },
-            2: { x: 35,  y: 430, w: 749, h: 290, radius: 14, name: 'Mặt Bằng Tầng' },
-            3: { x: 35,  y: 700, w: 475, h: 295, radius: 14, name: 'Layout Căn Hộ' },
-            4: { x: 500, y: 700, w: 284, h: 295, radius: 14, name: 'Ảnh Tiện Ích' }
+            2: { x: 35,  y: 452, w: 749, h: 268, radius: 14, name: 'Mặt Bằng Tầng' },
+            3: { x: 35,  y: 731, w: 458, h: 268, radius: 14, name: 'Layout Căn Hộ' },
+            4: { x: 504, y: 731, w: 280, h: 268, radius: 14, name: 'Ảnh Tiện Ích' }
         };
 
         // Table coordinates and color masks
@@ -470,39 +475,46 @@
             renderCanvas();
         };
 
-        // Helper: Draw rounded rectangle path
-        function roundRect(ctx, x, y, width, height, radius) {
+        // Hàm tạo đường dẫn bo góc chuẩn xác tuyệt đối (hỗ trợ cả ctx.roundRect native lẫn fallback)
+        function createRoundedPath(ctx, x, y, width, height, radius) {
             ctx.beginPath();
-            ctx.moveTo(x + radius, y);
-            ctx.lineTo(x + width - radius, y);
-            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-            ctx.lineTo(x + width, y + height - radius);
-            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-            ctx.lineTo(x + radius, y + height);
-            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-            ctx.lineTo(x, y + radius);
-            ctx.quadraticCurveTo(x, y, x + radius, y);
+            if (typeof ctx.roundRect === 'function') {
+                ctx.roundRect(x, y, width, height, radius);
+            } else {
+                ctx.moveTo(x + radius, y);
+                ctx.lineTo(x + width - radius, y);
+                ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+                ctx.lineTo(x + width, y + height - radius);
+                ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+                ctx.lineTo(x + radius, y + height);
+                ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+                ctx.lineTo(x, y + radius);
+                ctx.quadraticCurveTo(x, y, x + radius, y);
+            }
             ctx.closePath();
         }
 
-        // Draw an image inside frame with cover or contain mode
+        // Vẽ ảnh vào khung với cơ chế CLIPPING khóa chặt bên trong, KHÔNG BAO GIỜ TRÀN LỀ
         function drawFramedImage(frameId, img, mode) {
             const frame = FRAMES[frameId];
             if (!img || !frame) return;
 
             ctx.save();
-            roundRect(ctx, frame.x, frame.y, frame.w, frame.h, frame.radius);
+            
+            // 1. TẠO MẶT NẠ CLIPPING (Khóa ảnh tuyệt đối trong khung bo góc)
+            createRoundedPath(ctx, frame.x, frame.y, frame.w, frame.h, frame.radius);
             ctx.clip();
 
-            // Clear frame with pure white
+            // 2. Phủ màu nền trắng tinh khiết xóa sạch chữ mẫu cũ ("KHUNG CHÈN MẶT BẰNG TẦNG", v.v.)
             ctx.fillStyle = '#FFFFFF';
-            ctx.fillRect(frame.x, frame.y, frame.w, frame.h);
+            ctx.fillRect(frame.x - 2, frame.y - 2, frame.w + 4, frame.h + 4);
 
             const imgRatio = img.width / img.height;
             const frameRatio = frame.w / frame.h;
             let drawW, drawH, drawX, drawY;
 
             if (mode === 'cover') {
+                // Lấp đầy toàn bộ khung: ảnh sẽ bung trọn khung, phần thừa tự động bị cắt sạch bởi ctx.clip()
                 if (imgRatio > frameRatio) {
                     drawH = frame.h;
                     drawW = frame.h * imgRatio;
@@ -515,41 +527,46 @@
                     drawY = frame.y + (frame.h - drawH) / 2;
                 }
             } else {
-                // contain
-                if (imgRatio > frameRatio) {
-                    drawW = frame.w;
-                    drawH = frame.w / imgRatio;
-                    drawX = frame.x;
-                    drawY = frame.y + (frame.h - drawH) / 2;
+                // Vừa vặn (Contain): Ảnh hiển thị trọn vẹn 100% không mất bất kỳ chi tiết/chữ số nào
+                const pad = 6; // Căn lề an toàn 6px để ảnh bản vẽ thoáng đẹp, không dính sát mép khung
+                const targetW = frame.w - (pad * 2);
+                const targetH = frame.h - (pad * 2);
+                const targetRatio = targetW / targetH;
+
+                if (imgRatio > targetRatio) {
+                    drawW = targetW;
+                    drawH = targetW / imgRatio;
                 } else {
-                    drawH = frame.h;
-                    drawW = frame.h * imgRatio;
-                    drawX = frame.x + (frame.w - drawW) / 2;
-                    drawY = frame.y;
+                    drawH = targetH;
+                    drawW = targetH * imgRatio;
                 }
+                drawX = frame.x + (frame.w - drawW) / 2;
+                drawY = frame.y + (frame.h - drawH) / 2;
             }
 
+            // Vẽ ảnh đã tính toán kích thước
             ctx.drawImage(img, drawX, drawY, drawW, drawH);
+            
             ctx.restore();
         }
 
-        // MAIN RENDER FUNCTION
+        // HÀM RENDER CHÍNH (LIVE PREVIEW)
         function renderCanvas() {
             if (!baseImage.complete) return;
 
-            // 1. Draw base template
+            // 1. Vẽ phôi nền gốc (Template)
             ctx.drawImage(baseImage, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-            // 2. Draw 4 uploaded images in their frames
+            // 2. Vẽ 4 ảnh vào 4 khung với tọa độ pixel-perfect
             for (let id = 1; id <= 4; id++) {
                 if (state.images[id]) {
                     drawFramedImage(id, state.images[id], state.fitModes[id]);
                 }
             }
 
-            // 3. COVER OLD TEXT & RENDER NEW APARTMENT VALUES (KHU VỰC KHOANH ĐỎ)
+            // 3. THAY THẾ KHU VỰC KHOANH ĐỎ (THÔNG SỐ CĂN HỘ)
             
-            // 3A. Header: MÃ CĂN
+            // 3A. Tiêu đề Mã Căn (ST.36.18)
             const maCanText = document.getElementById('input_ma_can').value.trim();
             ctx.fillStyle = TABLE.header.color;
             ctx.fillRect(TABLE.header.cover_x, TABLE.header.cover_y, TABLE.header.cover_w, TABLE.header.cover_h);
@@ -560,7 +577,6 @@
                 ctx.font = '900 24px Montserrat, sans-serif';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                // Subtle text shadow for high crispness
                 ctx.shadowColor = 'rgba(0,0,0,0.3)';
                 ctx.shadowBlur = 4;
                 ctx.shadowOffsetY = 1;
@@ -568,7 +584,7 @@
                 ctx.restore();
             }
 
-            // 3B. 4 Table Rows
+            // 3B. 4 Dòng Giá trị trong bảng
             const rowValues = {
                 loai_can: document.getElementById('input_loai_can').value.trim(),
                 dien_tich: document.getElementById('input_dien_tich').value.trim(),
@@ -577,7 +593,7 @@
             };
 
             TABLE.rows.forEach(row => {
-                // Cover old text cleanly
+                // Che text cũ bằng màu nền gốc của ô
                 ctx.fillStyle = row.color;
                 ctx.fillRect(TABLE.val_col_x, row.y, TABLE.val_col_w, row.h);
 
@@ -585,7 +601,7 @@
                 if (text) {
                     ctx.save();
                     if (row.is_gold) {
-                        ctx.fillStyle = '#FFEAA7'; // Highlight gold for price
+                        ctx.fillStyle = '#FFEAA7'; // Nổi bật vàng gold cho giá niêm yết
                         ctx.font = '800 17px Montserrat, sans-serif';
                     } else {
                         ctx.fillStyle = '#FFFFFF';
@@ -598,29 +614,24 @@
                 }
             });
 
-            // 3C. Custom Project Title (Optional)
+            // 3C. Tùy chọn Tên Dự Án (Nếu người dùng thay đổi)
             const tenDuAn = document.getElementById('input_ten_du_an').value.trim();
             const tieuDePhu = document.getElementById('input_tieu_de_phu').value.trim();
             
-            // Only if user modified from original template
             if (tenDuAn && tenDuAn !== 'IMPERIA SKY PARK') {
                 ctx.save();
-                // Draw luxury dark blue gradient cover over title area
                 const grad = ctx.createLinearGradient(150, 110, 150, 205);
                 grad.addColorStop(0, '#042255');
                 grad.addColorStop(1, '#083B80');
                 ctx.fillStyle = grad;
                 ctx.fillRect(150, 110, 520, 95);
 
-                // Subtitle
                 ctx.fillStyle = '#FFFFFF';
                 ctx.font = '700 18px Montserrat, sans-serif';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.letterSpacing = '1px';
                 ctx.fillText(tieuDePhu || 'THÔNG TIN CHI TIẾT CĂN', 410, 138);
 
-                // Project Title
                 ctx.fillStyle = '#FFFFFF';
                 ctx.font = '900 36px Montserrat, sans-serif';
                 ctx.shadowColor = 'rgba(0,0,0,0.5)';
@@ -631,7 +642,7 @@
             }
         }
 
-        // --- IMAGE HANDLING & UPLOADS ---
+        // --- XỬ LÝ TẢI VÀ CHÈN ẢNH ---
         function handleFileSelect(e, frameId) {
             const file = e.target.files[0];
             if (!file) return;
@@ -651,7 +662,7 @@
                     state.images[frameId] = img;
                     updateThumbnail(frameId, event.target.result);
                     renderCanvas();
-                    showToast('Đã chèn ảnh', `Khung ${frameId} (${FRAMES[frameId].name}) đã được cập nhật!`, '✓');
+                    showToast('Đã chèn ảnh', `Khung ${frameId} (${FRAMES[frameId].name}) đã được khóa chuẩn vào khung!`, '✓');
                 };
                 img.src = event.target.result;
             };
@@ -692,7 +703,7 @@
             renderCanvas();
         }
 
-        // Paste from clipboard (Win + Shift + S or Copy Image)
+        // Dán ảnh từ Clipboard (Win + Shift + S hoặc Copy ảnh từ Zalo/PDF)
         async function pasteFromClipboard(frameId) {
             try {
                 const clipboardItems = await navigator.clipboard.read();
@@ -705,19 +716,18 @@
                         }
                     }
                 }
-                showToast('Chưa có ảnh', 'Không tìm thấy ảnh trong bộ nhớ tạm! Bạn hãy chụp màn hình hoặc Copy ảnh trước.', '⚠️');
+                showToast('Chưa có ảnh', 'Không tìm thấy ảnh trong clipboard! Bạn hãy chụp màn hình hoặc Copy ảnh trước.', '⚠️');
             } catch (err) {
                 showToast('Quyền truy cập', 'Vui lòng nhấn Ctrl + V khi đang nhấp vào khung để dán ảnh!', 'ℹ️');
             }
         }
 
-        // Global Paste Listener (Ctrl + V)
+        // Lắng nghe phím tắt Ctrl + V trên toàn trang
         window.addEventListener('paste', (e) => {
             const items = (e.clipboardData || e.originalEvent.clipboardData).items;
             for (const item of items) {
                 if (item.type.indexOf('image') !== -1) {
                     const blob = item.getAsFile();
-                    // Auto-target the first empty frame or active hover card
                     let targetFrame = 1;
                     if (!state.images[1]) targetFrame = 1;
                     else if (!state.images[2]) targetFrame = 2;
@@ -730,7 +740,7 @@
             }
         });
 
-        // --- DRAG AND DROP ON CARDS ---
+        // Kéo thả file ảnh trực tiếp vào thẻ
         [1, 2, 3, 4].forEach(id => {
             const card = document.getElementById(`card_frame_${id}`);
             if (!card) return;
@@ -751,7 +761,7 @@
             });
         });
 
-        // --- EXPORT FUNCTIONS ---
+        // --- XUẤT ẢNH & SAO CHÉP ---
         function downloadImage(format = 'png') {
             const maCan = document.getElementById('input_ma_can').value.trim() || 'chi-can';
             const cleanName = maCan.replace(/[^a-zA-Z0-9_-]/g, '_');
@@ -781,7 +791,6 @@
                         ]);
                         showToast('Đã sao chép ảnh!', 'Bạn chỉ cần mở Zalo và nhấn Ctrl + V để gửi cho khách ngay!', '📋');
                     } catch (err) {
-                        // Fallback: download instead
                         downloadImage('png');
                         showToast('Tự động tải về', 'Trình duyệt chưa cấp quyền dán trực tiếp, ảnh đã được tải về máy!', '📥');
                     }

@@ -5,6 +5,10 @@ wp-content/uploads/
 wp-content/upgrade/
 wp-content/cache/
 *.log
+*.zip
+*.tar.gz
+*.sql
+*.rar
 .htaccess
 .DS_Store
 Thumbs.db
