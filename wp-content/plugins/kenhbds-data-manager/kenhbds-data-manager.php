@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'KBDS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'KBDS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-url-normalizer.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-post-types.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-backup-manager.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-shortcodes.php';
@@ -23,6 +24,7 @@ require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-homepage-sections.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-notification-service.php';
 
 // Khởi chạy các phân hệ giao diện & dữ liệu
+KBDS_URL_Normalizer::init();
 KBDS_Post_Types::init();
 KBDS_Backup_Manager::init();
 KBDS_Shortcodes::init();

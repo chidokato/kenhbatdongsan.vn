@@ -17,8 +17,8 @@ define( 'DEPLOY_SECRET_TOKEN', 'KBDS_Deploy_Secret_2026_Secure_Key_!@#' );
 // ĐƯỜNG DẪN THƯ MỤC DỰ ÁN TRÊN HOSTING (Mặc định là thư mục chứa file deploy.php này)
 define( 'DEPLOY_DIR', __DIR__ );
 
-// Tên nhánh Git cần kéo về (mặc định main hoặc master)
-define( 'DEPLOY_BRANCH', 'main' );
+// Tên nhánh Git cần kéo về (mặc định master hoặc main)
+define( 'DEPLOY_BRANCH', 'master' );
 
 // 1. Kiểm tra phương thức yêu cầu (Chỉ nhận POST)
 if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) {
@@ -61,10 +61,17 @@ header( 'Content-Type: application/json; charset=utf-8' );
 
 chdir( DEPLOY_DIR );
 
+// Tự động nhận diện branch từ GitHub payload nếu có
+$target_branch = DEPLOY_BRANCH;
+$payload_data  = json_decode( $raw_payload, true );
+if ( isset( $payload_data['ref'] ) && preg_match( '#refs/heads/(.+)#', $payload_data['ref'], $matches ) ) {
+	$target_branch = trim( $matches[1] );
+}
+
 // Danh sách các lệnh thực thi an toàn
 $commands = array(
 	'git status',
-	'git pull origin ' . escapeshellarg( DEPLOY_BRANCH ),
+	'git pull origin ' . escapeshellarg( $target_branch ),
 );
 
 $output_log = array();
