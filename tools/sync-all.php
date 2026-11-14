@@ -34,7 +34,14 @@ function call_remote_api($endpoint, $method = 'GET', $payload = null) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     
     if ($payload !== null) {
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+        // Tự động chuyển đổi link localhost sang remote domain nếu có trong nội dung
+        $encoded = json_encode($payload);
+        $encoded = str_replace(
+            ['http:\/\/localhost\/www\/kenhbds', 'http://localhost/www/kenhbds'],
+            ['https:\/\/kenhbatdongsan.vn', 'https://kenhbatdongsan.vn'],
+            $encoded
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $encoded);
     }
     
     $res = curl_exec($ch);
@@ -161,6 +168,31 @@ foreach ($local_posts as $p) {
     } else {
         $cr = call_remote_api('wp/v2/posts', 'POST', $payload);
         echo " + Tạo mới Bài viết [{$p->post_title}] (HTTP {$cr['code']})\n";
+    }
+}
+
+// 6b. Đồng bộ UX Blocks (Footer, Form, Section 1..8)
+$local_blocks = get_posts(['post_type' => 'blocks', 'posts_per_page' => -1, 'post_status' => 'any']);
+echo "✔ Tìm thấy " . count($local_blocks) . " UX Blocks trên Localhost\n";
+
+foreach ($local_blocks as $b) {
+    $res = call_remote_api("wp/v2/ux-blocks?slug={$b->post_name}&status=any");
+    $exists = is_array($res['data']) && !empty($res['data']);
+    
+    $payload = [
+        'title'   => $b->post_title,
+        'content' => $b->post_content,
+        'status'  => $b->post_status,
+        'slug'    => $b->post_name,
+    ];
+    
+    if ($exists) {
+        $remote_id = $res['data'][0]['id'];
+        $up = call_remote_api("wp/v2/ux-blocks/{$remote_id}", 'POST', $payload);
+        echo " ✔ Cập nhật UX Block [{$b->post_title}] (HTTP {$up['code']})\n";
+    } else {
+        $cr = call_remote_api('wp/v2/ux-blocks', 'POST', $payload);
+        echo " + Tạo mới UX Block [{$b->post_title}] (HTTP {$cr['code']})\n";
     }
 }
 

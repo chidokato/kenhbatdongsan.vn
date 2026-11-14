@@ -76,15 +76,16 @@ h1, h2, h3, h4, h5, h6, .header-nav > li > a {
 }
 
 #logo.flex-col.logo {
-    flex: 0 0 160px !important;
-    width: 160px !important;
-    max-width: 160px !important;
+    flex: 0 0 165px !important;
+    width: 165px !important;
+    max-width: 165px !important;
     margin-right: 12px !important;
 }
 
 #logo img {
-    max-height: 48px !important;
+    max-height: 52px !important;
     width: auto !important;
+    object-fit: contain;
 }
 
 .header-inner .flex-left {
