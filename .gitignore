@@ -1,15 +1,14 @@
 # WordPress Standard .gitignore
 wp-config.php
 wp-content/kenhbds-backups/
-wp-content/uploads/
 wp-content/upgrade/
 wp-content/cache/
+wp-content/uploads/.htaccess
 *.log
 *.zip
 *.tar.gz
 *.sql
 *.rar
-.htaccess
 .DS_Store
 Thumbs.db
 node_modules/

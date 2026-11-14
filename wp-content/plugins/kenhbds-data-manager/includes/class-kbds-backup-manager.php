@@ -132,6 +132,34 @@ class KBDS_Backup_Manager {
 				wp_safe_redirect( admin_url( 'admin.php?page=kbds-data-backup&msg=' . $msg ) );
 				exit;
 
+			case 'generate_git_snapshot':
+				$dest_dir = WP_PLUGIN_DIR . '/kenhbds-data-manager/data';
+				if ( ! is_dir( $dest_dir ) ) {
+					wp_mkdir_p( $dest_dir );
+				}
+				$filename = self::create_json_content_backup( 'git_sync' );
+				if ( $filename ) {
+					$src  = self::get_backup_dir() . '/' . $filename;
+					$dest = $dest_dir . '/kenhbds-content-latest.json';
+					copy( $src, $dest );
+					wp_safe_redirect( admin_url( 'admin.php?page=kbds-data-backup&msg=snapshot_generated' ) );
+					exit;
+				}
+				wp_safe_redirect( admin_url( 'admin.php?page=kbds-data-backup&msg=error' ) );
+				exit;
+
+			case 'sync_from_git_snapshot':
+				$snapshot_file = WP_PLUGIN_DIR . '/kenhbds-data-manager/data/kenhbds-content-latest.json';
+				if ( file_exists( $snapshot_file ) ) {
+					$json_raw = file_get_contents( $snapshot_file );
+					$result   = self::import_json_content( $json_raw );
+					$msg      = $result ? 'git_synced' : 'error';
+				} else {
+					$msg = 'no_snapshot';
+				}
+				wp_safe_redirect( admin_url( 'admin.php?page=kbds-data-backup&msg=' . $msg ) );
+				exit;
+
 			case 'export_csv':
 				$type = isset( $_POST['csv_type'] ) ? sanitize_text_field( wp_unslash( $_POST['csv_type'] ) ) : 'du_an';
 				self::export_csv_stream( $type );
@@ -632,6 +660,9 @@ class KBDS_Backup_Manager {
 					'optimized'      => '✔ Đã dọn dẹp dữ liệu rác và tối ưu hóa toàn bộ bảng MySQL thành công!',
 					'schedule_saved' => '✔ Đã lưu cấu hình lịch trình tự động Backup và chính sách lưu trữ!',
 					'deleted'        => '✔ Đã xóa bản sao lưu.',
+					'snapshot_generated' => '✔ Đã tạo Git Snapshot thành công! Giờ bạn chỉ cần gõ "git push" là toàn bộ dữ liệu sẽ đồng bộ lên GitHub.',
+					'git_synced'         => '🚀 Chúc mừng! Toàn bộ Dự án, Giỏ hàng, Bài viết & Cấu hình đã được đồng bộ thành công vào Website!',
+					'no_snapshot'        => '⚠️ Chưa tìm thấy file snapshot kenhbds-content-latest.json trong plugin.',
 					'error'          => '⚠️ Có lỗi xảy ra trong quá trình xử lý. Vui lòng kiểm tra quyền ghi thư mục.',
 				);
 				$m = sanitize_text_field( wp_unslash( $_GET['msg'] ) );
@@ -639,6 +670,32 @@ class KBDS_Backup_Manager {
 				?>
 				</strong></p></div>
 			<?php endif; ?>
+
+			<!-- KHUNG ĐỒNG BỘ 1-CLICK TỪ GIT SNAPSHOT -->
+			<div style="background:linear-gradient(135deg, #0B2246 0%, #071931 100%);padding:22px 24px;border-radius:12px;color:#fff;margin-bottom:24px;border:2px solid #C59B27;box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+				<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+					<div>
+						<h3 style="color:#F59E0B;margin:0 0 6px 0;font-size:18px;display:flex;align-items:center;gap:8px;">
+							<span>⚡ ĐỒNG BỘ DỮ LIỆU TỪ GIT SNAPSHOT (1-CLICK SYNC)</span>
+						</h3>
+						<p style="margin:0;color:#CBD5E1;font-size:13.5px;max-width:700px;line-height:1.5;">
+							Giải pháp đồng bộ toàn diện: Khi bạn phát triển trên Localhost, bấm <strong>"📸 1. Xuất Snapshot vào Git"</strong> rồi chạy <code>git push</code>. Trên máy chủ Hosting, sau khi <code>git pull</code> chỉ cần bấm <strong>"🚀 2. Nhập Dữ Liệu Lên Hosting"</strong> là toàn bộ Bài viết, Dự án, Giỏ hàng sẽ được cập nhật đồng bộ 100%!
+						</p>
+					</div>
+					<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+						<form method="post" style="margin:0;">
+							<?php wp_nonce_field( 'kbds_backup_action', 'kbds_backup_nonce' ); ?>
+							<input type="hidden" name="kbds_action" value="generate_git_snapshot" />
+							<button type="submit" class="button button-secondary" style="font-weight:700;padding:8px 16px;height:auto;font-size:13.5px;">📸 1. Xuất Snapshot vào Git</button>
+						</form>
+						<form method="post" style="margin:0;">
+							<?php wp_nonce_field( 'kbds_backup_action', 'kbds_backup_nonce' ); ?>
+							<input type="hidden" name="kbds_action" value="sync_from_git_snapshot" />
+							<button type="submit" class="button button-primary" style="background:linear-gradient(135deg, #F59E0B 0%, #D97706 100%);border-color:#D97706;color:#071931;font-weight:900;font-size:14px;padding:8px 20px;height:auto;box-shadow:0 4px 12px rgba(245,158,11,0.4);">🚀 2. Nhập Dữ Liệu Lên Hosting</button>
+						</form>
+					</div>
+				</div>
+			</div>
 
 			<!-- Thống kê tổng quan dữ liệu -->
 			<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px;">
