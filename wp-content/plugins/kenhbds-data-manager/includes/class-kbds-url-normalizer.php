@@ -35,6 +35,7 @@ class KBDS_URL_Normalizer {
 
 		// 5. Tự động kiểm tra và đảm bảo Database options luôn lưu domain chuẩn
 		add_action( 'admin_init', array( __CLASS__, 'ensure_database_options' ) );
+		add_action( 'admin_init', array( __CLASS__, 'ensure_chi_can_menu' ) );
 	}
 
 	/**
@@ -129,6 +130,63 @@ class KBDS_URL_Normalizer {
 		if ( $db_siteurl !== self::PRODUCTION_URL || $db_home !== self::PRODUCTION_URL ) {
 			$wpdb->update( $wpdb->options, array( 'option_value' => self::PRODUCTION_URL ), array( 'option_name' => 'siteurl' ) );
 			$wpdb->update( $wpdb->options, array( 'option_value' => self::PRODUCTION_URL ), array( 'option_name' => 'home' ) );
+		}
+	}
+
+	/**
+	 * Tự động đảm bảo menu 'Chỉ Căn BĐS' -> 'Imperia Sky Park' luôn tồn tại trên mọi môi trường
+	 */
+	public static function ensure_chi_can_menu() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		$menu = wp_get_nav_menu_object( 'Menu Chính - Kênh BĐS' );
+		if ( ! $menu ) {
+			$locations = get_nav_menu_locations();
+			if ( ! empty( $locations['primary'] ) ) {
+				$menu = wp_get_nav_menu_object( $locations['primary'] );
+			}
+		}
+		if ( ! $menu ) {
+			return;
+		}
+
+		$items       = wp_get_nav_menu_items( $menu->term_id );
+		$parent_id   = 0;
+		$has_imperia = false;
+
+		if ( $items ) {
+			foreach ( $items as $item ) {
+				if ( trim( $item->title ) === 'Chỉ Căn BĐS' ) {
+					$parent_id = $item->ID;
+				}
+				if ( trim( $item->title ) === 'Imperia Sky Park' ) {
+					$has_imperia = true;
+				}
+			}
+		}
+
+		$tool_url = self::PRODUCTION_URL . '/tools/chi-can/';
+
+		if ( ! $parent_id ) {
+			$parent_id = wp_update_nav_menu_item( $menu->term_id, 0, array(
+				'menu-item-title'   => 'Chỉ Căn BĐS',
+				'menu-item-url'     => $tool_url,
+				'menu-item-status'  => 'publish',
+				'menu-item-type'    => 'custom',
+				'menu-item-classes' => 'menu-item-chi-can',
+			) );
+		}
+
+		if ( $parent_id && ! $has_imperia ) {
+			wp_update_nav_menu_item( $menu->term_id, 0, array(
+				'menu-item-title'     => 'Imperia Sky Park',
+				'menu-item-url'       => $tool_url,
+				'menu-item-status'    => 'publish',
+				'menu-item-type'      => 'custom',
+				'menu-item-parent-id' => $parent_id,
+			) );
 		}
 	}
 }
