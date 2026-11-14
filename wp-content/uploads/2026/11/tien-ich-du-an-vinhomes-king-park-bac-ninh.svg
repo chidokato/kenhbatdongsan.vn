@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+	<defs>
+		<linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#0B2C4D"/>
+			<stop offset="55%" stop-color="#155263"/>
+			<stop offset="100%" stop-color="#1B7A43"/>
+		</linearGradient>
+		<linearGradient id="water" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%" stop-color="#0F4C81" stop-opacity="0.9"/>
+			<stop offset="100%" stop-color="#1E88E5" stop-opacity="0.75"/>
+		</linearGradient>
+		<linearGradient id="golf" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#2E7D32"/>
+			<stop offset="100%" stop-color="#66BB6A"/>
+		</linearGradient>
+	</defs>
+	<rect width="900" height="520" fill="url(#sky)"/>
+	<circle cx="720" cy="110" r="75" fill="#E5C158" opacity="0.35"/>
+	<!-- Modern Towers & Villas Silhouette -->
+	<g fill="#FFFFFF" opacity="0.22">
+		<rect x="90" y="130" width="65" height="220" rx="4"/>
+		<rect x="170" y="95" width="75" height="255" rx="4"/>
+		<rect x="260" y="115" width="70" height="235" rx="4"/>
+		<rect x="345" y="145" width="60" height="205" rx="4"/>
+	</g>
+	<!-- 90ha Golf Peninsula Illustration -->
+	<path d="M 420 350 Q 620 260 880 340 L 900 430 L 380 430 Z" fill="url(#golf)" opacity="0.85"/>
+	<!-- Golf Flag -->
+	<line x1="660" y1="245" x2="660" y2="315" stroke="#FFFFFF" stroke-width="2.5"/>
+	<polygon points="660,245 695,257 660,270" fill="#E5C158"/>
+	<ellipse cx="660" cy="318" rx="28" ry="7" fill="#A5D6A7" opacity="0.7"/>
+	<!-- 101.69ha Water & Cau River -->
+	<path d="M 0 350 Q 250 325 480 365 T 900 355 L 900 520 L 0 520 Z" fill="url(#water)"/>
+	<line x1="0" y1="350" x2="900" y2="355" stroke="#E5C158" stroke-width="1.5" opacity="0.4"/>
+</svg>

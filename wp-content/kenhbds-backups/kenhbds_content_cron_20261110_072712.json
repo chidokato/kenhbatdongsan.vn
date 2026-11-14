@@ -1,0 +1,445 @@
+{
+    "site": "kenhbatdongsan.vn",
+    "exported_at": "2026-11-10 07:27:12",
+    "version": "1.0",
+    "theme_mods": {
+        "0": false,
+        "flatsome_fallback": 1,
+        "topbar_elements_left": [
+            "html"
+        ],
+        "topbar_elements_right": [
+            "nav-top",
+            "newsletter",
+            "social"
+        ],
+        "header_elements_left": [
+            "search",
+            "nav"
+        ],
+        "header_elements_right": [
+            "account",
+            "divider",
+            "cart"
+        ],
+        "header_elements_bottom_left": [],
+        "header_elements_bottom_center": [],
+        "header_elements_bottom_right": [],
+        "header_mobile_elements_left": [
+            "menu-icon"
+        ],
+        "header_mobile_elements_right": [
+            "cart"
+        ],
+        "header_mobile_elements_top": [
+            "html"
+        ],
+        "mobile_sidebar": [
+            "search-form",
+            "nav",
+            "account",
+            "newsletter",
+            "social",
+            "html-2",
+            "html-3"
+        ],
+        "product_layout": "right-sidebar-small",
+        "payment_icons_placement": "footer",
+        "follow_twitter": "http:\/\/url",
+        "follow_facebook": "http:\/\/url",
+        "follow_instagram": "http:\/\/url",
+        "follow_email": "your@email",
+        "flatsome_version": 3,
+        "portfolio_archive_filter": "left",
+        "type_headings": {
+            "font-family": "Lato",
+            "variant": "700"
+        },
+        "type_texts": {
+            "font-family": "Lato",
+            "variant": "regular"
+        },
+        "type_nav": {
+            "font-family": "Lato",
+            "variant": "700"
+        },
+        "type_alt": {
+            "font-family": "Dancing Script",
+            "variant": "regular"
+        },
+        "pages_template": "default",
+        "site_loader": "",
+        "flatsome_db_version": "3.20.1",
+        "nav_menu_locations": [],
+        "backups": null,
+        "smof_init": "Tue, 10 Nov 2026 07:04:36 +0000",
+        "html_scripts_header": "",
+        "html_scripts_footer": "",
+        "html_scripts_after_body": "",
+        "html_scripts_before_body": "",
+        "html_custom_css": "",
+        "html_custom_css_tablet": "",
+        "html_custom_css_mobile": "",
+        "": "",
+        "perf_instant_page": 0,
+        "lazy_load_images": 0,
+        "flatsome_disable_style_css": 0,
+        "disable_emoji": 0,
+        "disable_blockcss": 0,
+        "disable_mejs": 0,
+        "jquery_migrate": 0,
+        "blog_pagination": "",
+        "pjax_scroll_to_top": 0,
+        "infinite_scroll_loader_type": "spinner",
+        "infinite_scroll_loader_img": "",
+        "custom_css_post_id": -1
+    },
+    "taxonomies": {
+        "category": [
+            {
+                "name": "Cẩm nang &amp; Pháp lý",
+                "slug": "cam-nang-phap-ly",
+                "description": "Kiến thức pháp lý nhà đất, thủ tục sang tên sổ đỏ, tính thuế phí, kinh nghiệm đầu tư &amp; phong thủy."
+            },
+            {
+                "name": "Chưa phân loại",
+                "slug": "chua-phan-loai",
+                "description": ""
+            },
+            {
+                "name": "Quy hoạch &amp; Hạ tầng",
+                "slug": "quy-hoach-ha-tang",
+                "description": "Bản đồ quy hoạch sử dụng đất, thông tin tiến độ hạ tầng giao thông trọng điểm toàn quốc."
+            },
+            {
+                "name": "Review &amp; Phân tích Dự án",
+                "slug": "review-du-an",
+                "description": "Đánh giá khách quan ưu nhược điểm, so sánh và phân tích chuyên sâu các dự án bất động sản."
+            },
+            {
+                "name": "Thị trường &amp; Tài chính",
+                "slug": "thi-truong-tai-chinh",
+                "description": "Toàn cảnh chuyển động thị trường BĐS, biến động giá và bảng lãi suất vay mua nhà ngân hàng."
+            }
+        ],
+        "khu_vuc_bds": [
+            {
+                "name": "Bình Dương",
+                "slug": "binh-duong",
+                "description": ""
+            },
+            {
+                "name": "Đà Nẵng",
+                "slug": "da-nang",
+                "description": ""
+            },
+            {
+                "name": "Đồng Nai",
+                "slug": "dong-nai",
+                "description": ""
+            },
+            {
+                "name": "Hà Nội",
+                "slug": "ha-noi",
+                "description": ""
+            },
+            {
+                "name": "Hải Phòng",
+                "slug": "hai-phong",
+                "description": ""
+            },
+            {
+                "name": "Khánh Hòa",
+                "slug": "khanh-hoa",
+                "description": ""
+            },
+            {
+                "name": "Long An",
+                "slug": "long-an",
+                "description": ""
+            },
+            {
+                "name": "Quảng Ninh",
+                "slug": "quang-ninh",
+                "description": ""
+            },
+            {
+                "name": "TP. Hồ Chí Minh",
+                "slug": "tp-hcm",
+                "description": ""
+            }
+        ],
+        "loai_hinh_bds": [
+            {
+                "name": "BĐS Công nghiệp",
+                "slug": "bds-cong-nghiep",
+                "description": ""
+            },
+            {
+                "name": "BĐS Nghỉ dưỡng",
+                "slug": "bds-nghi-duong",
+                "description": ""
+            },
+            {
+                "name": "Căn hộ chung cư",
+                "slug": "can-ho-chung-cu",
+                "description": ""
+            },
+            {
+                "name": "Đất nền dự án",
+                "slug": "dat-nen-du-an",
+                "description": ""
+            },
+            {
+                "name": "Khu đô thị &amp; Biệt thự",
+                "slug": "khu-do-thi-biet-thu",
+                "description": ""
+            },
+            {
+                "name": "Shophouse &amp; Nhà phố",
+                "slug": "shophouse-nha-pho",
+                "description": ""
+            }
+        ],
+        "trang_thai_du_an": [
+            {
+                "name": "Đã bàn giao",
+                "slug": "da-ban-giao",
+                "description": ""
+            },
+            {
+                "name": "Đang mở bán",
+                "slug": "dang-mo-ban",
+                "description": ""
+            },
+            {
+                "name": "Sắp mở bán",
+                "slug": "sap-mo-ban",
+                "description": ""
+            }
+        ],
+        "chu_dau_tu": [
+            {
+                "name": "Ecopark",
+                "slug": "ecopark",
+                "description": ""
+            },
+            {
+                "name": "Gamuda Land",
+                "slug": "gamuda-land",
+                "description": ""
+            },
+            {
+                "name": "Khang Điền",
+                "slug": "khang-dien",
+                "description": ""
+            },
+            {
+                "name": "Masterise Homes",
+                "slug": "masterise-homes",
+                "description": ""
+            },
+            {
+                "name": "Nam Long",
+                "slug": "nam-long",
+                "description": ""
+            },
+            {
+                "name": "Sun Group",
+                "slug": "sun-group",
+                "description": ""
+            },
+            {
+                "name": "Vinhomes",
+                "slug": "vinhomes",
+                "description": ""
+            }
+        ],
+        "loai_giao_dich": [
+            {
+                "name": "Cho thuê",
+                "slug": "cho-thue",
+                "description": ""
+            },
+            {
+                "name": "Chuyển nhượng \/ Cắt lỗ",
+                "slug": "chuyen-nhuong",
+                "description": ""
+            },
+            {
+                "name": "Giỏ hàng Chủ đầu tư",
+                "slug": "gio-hang-chu-dau-tu",
+                "description": ""
+            }
+        ]
+    },
+    "items_count": 7,
+    "items": [
+        {
+            "ID": 7,
+            "post_type": "du_an",
+            "post_status": "publish",
+            "post_title": "Khu Đô Thị Sinh Thái Vinhomes Grand Park",
+            "post_name": "vinhomes-grand-park",
+            "post_excerpt": "Đại đô thị thông minh đẳng cấp quốc tế quy mô 271ha tại tâm điểm TP. Thủ Đức với hệ sinh thái tiện ích toàn diện.",
+            "post_content": "<h3>1. Phân tích Vị trí &amp; Hạ tầng Kết nối<\/h3><p>Dự án tọa lạc tại mặt tiền đường Nguyễn Xiển – Phước Thiện, Phường Long Bình và Long Thạnh Mỹ, TP. Thủ Đức. Điểm cộng lớn nhất về hạ tầng là tuyến đường Vành Đai 3 đi xuyên tâm dự án giúp rút ngắn thời gian di chuyển về trung tâm Quận 1 chỉ còn 20-25 phút.<\/p><h3>2. Mặt bằng &amp; Các phân khu trọng điểm<\/h3><p>Quy hoạch bao gồm các phân khu cao tầng (The Rainbow, The Origami, The Beverly, Glory Heights) và khu thấp tầng biệt thự ven sông The Manhattan.<\/p>",
+            "post_date": "2026-11-10 07:22:06",
+            "meta": {
+                "_kbds_project_code": "DA-VHGP-01",
+                "_kbds_price_from": "Từ 52 triệu\/m² (Căn hộ) - 18 tỷ\/căn (Biệt thự)",
+                "_kbds_price_min_num": "52",
+                "_kbds_address": "Nguyễn Xiển - Phước Thiện, P. Long Bình, TP. Thủ Đức, TP.HCM",
+                "_kbds_total_area": "271 ha (Mật độ xây dựng 22.5%)",
+                "_kbds_scale": "71 tòa căn hộ cao tầng & hơn 1.350 căn biệt thự, shophouse",
+                "_kbds_legal_status": "Quy hoạch 1\/500, GPXD đầy đủ, đã cấp sổ hồng các phân khu bàn giao",
+                "_kbds_handover_time": "2020 - 2026 (Tùy phân khu)",
+                "_kbds_bank_support": "Vietcombank, Techcombank, MB hỗ trợ vay 70%, ân hạn gốc lãi 24 tháng",
+                "_kbds_review_score": "9.3",
+                "_kbds_pros_cons": "+ Đại công viên 36ha và hệ sinh thái Vinschool, Vincom, Vinmec đã vận hành đồng bộ.\n+ Đón sóng trực tiếp đường Vành Đai 3 TP.HCM khép kín năm 2026.\n+ Pháp lý minh bạch, thanh khoản cho thuê và chuyển nhượng rất sôi động.\n- Khoảng cách vào trung tâm Quận 1 hiện tại qua Nguyễn Xiển vào giờ cao điểm đôi lúc đông đúc."
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "tp-hcm"
+                ],
+                "loai_hinh_bds": [
+                    "can-ho-chung-cu",
+                    "khu-do-thi-biet-thu"
+                ],
+                "trang_thai_du_an": [
+                    "dang-mo-ban"
+                ],
+                "chu_dau_tu": [
+                    "vinhomes"
+                ]
+            }
+        },
+        {
+            "ID": 8,
+            "post_type": "bat_dong_san",
+            "post_status": "publish",
+            "post_title": "Căn góc 2PN+1 The Beverly View Trực Diện Công Viên 36ha",
+            "post_name": "can-goc-2pn-the-beverly-view-cong-vien",
+            "post_excerpt": "",
+            "post_content": "Căn hộ tầng trung thoáng mát, bàn giao nội thất cao cấp chuẩn khách sạn 5 sao. Chủ nhà thiện chí sang nhượng nhanh bao toàn bộ thuế phí.",
+            "post_date": "2026-11-10 07:22:06",
+            "meta": {
+                "_kbds_parent_project_id": "7",
+                "_kbds_is_verified": "1",
+                "_kbds_listing_code": "GH-BE2-1508",
+                "_kbds_listing_price": "4.15 tỷ (Bao hết thuế phí)",
+                "_kbds_price_billion": "4.15",
+                "_kbds_area_m2": "79.2",
+                "_kbds_bedrooms": "2",
+                "_kbds_bathrooms": "2",
+                "_kbds_direction": "Đông Nam",
+                "_kbds_listing_legal": "HĐMB chính chủ - Hỗ trợ sang tên ngay"
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "tp-hcm"
+                ],
+                "loai_hinh_bds": [
+                    "can-ho-chung-cu"
+                ],
+                "loai_giao_dich": [
+                    "chuyen-nhuong"
+                ]
+            }
+        },
+        {
+            "ID": 9,
+            "post_type": "bat_dong_san",
+            "post_status": "publish",
+            "post_title": "Suất Ngoại Giao Shophouse Khối Đế Glory Heights Đối Diện Vincom",
+            "post_name": "shophouse-khoi-de-glory-heights-doi-dien-vincom",
+            "post_excerpt": "",
+            "post_content": "Vị trí kinh doanh đắc địa nhất phân khu Glory Heights, ngay trục đại lộ mua sắm Rodeo và đối diện TTTM Vincom Mega Mall.",
+            "post_date": "2026-11-10 07:22:06",
+            "meta": {
+                "_kbds_parent_project_id": "7",
+                "_kbds_is_verified": "1",
+                "_kbds_listing_code": "GH-GH3-SH02",
+                "_kbds_listing_price": "11.8 tỷ (Chiết khấu 8.5%)",
+                "_kbds_price_billion": "11.8",
+                "_kbds_area_m2": "105",
+                "_kbds_bedrooms": "1",
+                "_kbds_bathrooms": "2",
+                "_kbds_direction": "Đông Bắc",
+                "_kbds_listing_legal": "Ký trực tiếp Chủ đầu tư"
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "tp-hcm"
+                ],
+                "loai_hinh_bds": [
+                    "shophouse-nha-pho"
+                ],
+                "loai_giao_dich": [
+                    "gio-hang-chu-dau-tu"
+                ]
+            }
+        },
+        {
+            "ID": 10,
+            "post_type": "bds_lead",
+            "post_status": "publish",
+            "post_title": "Nguyễn Minh Tuấn (Khách mẫu) - 0909123456",
+            "post_name": "nguyen-minh-tuan-khach-mau-0909123456",
+            "post_excerpt": "",
+            "post_content": "",
+            "post_date": "2026-11-10 07:22:06",
+            "meta": {
+                "_kbds_lead_phone": "0909123456",
+                "_kbds_lead_email": "minhtuan@example.com",
+                "_kbds_lead_project": "Khu Đô Thị Sinh Thái Vinhomes Grand Park",
+                "_kbds_lead_demand": "Xin bảng giá căn 2PN view công viên và chính sách vay ngân hàng",
+                "_kbds_lead_status": "new"
+            },
+            "terms": []
+        },
+        {
+            "ID": 1,
+            "post_type": "post",
+            "post_status": "publish",
+            "post_title": "Chào tất cả mọi người!",
+            "post_name": "chao-moi-nguoi",
+            "post_excerpt": "",
+            "post_content": "<!-- wp:paragraph -->\n<p>Cảm ơn vì đã sử dụng WordPress. Đây là bài viết đầu tiên của bạn. Sửa hoặc xóa nó, và bắt đầu bài viết của bạn nhé!<\/p>\n<!-- \/wp:paragraph -->",
+            "post_date": "2026-11-10 07:03:32",
+            "meta": [],
+            "terms": {
+                "category": [
+                    "chua-phan-loai"
+                ]
+            }
+        },
+        {
+            "ID": 2,
+            "post_type": "page",
+            "post_status": "publish",
+            "post_title": "Trang mẫu",
+            "post_name": "trang-mau",
+            "post_excerpt": "",
+            "post_content": "<!-- wp:paragraph -->\n<p>Đây là trang mẫu. Nó khác với bài viết bởi vì nó thường cố định và hiển thị trong menu của bạn. Nhiều người bắt đầu với trang Giới thiệu nơi bạn chia sẻ thông tin cho những ai ghé thăm. Nó có thể bắt đầu như thế này:<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\">\n<!-- wp:paragraph -->\n<p>Chào bạn! Tôi là một người bán hàng, và đây là website của tôi. Tôi sống ở Hà Nội, có một gia đình nhỏ, và tôi thấy cách sử dụng WordPress rất thú vị.<\/p>\n<!-- \/wp:paragraph -->\n<\/blockquote>\n<!-- \/wp:quote -->\n\n<!-- wp:paragraph -->\n<p>... hoặc cái gì đó như thế này:<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\">\n<!-- wp:paragraph -->\n<p>Công ty chúng tôi được thành lập năm 2010, và cung cấp dịch vụ chất lượng cho rất nhiều sự kiện tại khắp Việt Nam. Với văn phòng đặt tại Hà Nội, TP. Hồ Chí Minh cùng hơn 40 nhân sự, chúng tôi là nơi nhiều đối tác tin tưởng giao cho tổ chức các sự kiện lớn.<\/p>\n<!-- \/wp:paragraph -->\n<\/blockquote>\n<!-- \/wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Là một người dùng WordPress mới, bạn nên ghé thăm <a href=\"http:\/\/localhost\/www\/kenhbds\/wp-admin\/\">bảng điều khiển<\/a> để xóa trang này và tạo trang mới cho nội dung của chính bạn. Chúc bạn vui vẻ!<\/p>\n<!-- \/wp:paragraph -->",
+            "post_date": "2026-11-10 07:03:32",
+            "meta": {
+                "_wp_page_template": "default"
+            },
+            "terms": []
+        },
+        {
+            "ID": 3,
+            "post_type": "page",
+            "post_status": "draft",
+            "post_title": "Chính sách bảo mật",
+            "post_name": "chinh-sach-bao-mat",
+            "post_excerpt": "",
+            "post_content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Chúng tôi là ai<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Địa chỉ website là: http:\/\/localhost\/www\/kenhbds.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Bình luận<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Khi khách truy cập để lại bình luận trên trang web, chúng tôi thu thập dữ liệu được hiển thị trong biểu mẫu bình luận và cũng là địa chỉ IP của người truy cập và chuỗi user agent của người dùng trình duyệt để giúp phát hiện bình luận rác<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Một chuỗi ẩn danh được tạo từ địa chỉ email của bạn (còn được gọi là hash) có thể được cung cấp cho dịch vụ Gravatar để xem bạn có đang sử dụng nó hay không. Chính sách bảo mật của dịch vụ Gravatar có tại đây: https:\/\/automattic.com\/privacy\/. Sau khi chấp nhận bình luận của bạn, ảnh tiểu sử của bạn được hiển thị công khai trong ngữ cảnh bình luận của bạn.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Thư viện<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Nếu bạn tải hình ảnh lên trang web, bạn nên tránh tải lên hình ảnh có dữ liệu vị trí được nhúng (EXIF GPS) đi kèm. Khách truy cập vào trang web có thể tải xuống và giải nén bất kỳ dữ liệu vị trí nào từ hình ảnh trên trang web.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Cookies<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Nếu bạn viết bình luận trong website, bạn có thể cung cấp cần nhập tên, email địa chỉ website trong cookie. Các thông tin này nhằm giúp bạn không cần nhập thông tin nhiều lần khi viết bình luận khác. Cookie này sẽ được lưu giữ trong một năm.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Nếu bạn vào trang đăng nhập, chúng tôi sẽ thiết lập một cookie tạm thời để xác định nếu trình duyệt cho phép sử dụng cookie. Cookie này không bao gồm thông tin cá nhân và sẽ được gỡ bỏ khi bạn đóng trình duyệt.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Khi bạn đăng nhập, chúng tôi sẽ thiết lập một vài cookie để lưu thông tin đăng nhập và lựa chọn hiển thị. Thông tin đăng nhập gần nhất lưu trong hai ngày, và lựa chọn hiển thị gần nhất lưu trong một năm. Nếu bạn chọn &quot;Nhớ tôi&quot;, thông tin đăng nhập sẽ được lưu trong hai tuần. Nếu bạn thoát tài khoản, thông tin cookie đăng nhập sẽ bị xoá.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Nếu bạn sửa hoặc xuất bản bài viết, một bản cookie bổ sung sẽ được lưu trong trình duyệt. Cookie này không chứa thông tin cá nhân và chỉ đơn giản bao gồm ID của bài viết bạn đã sửa. Nó tự động hết hạn sau 1 ngày.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Nội dung nhúng từ website khác<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Các bài viết trên trang web này có thể bao gồm nội dung được nhúng (ví dụ: video, hình ảnh, bài viết, v.v.). Nội dung được nhúng từ các trang web khác hoạt động theo cùng một cách chính xác như khi khách truy cập đã truy cập trang web khác.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Những website này có thể thu thập dữ liệu về bạn, sử dụng cookie, nhúng các trình theo dõi của bên thứ ba và giám sát tương tác của bạn với nội dung được nhúng đó, bao gồm theo dõi tương tác của bạn với nội dung được nhúng nếu bạn có tài khoản và đã đăng nhập vào trang web đó.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Chúng tôi chia sẻ dữ liệu của bạn với ai<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Nếu bạn yêu cầu đặt lại mật khẩu, địa chỉ IP của bạn sẽ được bao gồm trong email đặt lại.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Dữ liệu của bạn tồn tại bao lâu<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Nếu bạn để lại bình luận, bình luận và siêu dữ liệu của nó sẽ được giữ lại vô thời hạn. Điều này là để chúng tôi có thể tự động nhận ra và chấp nhận bất kỳ bình luận nào thay vì giữ chúng trong khu vực đợi kiểm duyệt.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Đối với người dùng đăng ký trên trang web của chúng tôi (nếu có), chúng tôi cũng lưu trữ thông tin cá nhân mà họ cung cấp trong hồ sơ người dùng của họ. Tất cả người dùng có thể xem, chỉnh sửa hoặc xóa thông tin cá nhân của họ bất kỳ lúc nào (ngoại trừ họ không thể thay đổi tên người dùng của họ). Quản trị viên trang web cũng có thể xem và chỉnh sửa thông tin đó.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Các quyền nào của bạn với dữ liệu của mình<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Nếu bạn có tài khoản trên trang web này hoặc đã để lại nhận xét, bạn có thể yêu cầu nhận tệp xuất dữ liệu cá nhân mà chúng tôi lưu giữ về bạn, bao gồm mọi dữ liệu bạn đã cung cấp cho chúng tôi. Bạn cũng có thể yêu cầu chúng tôi xóa mọi dữ liệu cá nhân mà chúng tôi lưu giữ về bạn. Điều này không bao gồm bất kỳ dữ liệu nào chúng tôi có nghĩa vụ giữ cho các mục đích hành chính, pháp lý hoặc bảo mật.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Dữ liệu của bạn được gửi đến đâu<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Văn bản được đề xuất: <\/strong>Các bình luận của khách (không phải là thành viên) có thể được kiểm tra thông qua dịch vụ tự động phát hiện bình luận rác.<\/p>\n<!-- \/wp:paragraph -->\n",
+            "post_date": "2026-11-10 07:03:32",
+            "meta": {
+                "_wp_page_template": "default"
+            },
+            "terms": []
+        }
+    ]
+}
