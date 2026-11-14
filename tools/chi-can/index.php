@@ -41,20 +41,20 @@ get_header();
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 22px;
+    padding: 18px 20px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 .chi-can-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #f1f5f9;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 .chi-can-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     color: #0b2b5e;
     text-transform: uppercase;
@@ -64,23 +64,23 @@ get_header();
     gap: 8px;
 }
 .chi-can-num {
-    width: 26px;
-    height: 26px;
-    border-radius: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
     background: #0b2b5e;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
 }
 .chi-can-frame-card {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 14px;
+    padding: 10px 12px;
+    margin-bottom: 0;
     transition: all 0.2s ease;
 }
 .chi-can-frame-card:hover {
@@ -146,29 +146,31 @@ get_header();
     background: #e2e8f0;
 }
 .chi-can-canvas-wrap {
-    background: #e2e8f0;
+    background: #f1f5f9;
     background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
     background-size: 16px 16px;
-    padding: 24px;
-    border-radius: 16px;
+    padding: 12px;
+    border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #cbd5e1;
-    max-height: 840px;
-    overflow: auto;
+    overflow: hidden;
 }
 #posterCanvas {
     max-width: 100%;
+    max-height: 575px;
     height: auto;
+    width: auto;
     border-radius: 8px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.16);
     background: #fff;
+    object-fit: contain;
 }
 .chi-can-input {
     width: 100%;
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: 7px 10px;
+    font-size: 12.5px;
     font-weight: 600;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
@@ -184,11 +186,12 @@ get_header();
 .chi-can-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 20px;
 }
 @media (min-width: 1024px) {
     .chi-can-grid {
-        grid-template-columns: 5fr 7fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
     }
 }
 </style>
@@ -304,20 +307,20 @@ get_header();
                         </div>
                     </div>
 
-                    <div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <!-- Khung 1: Ảnh Dự Án -->
                         <div class="chi-can-frame-card" id="card_frame_1">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">1. Ảnh Dự Án (Khung trên trái)</span>
-                                <button type="button" onclick="clearImage(1)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #0b2b5e;">1. Phối Cảnh (Trên trái)</span>
+                                <button type="button" onclick="clearImage(1)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5; padding: 2px 6px; font-size: 10px;">Xóa</button>
                             </div>
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div id="preview_thumb_1" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
-                                <div style="flex: 1;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div id="preview_thumb_1" style="width: 50px; height: 42px; background: #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
                                     <input type="file" id="file_frame_1" accept="image/*" onchange="handleFileSelect(event, 1)" style="display: none;">
-                                    <div style="display: flex; gap: 8px;">
-                                        <button type="button" onclick="document.getElementById('file_frame_1').click()" class="chi-can-btn-sm" style="flex: 1; padding: 7px 10px; font-weight: 700;">📁 Chọn Ảnh</button>
-                                        <button type="button" onclick="pasteFromClipboard(1)" class="chi-can-btn-sm" style="padding: 7px 12px; font-weight: 700; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh đã chụp (Ctrl+V)">📋 Dán</button>
+                                    <div style="display: flex; gap: 4px;">
+                                        <button type="button" onclick="document.getElementById('file_frame_1').click()" class="chi-can-btn-sm" style="flex: 1; padding: 6px 4px; font-weight: 700; font-size: 11px;">📁 Chọn File</button>
+                                        <button type="button" onclick="pasteFromClipboard(1)" class="chi-can-btn-sm" style="padding: 6px 8px; font-weight: 700; font-size: 11px; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh (Ctrl+V)">📋 Dán</button>
                                     </div>
                                 </div>
                             </div>
@@ -325,17 +328,17 @@ get_header();
 
                         <!-- Khung 2: Mặt Bằng Tầng -->
                         <div class="chi-can-frame-card" id="card_frame_2">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">2. Mặt Bằng Tầng (Khung giữa)</span>
-                                <button type="button" onclick="clearImage(2)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #0b2b5e;">2. Mặt Bằng Tầng (Giữa)</span>
+                                <button type="button" onclick="clearImage(2)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5; padding: 2px 6px; font-size: 10px;">Xóa</button>
                             </div>
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div id="preview_thumb_2" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
-                                <div style="flex: 1;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div id="preview_thumb_2" style="width: 50px; height: 42px; background: #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
                                     <input type="file" id="file_frame_2" accept="image/*" onchange="handleFileSelect(event, 2)" style="display: none;">
-                                    <div style="display: flex; gap: 8px;">
-                                        <button type="button" onclick="document.getElementById('file_frame_2').click()" class="chi-can-btn-sm" style="flex: 1; padding: 7px 10px; font-weight: 700;">📁 Chọn Ảnh</button>
-                                        <button type="button" onclick="pasteFromClipboard(2)" class="chi-can-btn-sm" style="padding: 7px 12px; font-weight: 700; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh đã chụp (Ctrl+V)">📋 Dán</button>
+                                    <div style="display: flex; gap: 4px;">
+                                        <button type="button" onclick="document.getElementById('file_frame_2').click()" class="chi-can-btn-sm" style="flex: 1; padding: 6px 4px; font-weight: 700; font-size: 11px;">📁 Chọn File</button>
+                                        <button type="button" onclick="pasteFromClipboard(2)" class="chi-can-btn-sm" style="padding: 6px 8px; font-weight: 700; font-size: 11px; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh (Ctrl+V)">📋 Dán</button>
                                     </div>
                                 </div>
                             </div>
@@ -343,17 +346,17 @@ get_header();
 
                         <!-- Khung 3: Layout Căn Hộ -->
                         <div class="chi-can-frame-card" id="card_frame_3">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">3. Layout Căn Hộ (Khung dưới trái)</span>
-                                <button type="button" onclick="clearImage(3)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #0b2b5e;">3. Layout Căn Hộ (Dưới trái)</span>
+                                <button type="button" onclick="clearImage(3)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5; padding: 2px 6px; font-size: 10px;">Xóa</button>
                             </div>
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div id="preview_thumb_3" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
-                                <div style="flex: 1;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div id="preview_thumb_3" style="width: 50px; height: 42px; background: #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
                                     <input type="file" id="file_frame_3" accept="image/*" onchange="handleFileSelect(event, 3)" style="display: none;">
-                                    <div style="display: flex; gap: 8px;">
-                                        <button type="button" onclick="document.getElementById('file_frame_3').click()" class="chi-can-btn-sm" style="flex: 1; padding: 7px 10px; font-weight: 700;">📁 Chọn Ảnh</button>
-                                        <button type="button" onclick="pasteFromClipboard(3)" class="chi-can-btn-sm" style="padding: 7px 12px; font-weight: 700; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh đã chụp (Ctrl+V)">📋 Dán</button>
+                                    <div style="display: flex; gap: 4px;">
+                                        <button type="button" onclick="document.getElementById('file_frame_3').click()" class="chi-can-btn-sm" style="flex: 1; padding: 6px 4px; font-weight: 700; font-size: 11px;">📁 Chọn File</button>
+                                        <button type="button" onclick="pasteFromClipboard(3)" class="chi-can-btn-sm" style="padding: 6px 8px; font-weight: 700; font-size: 11px; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh (Ctrl+V)">📋 Dán</button>
                                     </div>
                                 </div>
                             </div>
@@ -361,22 +364,21 @@ get_header();
 
                         <!-- Khung 4: Ảnh Tiện Ích -->
                         <div class="chi-can-frame-card" id="card_frame_4">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">4. Ảnh Tiện Ích (Khung dưới phải)</span>
-                                <button type="button" onclick="clearImage(4)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #0b2b5e;">4. Tiện Ích (Dưới phải)</span>
+                                <button type="button" onclick="clearImage(4)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5; padding: 2px 6px; font-size: 10px;">Xóa</button>
                             </div>
-                            <div style="display: flex; gap: 12px; align-items: center;">
-                                <div id="preview_thumb_4" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
-                                <div style="flex: 1;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div id="preview_thumb_4" style="width: 50px; height: 42px; background: #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
                                     <input type="file" id="file_frame_4" accept="image/*" onchange="handleFileSelect(event, 4)" style="display: none;">
-                                    <div style="display: flex; gap: 8px;">
-                                        <button type="button" onclick="document.getElementById('file_frame_4').click()" class="chi-can-btn-sm" style="flex: 1; padding: 7px 10px; font-weight: 700;">📁 Chọn Ảnh</button>
-                                        <button type="button" onclick="pasteFromClipboard(4)" class="chi-can-btn-sm" style="padding: 7px 12px; font-weight: 700; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh đã chụp (Ctrl+V)">📋 Dán</button>
+                                    <div style="display: flex; gap: 4px;">
+                                        <button type="button" onclick="document.getElementById('file_frame_4').click()" class="chi-can-btn-sm" style="flex: 1; padding: 6px 4px; font-weight: 700; font-size: 11px;">📁 Chọn File</button>
+                                        <button type="button" onclick="pasteFromClipboard(4)" class="chi-can-btn-sm" style="padding: 6px 8px; font-weight: 700; font-size: 11px; color: #2563eb; background: #eff6ff; border-color: #bfdbfe;" title="Dán ảnh (Ctrl+V)">📋 Dán</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
