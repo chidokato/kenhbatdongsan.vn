@@ -186,3 +186,31 @@ add_action( 'wp_footer', function() {
 	</div>
 	<?php
 }, 100 );
+
+/**
+ * 6. Loại bỏ tiền tố "Lưu trữ danh mục:", "Chuyên mục:", "Category:" trên toàn bộ trang danh mục
+ */
+add_filter( 'get_the_archive_title', function ( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = get_the_author();
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_tax() ) {
+		$title = single_term_title( '', false );
+	}
+	return $title;
+} );
+
+add_filter( 'gettext', function( $translation, $text, $domain ) {
+	if ( 'Category Archives: %s' === $text || 'Category: %s' === $text ) {
+		return '%s';
+	}
+	if ( 'Tag Archives: %s' === $text || 'Tag: %s' === $text ) {
+		return '%s';
+	}
+	return $translation;
+}, 20, 3 );
