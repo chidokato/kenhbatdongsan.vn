@@ -295,26 +295,21 @@ get_header();
                     </div>
                 </div>
 
-                <!-- 2. BỐN KHUNG CHÈN ẢNH (LẤP ĐẦY KHÔNG KHOẢNG TRẮNG) -->
+                <!-- 2. BỐN KHUNG CHÈN ẢNH -->
                 <div class="chi-can-card">
                     <div class="chi-can-card-header">
                         <div class="chi-can-title">
                             <span class="chi-can-num">2</span>
-                            <span>Thay 4 Khung Ảnh (Lấp Đầy 100% Khung)</span>
+                            <span>Hình Ảnh Căn Hộ (4 Khung)</span>
                         </div>
-                        <span style="font-size: 11px; color: #2563eb; font-weight: 600;">Không còn khoảng trắng</span>
                     </div>
 
                     <div>
                         <!-- Khung 1: Ảnh Dự Án -->
                         <div class="chi-can-frame-card" id="card_frame_1">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">1. Ảnh Phối Cảnh Dự Án (Khung trên trái)</span>
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <button type="button" onclick="setFitMode(1, 'cover')" id="fit_btn_1_cover" class="chi-can-btn-sm active">Lấp đầy</button>
-                                    <button type="button" onclick="setFitMode(1, 'contain')" id="fit_btn_1_contain" class="chi-can-btn-sm">Vừa vặn</button>
-                                    <button type="button" onclick="clearImage(1)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
-                                </div>
+                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">1. Ảnh Dự Án (Khung trên trái)</span>
+                                <button type="button" onclick="clearImage(1)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
                             </div>
                             <div style="display: flex; gap: 12px; align-items: center;">
                                 <div id="preview_thumb_1" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
@@ -331,12 +326,8 @@ get_header();
                         <!-- Khung 2: Mặt Bằng Tầng -->
                         <div class="chi-can-frame-card" id="card_frame_2">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">2. Mặt Bằng Tầng (Khung giữa rộng)</span>
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <button type="button" onclick="setFitMode(2, 'cover')" id="fit_btn_2_cover" class="chi-can-btn-sm active">Lấp đầy (Hết trắng)</button>
-                                    <button type="button" onclick="setFitMode(2, 'contain')" id="fit_btn_2_contain" class="chi-can-btn-sm">Vừa vặn</button>
-                                    <button type="button" onclick="clearImage(2)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
-                                </div>
+                                <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">2. Mặt Bằng Tầng (Khung giữa)</span>
+                                <button type="button" onclick="clearImage(2)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
                             </div>
                             <div style="display: flex; gap: 12px; align-items: center;">
                                 <div id="preview_thumb_2" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
@@ -354,11 +345,7 @@ get_header();
                         <div class="chi-can-frame-card" id="card_frame_3">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                 <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">3. Layout Căn Hộ (Khung dưới trái)</span>
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <button type="button" onclick="setFitMode(3, 'cover')" id="fit_btn_3_cover" class="chi-can-btn-sm active">Lấp đầy (Hết trắng)</button>
-                                    <button type="button" onclick="setFitMode(3, 'contain')" id="fit_btn_3_contain" class="chi-can-btn-sm">Vừa vặn</button>
-                                    <button type="button" onclick="clearImage(3)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
-                                </div>
+                                <button type="button" onclick="clearImage(3)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
                             </div>
                             <div style="display: flex; gap: 12px; align-items: center;">
                                 <div id="preview_thumb_3" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
@@ -376,11 +363,7 @@ get_header();
                         <div class="chi-can-frame-card" id="card_frame_4">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                 <span style="font-size: 12px; font-weight: 800; color: #0b2b5e;">4. Ảnh Tiện Ích (Khung dưới phải)</span>
-                                <div style="display: flex; align-items: center; gap: 4px;">
-                                    <button type="button" onclick="setFitMode(4, 'cover')" id="fit_btn_4_cover" class="chi-can-btn-sm active">Lấp đầy (Hết trắng)</button>
-                                    <button type="button" onclick="setFitMode(4, 'contain')" id="fit_btn_4_contain" class="chi-can-btn-sm">Vừa vặn</button>
-                                    <button type="button" onclick="clearImage(4)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
-                                </div>
+                                <button type="button" onclick="clearImage(4)" class="chi-can-btn-sm" style="color: #ef4444; border-color: #fca5a5;">Xóa</button>
                             </div>
                             <div style="display: flex; gap: 12px; align-items: center;">
                                 <div id="preview_thumb_4" style="width: 64px; height: 52px; background: #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #94a3b8; font-weight: 700;">Trống</div>
@@ -692,13 +675,14 @@ get_header();
         state.fitModes[frameId] = mode;
         const btnCover = document.getElementById(`fit_btn_${frameId}_cover`);
         const btnContain = document.getElementById(`fit_btn_${frameId}_contain`);
-        
-        if (mode === 'cover') {
-            btnCover.classList.add('active');
-            btnContain.classList.remove('active');
-        } else {
-            btnCover.classList.remove('active');
-            btnContain.classList.add('active');
+        if (btnCover && btnContain) {
+            if (mode === 'cover') {
+                btnCover.classList.add('active');
+                btnContain.classList.remove('active');
+            } else {
+                btnCover.classList.remove('active');
+                btnContain.classList.add('active');
+            }
         }
         renderCanvas();
     }
