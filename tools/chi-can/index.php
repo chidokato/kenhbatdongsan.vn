@@ -473,7 +473,7 @@ get_header();
     const ctx = canvas.getContext('2d');
     const baseImage = new Image();
     baseImage.crossOrigin = 'anonymous';
-    baseImage.src = '<?php echo esc_url( home_url( '/tools/chi-can/assets/template-chi-can.jpg' ) ); ?>';
+    baseImage.src = '<?php echo esc_url( home_url( '/tools/chi-can/assets/template-chi-can.jpg?v=' . filemtime( __DIR__ . '/assets/template-chi-can.jpg' ) ) ); ?>';
 
     baseImage.onload = () => {
         renderCanvas();
@@ -597,32 +597,26 @@ get_header();
             }
         });
 
-        // 3C. Tùy Chọn Tên Dự Án Khác
-        const tenDuAn = document.getElementById('input_ten_du_an').value.trim();
-        const tieuDePhu = document.getElementById('input_tieu_de_phu').value.trim();
+        // 3C. Tên Dự Án & Tiêu Đề Phụ (Vẽ trực tiếp trên nền liền mạch, không hộp đè)
+        const tenDuAn = document.getElementById('input_ten_du_an').value.trim() || 'IMPERIA SKY PARK';
+        const tieuDePhu = document.getElementById('input_tieu_de_phu').value.trim() || 'THÔNG TIN CHI TIẾT CĂN';
         
-        if (tenDuAn && tenDuAn !== 'IMPERIA SKY PARK') {
-            ctx.save();
-            const grad = ctx.createLinearGradient(150, 110, 150, 205);
-            grad.addColorStop(0, '#042255');
-            grad.addColorStop(1, '#083B80');
-            ctx.fillStyle = grad;
-            ctx.fillRect(150, 110, 520, 95);
+        ctx.save();
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '700 18px Montserrat, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+        ctx.shadowBlur = 5;
+        ctx.shadowOffsetY = 1;
+        ctx.fillText(tieuDePhu, 410, 138);
 
-            ctx.fillStyle = '#FFFFFF';
-            ctx.font = '700 18px Montserrat, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(tieuDePhu || 'THÔNG TIN CHI TIẾT CĂN', 410, 138);
-
-            ctx.fillStyle = '#FFFFFF';
-            ctx.font = '900 36px Montserrat, sans-serif';
-            ctx.shadowColor = 'rgba(0,0,0,0.5)';
-            ctx.shadowBlur = 8;
-            ctx.shadowOffsetY = 2;
-            ctx.fillText(tenDuAn, 410, 180);
-            ctx.restore();
-        }
+        ctx.font = '900 36px Montserrat, sans-serif';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetY = 2;
+        ctx.fillText(tenDuAn, 410, 180);
+        ctx.restore();
     }
 
     // --- UPLOAD & PASTE ---

@@ -33,9 +33,31 @@ class KBDS_URL_Normalizer {
 		// 4. Ngăn chặn chuyển hướng (redirect) về localhost khi ở trên hosting
 		add_filter( 'wp_redirect', array( __CLASS__, 'filter_redirect' ), 999 );
 
-		// 5. Tự động kiểm tra và đảm bảo Database options luôn lưu domain chuẩn
+		// 5. Chuẩn hóa theme mods logo
+		add_filter( 'theme_mod_site_logo', array( __CLASS__, 'filter_content_urls' ), 999 );
+		add_filter( 'theme_mod_site_logo_dark', array( __CLASS__, 'filter_content_urls' ), 999 );
+		add_filter( 'theme_mod_site_logo_sticky', array( __CLASS__, 'filter_content_urls' ), 999 );
+		add_filter( 'theme_mod_custom_logo', array( __CLASS__, 'filter_content_urls' ), 999 );
+
+		// 6. Output Buffering cho toàn bộ frontend để triệt tiêu mọi URL lỗi (cả trang WP và tools)
+		add_action( 'init', array( __CLASS__, 'start_output_buffer' ), 1 );
+		add_action( 'template_redirect', array( __CLASS__, 'start_output_buffer' ), 1 );
+
+		// 7. Tự động kiểm tra và đảm bảo Database options luôn lưu domain chuẩn
 		add_action( 'admin_init', array( __CLASS__, 'ensure_database_options' ) );
 		add_action( 'admin_init', array( __CLASS__, 'ensure_chi_can_menu' ) );
+	}
+
+	private static $buffer_started = false;
+
+	/**
+	 * Bắt đầu output buffer để rewrite toàn bộ URL trên HTML trả về
+	 */
+	public static function start_output_buffer() {
+		if ( ! is_admin() && ! self::$buffer_started ) {
+			self::$buffer_started = true;
+			ob_start( array( __CLASS__, 'filter_content_urls' ) );
+		}
 	}
 
 	/**

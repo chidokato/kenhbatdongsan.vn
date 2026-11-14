@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" width="420" height="96">
+	<defs>
+		<linearGradient id="goldGradWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#F59E0B"/>
+			<stop offset="100%" stop-color="#D97706"/>
+		</linearGradient>
+	</defs>
+	<!-- Icon Mark -->
+	<rect x="4" y="12" width="72" height="72" rx="14" fill="url(#goldGradWhite)"/>
+	<path d="M22 64 V34 L40 22 L58 34 V64 H48 V44 H32 V64 Z" fill="#071931"/>
+	<rect x="36" y="32" width="8" height="8" rx="1" fill="#FFFFFF"/>
+	<!-- Brand Text -->
+	<text x="90" y="48" font-family="'Be Vietnam Pro', Montserrat, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="0.8">KÊNH BĐS</text>
+	<rect x="246" y="27" width="48" height="25" rx="5" fill="url(#goldGradWhite)"/>
+	<text x="270" y="45" font-family="'Be Vietnam Pro', Montserrat, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#071931" text-anchor="middle">.VN</text>
+	<text x="90" y="73" font-family="'Be Vietnam Pro', Montserrat, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#CBD5E1" letter-spacing="1.5">DỰ ÁN • QUY HOẠCH • GIỎ HÀNG</text>
+</svg>
