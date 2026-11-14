@@ -22,6 +22,7 @@ require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-shortcodes.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-seo-enhancer.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-homepage-sections.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-notification-service.php';
+require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-chi-can-router.php';
 
 // Khởi chạy các phân hệ giao diện & dữ liệu
 KBDS_URL_Normalizer::init();
@@ -55,7 +56,7 @@ function kbds_register_chi_can_tool_menu() {
 }
 
 function kbds_render_chi_can_tool_page() {
-	$tool_url = home_url( '/tools/chi-can/' );
+	$tool_url = home_url( '/chi-can/imperia-sky-park' );
 	?>
 	<div class="wrap" style="margin: 10px 20px 0 0;">
 		<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -78,7 +79,7 @@ function kbds_add_chi_can_tool_admin_bar( $admin_bar ) {
 	$admin_bar->add_node( array(
 		'id'    => 'kbds_tool_chi_can',
 		'title' => '<span class="ab-icon dashicons dashicons-layout" style="top:2px;"></span> <span class="ab-label" style="font-weight:bold;color:#fcd34d;">Tool Chỉ Căn</span>',
-		'href'  => home_url( '/tools/chi-can/' ),
+		'href'  => home_url( '/chi-can/imperia-sky-park' ),
 		'meta'  => array(
 			'target' => '_blank',
 			'title'  => 'Mở Tool Tạo Phiếu Chỉ Căn BĐS',

@@ -178,23 +178,31 @@ class KBDS_URL_Normalizer {
 		$parent_id   = 0;
 		$has_imperia = false;
 
+		$parent_url  = home_url( '/chi-can/' );
+		$project_url = home_url( '/chi-can/imperia-sky-park' );
+
 		if ( $items ) {
 			foreach ( $items as $item ) {
 				if ( trim( $item->title ) === 'Chỉ Căn BĐS' ) {
 					$parent_id = $item->ID;
+					// Cập nhật link nếu còn là link cũ
+					if ( strpos( $item->url, '/tools/chi-can' ) !== false ) {
+						update_post_meta( $item->ID, '_menu_item_url', esc_url_raw( $parent_url ) );
+					}
 				}
 				if ( trim( $item->title ) === 'Imperia Sky Park' ) {
 					$has_imperia = true;
+					if ( strpos( $item->url, '/tools/chi-can' ) !== false ) {
+						update_post_meta( $item->ID, '_menu_item_url', esc_url_raw( $project_url ) );
+					}
 				}
 			}
 		}
 
-		$tool_url = self::PRODUCTION_URL . '/tools/chi-can/';
-
 		if ( ! $parent_id ) {
 			$parent_id = wp_update_nav_menu_item( $menu->term_id, 0, array(
 				'menu-item-title'   => 'Chỉ Căn BĐS',
-				'menu-item-url'     => $tool_url,
+				'menu-item-url'     => $parent_url,
 				'menu-item-status'  => 'publish',
 				'menu-item-type'    => 'custom',
 				'menu-item-classes' => 'menu-item-chi-can',
@@ -204,7 +212,7 @@ class KBDS_URL_Normalizer {
 		if ( $parent_id && ! $has_imperia ) {
 			wp_update_nav_menu_item( $menu->term_id, 0, array(
 				'menu-item-title'     => 'Imperia Sky Park',
-				'menu-item-url'       => $tool_url,
+				'menu-item-url'       => $project_url,
 				'menu-item-status'    => 'publish',
 				'menu-item-type'      => 'custom',
 				'menu-item-parent-id' => $parent_id,

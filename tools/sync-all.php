@@ -196,7 +196,7 @@ foreach ($local_blocks as $b) {
     }
 }
 
-// 7. Đồng bộ Thứ tự Menu Chính (Menu 40)
+// 7. Đồng bộ Thứ tự Menu Chính & Link Chỉ Căn (Menu 40)
 $menu_orders = [
     109 => 1, 110 => 2, 111 => 3, 112 => 4, 113 => 5,
     155 => 6, 156 => 7, 114 => 8, 115 => 9, 116 => 10,
@@ -205,7 +205,9 @@ $menu_orders = [
 foreach ($menu_orders as $mid => $ord) {
     call_remote_api("wp/v2/menu-items/{$mid}", 'POST', ['menu_order' => $ord]);
 }
-echo "✔ Menu Chính đã được đồng bộ thứ tự chuẩn xác.\n";
+call_remote_api("wp/v2/menu-items/155", 'POST', ['url' => 'https://kenhbatdongsan.vn/chi-can/']);
+call_remote_api("wp/v2/menu-items/156", 'POST', ['url' => 'https://kenhbatdongsan.vn/chi-can/imperia-sky-park/']);
+echo "✔ Menu Chính đã được đồng bộ thứ tự & đường dẫn Chỉ Căn chuẩn xác.\n";
 
 echo "==============================================================\n";
 echo "🎉 ĐỒNG BỘ DỮ LIỆU HOÀN TẤT 100%! BẮT ĐẦU GIT PUSH CODE...\n";

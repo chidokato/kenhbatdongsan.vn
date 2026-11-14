@@ -7,6 +7,31 @@
 // Nạp môi trường WordPress
 require_once __DIR__ . '/../../wp-load.php';
 
+// 1. Chuyển hướng 301 bỏ hẳn /tools/chi-can/
+if ( ! get_query_var( 'kbds_chi_can' ) && isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], '/tools/chi-can' ) !== false ) {
+	wp_redirect( home_url( '/chi-can/imperia-sky-park' ), 301 );
+	exit;
+}
+
+// 2. Xác định dự án đang xem
+global $kbds_project_slug, $kbds_project_title;
+if ( empty( $kbds_project_slug ) ) {
+	$kbds_project_slug = 'imperia-sky-park';
+}
+if ( empty( $kbds_project_title ) ) {
+	$words = explode( '-', $kbds_project_slug );
+	$kbds_project_title = ucwords( implode( ' ', $words ) );
+}
+
+// Lấy danh sách các dự án để tạo bộ chọn nhanh
+$kbds_all_projects = get_posts( array(
+	'post_type'      => 'du_an',
+	'posts_per_page' => -1,
+	'post_status'    => 'publish',
+	'orderby'        => 'title',
+	'order'          => 'ASC',
+) );
+
 // Nạp Header chuẩn của Website (Bao gồm Menu Kênh BĐS, Logo, Hotline, Zalo)
 get_header();
 ?>
@@ -201,12 +226,31 @@ get_header();
         
         <!-- Breadcrumbs & Quick Project Switcher -->
         <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 12px;">
-            <div style="font-size: 13px; color: #64748b; font-weight: 500;">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #64748b; text-decoration: none;">Trang chủ</a>
-                <span style="margin: 0 6px;">/</span>
-                <span style="color: #0b2b5e; font-weight: 700;">Chỉ Căn BĐS</span>
-                <span style="margin: 0 6px;">/</span>
-                <span style="color: #2563eb; font-weight: 700;">Imperia Sky Park</span>
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: #64748b; font-weight: 500;">
+                <div>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #64748b; text-decoration: none;">Trang chủ</a>
+                    <span style="margin: 0 6px;">/</span>
+                    <a href="<?php echo esc_url( home_url( '/chi-can/' ) ); ?>" style="color: #0b2b5e; font-weight: 700; text-decoration: none;">Chỉ Căn BĐS</a>
+                    <span style="margin: 0 6px;">/</span>
+                    <span style="color: #2563eb; font-weight: 700;"><?php echo esc_html( $kbds_project_title ); ?></span>
+                </div>
+
+                <!-- Dropdown chọn dự án nhanh -->
+                <div style="display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; background: #fff; padding: 4px 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <label for="select_du_an_nav" style="font-size: 11px; font-weight: 700; color: #475569; margin: 0;">🏢 Dự án:</label>
+                    <select id="select_du_an_nav" onchange="window.location.href=this.value;" style="font-size: 12px; font-weight: 700; color: #0b2b5e; border: none; background: transparent; outline: none; cursor: pointer; padding: 2px;">
+                        <option value="<?php echo esc_url( home_url( '/chi-can/imperia-sky-park' ) ); ?>" <?php selected( $kbds_project_slug, 'imperia-sky-park' ); ?>>Imperia Sky Park</option>
+                        <?php if ( ! empty( $kbds_all_projects ) ) : ?>
+                            <?php foreach ( $kbds_all_projects as $p ) : ?>
+                                <?php if ( $p->post_name !== 'imperia-sky-park' ) : ?>
+                                    <option value="<?php echo esc_url( home_url( '/chi-can/' . $p->post_name ) ); ?>" <?php selected( $kbds_project_slug, $p->post_name ); ?>>
+                                        <?php echo esc_html( $p->post_title ); ?>
+                                    </option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </select>
+                </div>
             </div>
 
             <!-- Action buttons -->
@@ -281,12 +325,12 @@ get_header();
                         <div>
                             <button type="button" onclick="toggleAdvancedOptions()" style="background: none; border: none; font-size: 12px; color: #2563eb; font-weight: 700; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 4px;">
                                 <span id="adv_icon">▼</span>
-                                <span>Tùy chọn: Thay tên Dự Án khác (Mặc định: IMPERIA SKY PARK)</span>
+                                <span>Tùy chọn: Thay tên Dự Án khác (Hiện tại: <?php echo esc_html( strtoupper( $kbds_project_title ) ); ?>)</span>
                             </button>
                             <div id="adv_options" style="display: none; margin-top: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px;">
                                 <div style="margin-bottom: 8px;">
                                     <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 3px;">Tên Dự Án</label>
-                                    <input type="text" id="input_ten_du_an" value="IMPERIA SKY PARK" oninput="renderCanvas()" class="chi-can-input">
+                                    <input type="text" id="input_ten_du_an" value="<?php echo esc_attr( strtoupper( $kbds_project_title ) ); ?>" oninput="renderCanvas()" class="chi-can-input">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 3px;">Dòng Tiêu Đề Phụ</label>
@@ -790,7 +834,7 @@ get_header();
         document.getElementById('input_dien_tich').value = '72.8 m²';
         document.getElementById('input_huong_bc').value = 'Đông Nam';
         document.getElementById('input_gia_niem_yet').value = '4.250.000.000 đ';
-        document.getElementById('input_ten_du_an').value = 'IMPERIA SKY PARK';
+        document.getElementById('input_ten_du_an').value = '<?php echo esc_js( strtoupper( $kbds_project_title ) ); ?>';
         document.getElementById('input_tieu_de_phu').value = 'THÔNG TIN CHI TIẾT CĂN';
 
         for (let i = 1; i <= 4; i++) {
