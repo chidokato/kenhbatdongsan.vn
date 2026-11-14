@@ -15,6 +15,7 @@ Options -Indexes
 # BEGIN KenhBDS Chi Can Friendly Routing
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule ^chi-can/index\.php$ - [L]
 RewriteRule ^chi-can/([^/]+)/?$ chi-can/index.php?du_an=$1 [L,QSA]
 RewriteRule ^chi-can/?$ chi-can/index.php [L,QSA]
 </IfModule>
