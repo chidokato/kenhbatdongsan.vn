@@ -241,6 +241,32 @@ foreach ($local_posts as $p) {
         'status'  => $p->post_status,
         'slug'    => $p->post_name,
     ];
+
+    // Chuyên mục (categories)
+    $cat_terms = wp_get_post_categories($p->ID, ['fields' => 'all']);
+    if ($cat_terms && !is_wp_error($cat_terms)) {
+        $cat_ids = [];
+        foreach ($cat_terms as $ct) {
+            if ($ct->slug === 'chua-phan-loai') continue;
+            if (!isset($remote_term_cache['categories'][$ct->slug])) {
+                $c = call_remote_api('wp/v2/categories', 'POST', ['name' => $ct->name, 'slug' => $ct->slug]);
+                if (in_array($c['code'], [200, 201]) && isset($c['data']['id'])) {
+                    $remote_term_cache['categories'][$ct->slug] = $c['data']['id'];
+                }
+            }
+            if (isset($remote_term_cache['categories'][$ct->slug])) {
+                $cat_ids[] = $remote_term_cache['categories'][$ct->slug];
+            }
+        }
+        if ($cat_ids) $payload['categories'] = $cat_ids;
+    }
+
+    // Ảnh đại diện bài viết
+    $thumb_id = get_post_thumbnail_id($p->ID);
+    if ($thumb_id) {
+        $remote_thumb = kbds_remote_media_id($thumb_id);
+        if ($remote_thumb) $payload['featured_media'] = $remote_thumb;
+    }
     
     if ($exists) {
         $remote_id = $res['data'][0]['id'];
