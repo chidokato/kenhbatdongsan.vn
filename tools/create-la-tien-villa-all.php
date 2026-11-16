@@ -481,9 +481,9 @@ echo "✔ Đã thiết lập Meta, Taxonomies & Ảnh đại diện cho Dự Án
 
 // 5. TẠO 5 BÀI VIẾT VỆ TINH CHUẨN SEO TOPIC CLUSTER
 $cat_qh = get_category_by_slug('quy-hoach-ha-tang');
-$cat_rv = get_category_by_slug('review-bat-dong-san');
-$cat_qh_id = $cat_qh ? $cat_qh->term_id : 1;
-$cat_rv_id = $cat_rv ? $cat_rv->term_id : 1;
+$cat_rv = get_category_by_slug('review-du-an');
+$cat_qh_id = $cat_qh ? $cat_qh->term_id : 3;
+$cat_rv_id = $cat_rv ? $cat_rv->term_id : 2;
 
 $articles = [
     // Bài 1: Vị trí
