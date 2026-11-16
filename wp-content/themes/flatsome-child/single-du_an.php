@@ -30,6 +30,17 @@ get_header();
 				<?php the_content(); ?>
 			</div>
 		<?php endif; ?>
+
+		<?php
+		// Tự động hiển thị Section Tin Tức Dự Án trên mỗi trang dự án
+		if ( class_exists( 'KBDS_Shortcodes' ) && ! has_shortcode( $raw_content, 'kbds_project_news' ) && false === strpos( $raw_content, 'id="tin-tuc-du-an"' ) ) {
+			echo KBDS_Shortcodes::shortcode_project_news( array(
+				'project_id'   => get_the_ID(),
+				'project_name' => get_the_title(),
+				'limit'        => 6,
+			) );
+		}
+		?>
 	<?php endwhile; ?>
 </div>
 <?php
