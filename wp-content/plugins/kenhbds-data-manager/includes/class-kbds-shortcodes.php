@@ -545,6 +545,7 @@ class KBDS_Shortcodes {
 			if ( strpos( $clean_name, '–' ) !== false ) {
 				$clean_name = trim( explode( '–', $clean_name )[0] );
 			}
+			$core_name = trim( preg_replace( '/^(Chung Cư|Dự Án|Tổ Hợp|Khu Đô Thị|Căn Hộ|Đại Đô Thị)\s+/iu', '', $clean_name ) );
 
 			$search_args = array(
 				'post_type'      => 'post',
@@ -555,7 +556,10 @@ class KBDS_Shortcodes {
 				'order'          => 'DESC',
 			);
 
-			$tag_obj = get_term_by( 'name', $clean_name, 'post_tag' );
+			$tag_obj = get_term_by( 'name', $core_name ?: $clean_name, 'post_tag' );
+			if ( ! $tag_obj ) {
+				$tag_obj = get_term_by( 'name', $clean_name, 'post_tag' );
+			}
 			if ( ! $tag_obj ) {
 				$tag_obj = get_term_by( 'name', $p_title, 'post_tag' );
 			}
@@ -563,7 +567,7 @@ class KBDS_Shortcodes {
 			if ( $tag_obj ) {
 				$search_args['tag_id'] = $tag_obj->term_id;
 			} else {
-				$search_args['s'] = $clean_name ?: $p_title;
+				$search_args['s'] = $core_name ?: $clean_name ?: $p_title;
 			}
 
 			$search_posts = get_posts( $search_args );
