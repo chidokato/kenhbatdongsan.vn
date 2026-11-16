@@ -3,7 +3,6 @@ wp-config.php
 wp-content/kenhbds-backups/
 wp-content/upgrade/
 wp-content/cache/
-wp-content/uploads/.htaccess
 *.log
 *.zip
 *.tar.gz
