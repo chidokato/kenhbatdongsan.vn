@@ -48,7 +48,7 @@ class KBDS_Post_Types {
 	 * Đăng ký REST field `kbds_meta` (đọc/ghi các meta `_kbds_*` và SEO Rank Math)
 	 */
 	public static function register_rest_meta_field() {
-		foreach ( array( 'du_an', 'bat_dong_san' ) as $pt ) {
+		foreach ( array( 'du_an', 'bat_dong_san', 'post' ) as $pt ) {
 			register_rest_field( $pt, 'kbds_meta', array(
 				'get_callback'    => function ( $obj ) {
 					if ( ! current_user_can( 'edit_post', $obj['id'] ) ) {

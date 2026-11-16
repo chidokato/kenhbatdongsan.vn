@@ -263,6 +263,27 @@ foreach ($local_posts as $p) {
         $remote_thumb = kbds_remote_media_id($thumb_id);
         if ($remote_thumb) $payload['featured_media'] = $remote_thumb;
     }
+
+    // Meta bài viết (_kbds_* & Rank Math SEO)
+    $meta = [];
+    foreach (get_post_meta($p->ID) as $mk => $mv) {
+        if (strpos($mk, '_kbds_') === 0 || strpos($mk, 'rank_math_') === 0) {
+            $meta[$mk] = $mv[0];
+        }
+    }
+    if (isset($meta['_kbds_project_ref'])) {
+        $local_proj = get_post($meta['_kbds_project_ref']);
+        if ($local_proj) {
+            $meta['_kbds_project_slug'] = $local_proj->post_name;
+            $r_proj = call_remote_api("wp/v2/du_an?slug={$local_proj->post_name}&status=any");
+            if (is_array($r_proj['data']) && !empty($r_proj['data'][0]['id'])) {
+                $meta['_kbds_project_ref'] = $r_proj['data'][0]['id'];
+            }
+        }
+    }
+    if ($meta) {
+        $payload['kbds_meta'] = $meta;
+    }
     
     if ($exists) {
         $remote_id = $res['data'][0]['id'];
