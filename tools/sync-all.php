@@ -151,8 +151,24 @@ function kbds_remote_media_id($attachment_id) {
         'caption'     => $att->post_excerpt,
         'description' => $att->post_content,
     ]);
-    echo "   + Đã upload ảnh đại diện lên Live: " . basename($file) . "\n";
+    echo "   + Đã upload ảnh lên Live: " . basename($file) . "\n";
     return $res['id'];
+}
+
+// 3b. Tự động đồng bộ toàn bộ tệp Media Library lên Live
+$recent_attachments = get_posts([
+    'post_type'      => 'attachment',
+    'posts_per_page' => -1,
+    'post_status'    => 'inherit',
+    'date_query'     => [
+        ['after' => '14 days ago']
+    ]
+]);
+if ($recent_attachments) {
+    echo "✔ Đang đồng bộ " . count($recent_attachments) . " tệp Media mới nhất lên Live...\n";
+    foreach ($recent_attachments as $att) {
+        kbds_remote_media_id($att->ID);
+    }
 }
 
 $local_projects = get_posts(['post_type' => 'du_an', 'posts_per_page' => -1, 'post_status' => 'any']);

@@ -1,6 +1,6 @@
 {
     "site": "kenhbatdongsan.vn",
-    "exported_at": "2026-11-16 08:36:09",
+    "exported_at": "2026-11-16 08:43:23",
     "version": "1.0",
     "theme_mods": {
         "0": false,
@@ -353,7 +353,7 @@
             },
             "terms": {
                 "category": [
-                    "chua-phan-loai"
+                    "review-du-an"
                 ]
             }
         },
@@ -377,7 +377,7 @@
             },
             "terms": {
                 "category": [
-                    "chua-phan-loai"
+                    "review-du-an"
                 ]
             }
         },
@@ -401,7 +401,7 @@
             },
             "terms": {
                 "category": [
-                    "chua-phan-loai"
+                    "review-du-an"
                 ]
             }
         },
@@ -493,7 +493,7 @@
             },
             "terms": {
                 "category": [
-                    "chua-phan-loai"
+                    "review-du-an"
                 ]
             }
         },
