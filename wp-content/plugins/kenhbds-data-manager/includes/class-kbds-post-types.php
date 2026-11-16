@@ -39,6 +39,46 @@ class KBDS_Post_Types {
 		add_filter( 'manage_edit-chu_dau_tu_columns', array( __CLASS__, 'developer_tax_columns' ) );
 		add_filter( 'manage_chu_dau_tu_custom_column', array( __CLASS__, 'developer_tax_column_content' ), 10, 3 );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_media_for_developer_tax' ) );
+
+		// REST field `kbds_meta`: cho phép đồng bộ meta Dự án / Giỏ hàng từ Localhost lên Live qua API
+		add_action( 'rest_api_init', array( __CLASS__, 'register_rest_meta_field' ) );
+	}
+
+	/**
+	 * Đăng ký REST field `kbds_meta` (đọc/ghi các meta `_kbds_*` và SEO Rank Math)
+	 */
+	public static function register_rest_meta_field() {
+		foreach ( array( 'du_an', 'bat_dong_san' ) as $pt ) {
+			register_rest_field( $pt, 'kbds_meta', array(
+				'get_callback'    => function ( $obj ) {
+					if ( ! current_user_can( 'edit_post', $obj['id'] ) ) {
+						return null;
+					}
+					$out = array();
+					foreach ( get_post_meta( $obj['id'] ) as $k => $v ) {
+						if ( self::is_syncable_meta_key( $k ) ) {
+							$out[ $k ] = $v[0];
+						}
+					}
+					return $out;
+				},
+				'update_callback' => function ( $value, $post ) {
+					if ( ! is_array( $value ) || ! current_user_can( 'edit_post', $post->ID ) ) {
+						return;
+					}
+					foreach ( $value as $k => $v ) {
+						if ( self::is_syncable_meta_key( $k ) ) {
+							update_post_meta( $post->ID, sanitize_key( $k ), wp_kses_post( (string) $v ) );
+						}
+					}
+				},
+				'schema'          => array( 'type' => 'object', 'context' => array( 'edit' ) ),
+			) );
+		}
+	}
+
+	private static function is_syncable_meta_key( $key ) {
+		return 0 === strpos( $key, '_kbds_' ) || 0 === strpos( $key, 'rank_math_' );
 	}
 
 	/**

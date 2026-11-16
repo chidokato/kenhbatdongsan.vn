@@ -1275,6 +1275,167 @@ html {
     border-color: #E5C158;
 }
 
+/* ===================================================================
+ * 9B. LALALAY RESIDENCES LUXURY THEME & COLOR PALETTE
+ * Tone màu: Terracotta Nung • Rose Gold • Warm Cream • Sandstone
+ * =================================================================== */
+.kbds-lala-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(194, 86, 43, 0.12) 0%, rgba(217, 119, 6, 0.12) 100%);
+    color: #C2562B;
+    border: 1px solid rgba(194, 86, 43, 0.32);
+    padding: 5px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.kbds-lala-badge-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(247, 185, 139, 0.12);
+    color: #F7B98B;
+    border: 1px solid rgba(247, 185, 139, 0.35);
+    padding: 5px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.kbds-lala-card {
+    background: #FFFFFF;
+    border: 1px solid #EFE4DC;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(194, 86, 43, 0.05);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    height: 100%;
+}
+
+.kbds-lala-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(194, 86, 43, 0.12);
+    border-color: #C2562B;
+}
+
+.kbds-lala-stat-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.kbds-lala-stat-box:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #F7B98B;
+}
+
+.kbds-lala-step-card {
+    background: #FFFFFF;
+    border: 1px solid #EFE4DC;
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kbds-lala-step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(194, 86, 43, 0.09);
+    border-color: #C2562B;
+}
+
+.kbds-lala-step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #C2562B 0%, #E07A5F 100%);
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(194, 86, 43, 0.3);
+}
+
+.kbds-lala-amenity-pill {
+    background: #FFFFFF;
+    border: 1px solid #EFE4DC;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: #2D241E;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.kbds-lala-amenity-pill:hover {
+    border-color: #C2562B;
+    background: #FFF9F5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(194, 86, 43, 0.08);
+}
+
+.kbds-lala-amenity-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #C2562B;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.kbds-proj-figure {
+    overflow: hidden;
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+.kbds-proj-figure img {
+    transition: transform 0.4s ease;
+}
+
+.kbds-proj-figure:hover img {
+    transform: scale(1.02);
+}
+
+.kbds-lala-handover-item {
+    background: #FFFFFF;
+    border: 1px solid #EFE4DC;
+    border-radius: 14px;
+    padding: 20px;
+    border-left: 4px solid #C2562B;
+    transition: all 0.25s ease;
+}
+
+.kbds-lala-handover-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(194, 86, 43, 0.1);
+}
+
 /*******************************************************************
  * 10. TỐI ƯU TRANG BÀI VIẾT BĐS (SINGLE POST CLEAN & CRO)
  *******************************************************************/

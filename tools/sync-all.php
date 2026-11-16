@@ -93,7 +93,68 @@ foreach ($local_cats as $lc) {
     }
 }
 
-// 4. Đồng bộ Dự Án (du_an)
+// 4. Đồng bộ Dự Án (du_an) – gồm Meta, Taxonomy & Ảnh đại diện
+$remote_term_cache = [];
+function kbds_remote_term_ids($taxonomy, $local_terms) {
+    global $remote_term_cache;
+    if (!isset($remote_term_cache[$taxonomy])) {
+        $remote_term_cache[$taxonomy] = [];
+        $r = call_remote_api("wp/v2/{$taxonomy}?per_page=100&hide_empty=0");
+        if (is_array($r['data'])) {
+            foreach ($r['data'] as $t) {
+                if (isset($t['slug'])) $remote_term_cache[$taxonomy][$t['slug']] = $t['id'];
+            }
+        }
+    }
+    $ids = [];
+    foreach ($local_terms as $lt) {
+        if (!isset($remote_term_cache[$taxonomy][$lt->slug])) {
+            $c = call_remote_api("wp/v2/{$taxonomy}", 'POST', ['name' => $lt->name, 'slug' => $lt->slug, 'description' => $lt->description]);
+            if (in_array($c['code'], [200, 201]) && isset($c['data']['id'])) {
+                $remote_term_cache[$taxonomy][$lt->slug] = $c['data']['id'];
+                echo "   + Tạo term [{$taxonomy}] {$lt->name}\n";
+            }
+        }
+        if (isset($remote_term_cache[$taxonomy][$lt->slug])) $ids[] = $remote_term_cache[$taxonomy][$lt->slug];
+    }
+    return $ids;
+}
+
+function kbds_remote_media_id($attachment_id) {
+    global $remote_domain, $auth_header;
+    $file = get_attached_file($attachment_id);
+    if (!$file || !file_exists($file)) return 0;
+    $att  = get_post($attachment_id);
+    $slug = $att->post_name;
+    $r = call_remote_api("wp/v2/media?slug=" . urlencode($slug));
+    if (is_array($r['data']) && !empty($r['data'][0]['id'])) return $r['data'][0]['id'];
+
+    // Upload ảnh lên Media Library của Live
+    $ch = curl_init($remote_domain . '/wp-json/wp/v2/media');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $auth_header,
+        'Content-Type: ' . get_post_mime_type($attachment_id),
+        'Content-Disposition: attachment; filename="' . basename($file) . '"',
+    ]);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, file_get_contents($file));
+    $res  = json_decode(curl_exec($ch), true);
+    curl_close($ch);
+    if (empty($res['id'])) return 0;
+    call_remote_api("wp/v2/media/{$res['id']}", 'POST', [
+        'slug'        => $slug,
+        'title'       => $att->post_title,
+        'alt_text'    => get_post_meta($attachment_id, '_wp_attachment_image_alt', true),
+        'caption'     => $att->post_excerpt,
+        'description' => $att->post_content,
+    ]);
+    echo "   + Đã upload ảnh đại diện lên Live: " . basename($file) . "\n";
+    return $res['id'];
+}
+
 $local_projects = get_posts(['post_type' => 'du_an', 'posts_per_page' => -1, 'post_status' => 'any']);
 echo "✔ Tìm thấy " . count($local_projects) . " hồ sơ Dự án trên Localhost\n";
 
@@ -108,6 +169,26 @@ foreach ($local_projects as $proj) {
         'status'  => $proj->post_status,
         'slug'    => $proj->post_name,
     ];
+
+    // Meta dự án (_kbds_* & Rank Math SEO)
+    $meta = [];
+    foreach (get_post_meta($proj->ID) as $mk => $mv) {
+        if (strpos($mk, '_kbds_') === 0 || strpos($mk, 'rank_math_') === 0) $meta[$mk] = $mv[0];
+    }
+    if ($meta) $payload['kbds_meta'] = $meta;
+
+    // Taxonomies (khu vực, loại hình, trạng thái, chủ đầu tư)
+    foreach (['khu_vuc_bds', 'loai_hinh_bds', 'trang_thai_du_an', 'chu_dau_tu'] as $tax) {
+        $terms = wp_get_post_terms($proj->ID, $tax);
+        if (!is_wp_error($terms) && $terms) $payload[$tax] = kbds_remote_term_ids($tax, $terms);
+    }
+
+    // Ảnh đại diện
+    $thumb_id = get_post_thumbnail_id($proj->ID);
+    if ($thumb_id) {
+        $remote_thumb = kbds_remote_media_id($thumb_id);
+        if ($remote_thumb) $payload['featured_media'] = $remote_thumb;
+    }
     
     if ($exists) {
         $remote_id = $res['data'][0]['id'];
