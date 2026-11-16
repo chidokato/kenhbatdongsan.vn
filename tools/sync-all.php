@@ -248,17 +248,13 @@ foreach ($local_posts as $p) {
         $cat_ids = [];
         foreach ($cat_terms as $ct) {
             if ($ct->slug === 'chua-phan-loai') continue;
-            if (!isset($remote_term_cache['categories'][$ct->slug])) {
-                $c = call_remote_api('wp/v2/categories', 'POST', ['name' => $ct->name, 'slug' => $ct->slug]);
-                if (in_array($c['code'], [200, 201]) && isset($c['data']['id'])) {
-                    $remote_term_cache['categories'][$ct->slug] = $c['data']['id'];
-                }
-            }
-            if (isset($remote_term_cache['categories'][$ct->slug])) {
-                $cat_ids[] = $remote_term_cache['categories'][$ct->slug];
+            if (isset($remote_cat_slugs[$ct->slug])) {
+                $cat_ids[] = $remote_cat_slugs[$ct->slug];
             }
         }
-        if ($cat_ids) $payload['categories'] = $cat_ids;
+        if ($cat_ids) {
+            $payload['categories'] = $cat_ids;
+        }
     }
 
     // Ảnh đại diện bài viết

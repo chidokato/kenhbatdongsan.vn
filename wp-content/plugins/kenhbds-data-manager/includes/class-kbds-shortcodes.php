@@ -602,7 +602,10 @@ class KBDS_Shortcodes {
 						<?php
 						$thumb_url = get_the_post_thumbnail_url( $post_item->ID, 'medium_large' ) ?: get_the_post_thumbnail_url( $post_item->ID, 'full' );
 						$cats = get_the_category( $post_item->ID );
-						$cat_name = ! empty( $cats ) ? $cats[0]->name : 'Review Dự Án';
+						$filtered_cats = array_filter( $cats, function( $c ) {
+							return $c->slug !== 'chua-phan-loai';
+						} );
+						$cat_name = ! empty( $filtered_cats ) ? reset( $filtered_cats )->name : 'Review Dự Án';
 						$date_str = get_the_date( 'd/m/Y', $post_item->ID );
 						$excerpt  = $post_item->post_excerpt ?: wp_strip_all_tags( $post_item->post_content );
 						?>
