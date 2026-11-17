@@ -11,9 +11,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 class KBDS_SEO_Enhancer {
 
 	public static function init() {
+		// Luôn đảm bảo website được Google & công cụ tìm kiếm lập chỉ mục (blog_public = 1)
+		if ( '1' !== (string) get_option( 'blog_public' ) ) {
+			update_option( 'blog_public', 1 );
+		}
+		remove_action( 'wp_head', 'noindex', 1 );
+
+		add_filter( 'wp_robots', array( __CLASS__, 'force_robots_index' ), 999 );
+		add_filter( 'rank_math/frontend/robots', array( __CLASS__, 'force_rank_math_robots_index' ), 999 );
+
 		add_action( 'wp_head', array( __CLASS__, 'output_real_estate_schema' ), 25 );
 		add_action( 'wp_head', array( __CLASS__, 'protect_crm_leads_noindex' ), 1 );
 		add_filter( 'wp_sitemaps_post_types', array( __CLASS__, 'exclude_crm_from_core_sitemap' ) );
+	}
+
+	/**
+	 * Đảm bảo mọi trang Dự án, Bài viết, Giỏ hàng đều mở index, follow cho Googlebot
+	 */
+	public static function force_robots_index( $robots ) {
+		if ( is_singular( 'bds_lead' ) || is_post_type_archive( 'bds_lead' ) ) {
+			return array( 'noindex' => true, 'nofollow' => true );
+		}
+		if ( is_array( $robots ) ) {
+			$robots['noindex']  = false;
+			$robots['nofollow'] = false;
+			$robots['index']    = true;
+			$robots['follow']   = true;
+			$robots['max-image-preview'] = 'large';
+		}
+		return $robots;
+	}
+
+	/**
+	 * Tương thích Rank Math SEO: Buộc index cho mọi trang công khai
+	 */
+	public static function force_rank_math_robots_index( $robots ) {
+		if ( is_singular( 'bds_lead' ) || is_post_type_archive( 'bds_lead' ) ) {
+			return array( 'noindex' => 'noindex', 'nofollow' => 'nofollow' );
+		}
+		if ( is_array( $robots ) ) {
+			unset( $robots['noindex'], $robots['nofollow'] );
+			$robots['index']  = 'index';
+			$robots['follow'] = 'follow';
+		}
+		return $robots;
 	}
 
 	/**
