@@ -403,31 +403,7 @@ $landing_html = <<<HTML
       <h2 style="font-size:30px;font-weight:900;color:#FFFFFF;margin-bottom:12px;">ĐĂNG KÝ NHẬN THÔNG TIN & BẢNG GIÁ HINODE SOLERA</h2>
       <p style="font-size:15px;color:#CBD5E1;max-width:620px;margin:0 auto 28px;line-height:1.6;">Để lại thông tin chính xác dưới đây để nhận trọn bộ tài liệu thiết kế chi tiết 16 căn hộ, bảng giá gốc đợt 1 và chính sách ưu đãi tài chính tốt nhất.</p>
 
-      <form action="#" method="POST" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left;">
-        <div>
-          <label style="display:block;font-size:13px;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Họ và tên của bạn (*)</label>
-          <input type="text" placeholder="Ví dụ: Nguyễn Văn A" required style="width:100%;padding:13px 16px;border-radius:10px;border:1px solid #475569;background:#0F172A;color:#fff;font-size:14px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="display:block;font-size:13px;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Số điện thoại (Zalo) (*)</label>
-          <input type="tel" placeholder="Ví dụ: 0912 345 678" required style="width:100%;padding:13px 16px;border-radius:10px;border:1px solid #475569;background:#0F172A;color:#fff;font-size:14px;box-sizing:border-box;">
-        </div>
-        <div style="grid-column:span 2;">
-          <label style="display:block;font-size:13px;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Loại hình căn hộ quan tâm</label>
-          <select style="width:100%;padding:13px 16px;border-radius:10px;border:1px solid #475569;background:#0F172A;color:#fff;font-size:14px;box-sizing:border-box;">
-            <option>Căn hộ 1 Phòng ngủ (54.3m² - 57.1m²)</option>
-            <option>Căn hộ 2 Phòng ngủ (87.7m² - 88.3m²)</option>
-            <option>Căn hộ 3 Phòng ngủ (122.7m²)</option>
-            <option>Căn hộ Dual Key 1+1 (88.5m² - 122.2m²)</option>
-            <option>Căn hộ Dual Key 2+1 (159.4m² - Căn góc VIP)</option>
-          </select>
-        </div>
-        <div style="grid-column:span 2;margin-top:10px;">
-          <button type="submit" style="width:100%;background:linear-gradient(135deg,#F59E0B,#D97706);color:#0F172A;padding:16px;border:none;border-radius:12px;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 8px 25px rgba(245,158,11,0.4);">
-            GỬI YÊU CẦU NHẬN BÁO GIÁ & CHÍNH SÁCH ĐỢT 1 ➔
-          </button>
-        </div>
-      </form>
+      [kbds_lead_form title="" project="Chung Cư Hinode Solera Phạm Hùng" button_text="Gửi Yêu Cầu Nhận Báo Giá & Chính Sách Đợt 1 ➔"]
     </div>
   </div>
 </section>
