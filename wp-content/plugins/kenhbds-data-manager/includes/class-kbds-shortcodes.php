@@ -516,7 +516,7 @@ class KBDS_Shortcodes {
 		}
 		$p_slug = $pid ? get_post_field( 'post_name', $pid ) : '';
 		$limit  = (int) $atts['limit'];
-		$section_title = $atts['title'] ?: '📰 Tin Tức, Phân Tích & Đánh Giá Dự Án ' . $p_title;
+		$section_title = $atts['title'] ?: 'Tin Tức, Phân Tích & Đánh Giá Dự Án ' . $p_title;
 
 		$found_ids = array();
 
@@ -595,9 +595,12 @@ class KBDS_Shortcodes {
 		<section class="kbds-project-news-section" id="tin-tuc-du-an" style="padding:60px 0;background:#F8FAFC;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
 			<div class="kbds-container">
 				<!-- Header Section với Nút Điều Hướng Slider -->
-				<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:20px;flex-wrap:wrap;">
+				<div class="kbds-news-header-wrap" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:20px;flex-wrap:wrap;">
 					<div style="max-width:760px;">
-						<span style="display:inline-block;background:rgba(194,86,43,0.12);color:#C2562B;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:10px;">📰 TIN TỨC &amp; GÓC NHÌN CHUYÊN GIA</span>
+						<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(194,86,43,0.12);color:#C2562B;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:10px;">
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;flex-shrink:0;"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg>
+							TIN TỨC &amp; GÓC NHÌN CHUYÊN GIA
+						</span>
 						<h2 style="color:#0B2C4D;font-size:26px;font-weight:800;line-height:1.35;margin:0 0 8px;">
 							<?php echo esc_html( $section_title ); ?>
 						</h2>
@@ -640,8 +643,12 @@ class KBDS_Shortcodes {
 								</div>
 
 								<div style="padding:16px 18px;display:flex;flex-direction:column;flex:1;">
-									<div style="font-size:12px;color:#64748B;margin-bottom:6px;font-weight:600;">
-										📅 <?php echo esc_html( $date_str ); ?> • ⏱️ 5 phút đọc
+									<div style="font-size:12px;color:#64748B;margin-bottom:6px;font-weight:600;display:flex;align-items:center;gap:6px;">
+										<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" style="display:inline-block;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+										<span><?php echo esc_html( $date_str ); ?></span>
+										<span style="color:#CBD5E1;">•</span>
+										<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" style="display:inline-block;flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+										<span>5 phút đọc</span>
 									</div>
 									<h3 style="margin:0 0 8px;font-size:15px;line-height:1.45;font-weight:700;height:44px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
 										<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>" style="color:#0B2C4D;text-decoration:none;transition:color 0.2s;">
@@ -796,6 +803,26 @@ class KBDS_Shortcodes {
 	public static function render_global_responsive_styles() {
 		?>
 		<style id="kbds-project-mobile-styles">
+		/* Bảo vệ Emoji toàn trang: Không bao giờ bị phóng to làm vỡ layout */
+		img.emoji, img.wp-smiley,
+		.single-du_an img.emoji, .single-du_an img.wp-smiley,
+		.single-du_an section img.emoji, .single-du_an article img.emoji {
+			display: inline-block !important;
+			width: 1.15em !important;
+			height: 1.15em !important;
+			min-width: unset !important;
+			min-height: unset !important;
+			max-width: 1.15em !important;
+			max-height: 1.15em !important;
+			vertical-align: -0.15em !important;
+			margin: 0 0.15em !important;
+			border: none !important;
+			box-shadow: none !important;
+			padding: 0 !important;
+			background: transparent !important;
+			object-fit: contain !important;
+		}
+
 		@media (max-width: 820px) {
 			/* Container tràn viền chuẩn & padding an toàn */
 			.single-du_an .kbds-container,
@@ -871,7 +898,7 @@ class KBDS_Shortcodes {
 			.single-du_an .kbds-hero-actions {
 				display: flex !important;
 				flex-direction: column !important;
-				gap: 10px !important;
+				gap: 12px !important;
 				width: 100% !important;
 			}
 			.single-du_an section:first-of-type [style*="display:flex;gap:14px"] > a,
@@ -884,22 +911,70 @@ class KBDS_Shortcodes {
 				padding: 12px 18px !important;
 				font-size: 14px !important;
 			}
-			.single-du_an section:first-of-type img,
-			.single-du_an .kbds-hero-img {
+			/* Chỉ tác động lên ảnh tòa tháp, không làm to emoji */
+			.single-du_an .kbds-hero-img,
+			.single-du_an .kbds-hero-media img:not(.emoji),
+			.single-du_an section:first-of-type .kbds-hero-media img:not(.emoji) {
 				width: 100% !important;
 				height: 250px !important;
 				object-fit: cover !important;
 				border-radius: 14px !important;
+				display: block !important;
 			}
+			.single-du_an img:not(.emoji) {
+				max-width: 100% !important;
+			}
+
+			/* Thẻ nổi bật Hero */
 			.single-du_an section:first-of-type [style*="position:absolute;bottom:"],
 			.single-du_an section:first-of-type [style*="position: absolute; bottom:"],
 			.single-du_an .kbds-hero-float-badge {
 				position: static !important;
-				margin-top: 12px !important;
+				margin-top: 14px !important;
 				width: 100% !important;
 				box-sizing: border-box !important;
-				padding: 10px 14px !important;
-				justify-content: flex-start !important;
+				padding: 10px 16px !important;
+				display: flex !important;
+				align-items: center !important;
+				gap: 12px !important;
+				background: #0F172A !important;
+				border-radius: 12px !important;
+				border: 1px solid #D97706 !important;
+			}
+			.single-du_an .kbds-hero-float-badge > div:first-child {
+				width: 38px !important;
+				height: 38px !important;
+				min-width: 38px !important;
+				max-width: 38px !important;
+				max-height: 38px !important;
+				border-radius: 50% !important;
+				overflow: hidden !important;
+				flex-shrink: 0 !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				font-size: 16px !important;
+			}
+
+			/* Header News & Slider buttons trên mobile */
+			.kbds-news-header-wrap {
+				flex-direction: row !important;
+				align-items: center !important;
+				justify-content: space-between !important;
+				margin-bottom: 18px !important;
+			}
+			.kbds-news-nav-buttons button {
+				width: 36px !important;
+				height: 36px !important;
+				font-size: 18px !important;
+			}
+			.kbds-slide-card {
+				flex: 0 0 85% !important;
+				min-width: 260px !important;
+				max-width: 85% !important;
+			}
+			.kbds-slide-card .kbds-card-media {
+				height: 160px !important;
 			}
 
 			/* Quick Stats Bar gọn gàng 2x2 */

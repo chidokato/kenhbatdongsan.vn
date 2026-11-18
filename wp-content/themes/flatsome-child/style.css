@@ -1711,6 +1711,26 @@ html {
 /*******************************************************************
  * 10. TỐI ƯU TOÀN DIỆN RESPONSIVE MOBILE CHO TRANG DỰ ÁN (BĐS)
  *******************************************************************/
+/* Khóa chặt kích thước Emoji không bao giờ bị phóng to làm vỡ bố cục */
+img.emoji, img.wp-smiley,
+.single-du_an img.emoji, .single-du_an img.wp-smiley,
+.single-du_an section img.emoji, .single-du_an article img.emoji {
+    display: inline-block !important;
+    width: 1.15em !important;
+    height: 1.15em !important;
+    min-width: unset !important;
+    min-height: unset !important;
+    max-width: 1.15em !important;
+    max-height: 1.15em !important;
+    vertical-align: -0.15em !important;
+    margin: 0 0.15em !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    object-fit: contain !important;
+}
+
 @media (max-width: 820px) {
     /* --- Bố cục Container & Cột Grid --- */
     .single-du_an .kbds-container,
@@ -1810,13 +1830,18 @@ html {
         font-size: 14px !important;
     }
 
-    /* Ảnh phối cảnh tòa tháp Hero */
-    .single-du_an section:first-of-type img,
-    .single-du_an .kbds-hero-img {
+    /* Ảnh phối cảnh tòa tháp Hero: Chỉ tác động lên ảnh tòa tháp, không làm to emoji */
+    .single-du_an .kbds-hero-img,
+    .single-du_an .kbds-hero-media img:not(.emoji),
+    .single-du_an section:first-of-type .kbds-hero-media img:not(.emoji) {
         width: 100% !important;
         height: 250px !important;
         object-fit: cover !important;
         border-radius: 14px !important;
+        display: block !important;
+    }
+    .single-du_an img:not(.emoji) {
+        max-width: 100% !important;
     }
 
     /* Thẻ nổi bật gắn trên ảnh Hero ("Dòng sản phẩm độc bản...") */
@@ -1824,11 +1849,30 @@ html {
     .single-du_an section:first-of-type [style*="position: absolute; bottom:"],
     .single-du_an .kbds-hero-float-badge {
         position: static !important;
-        margin-top: 12px !important;
+        margin-top: 14px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        padding: 10px 14px !important;
-        justify-content: flex-start !important;
+        padding: 10px 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        background: #0F172A !important;
+        border-radius: 12px !important;
+        border: 1px solid #D97706 !important;
+    }
+    .single-du_an .kbds-hero-float-badge > div:first-child {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+        max-height: 38px !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 16px !important;
     }
 
     /* --- Quick Stats Bar (Thanh thông số nhanh 4 chỉ số) --- */

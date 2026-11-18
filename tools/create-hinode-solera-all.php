@@ -75,7 +75,7 @@ $landing_html = <<<HTML
         <img class="kbds-hero-img" src="{$m['phoi_canh_toa_thap']['url']}" alt="{$m['phoi_canh_toa_thap']['alt']}" style="width:100%;height:440px;object-fit:cover;display:block;">
       </div>
       <div class="kbds-hero-float-badge" style="position:absolute;bottom:-18px;left:20px;background:#0F172A;border:1px solid #D97706;padding:12px 22px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.4);display:flex;align-items:center;gap:14px;">
-        <div style="background:#D97706;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">💎</div>
+        <div style="background:#D97706;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden;flex-shrink:0;">💎</div>
         <div>
           <div style="font-size:11.5px;color:#94A3B8;text-transform:uppercase;font-weight:700;">Dòng sản phẩm độc bản</div>
           <div style="font-size:14.5px;font-weight:800;color:#FDE68A;">Căn Hộ Dual Key 1+1 & 2+1</div>
@@ -382,18 +382,7 @@ $landing_html = <<<HTML
 </section>
 
 <!-- SECTION 8: TIN TỨC & BÀI VIẾT VỆ TINH DỰ ÁN (#tin-tuc-du-an) -->
-<section id="tin-tuc-du-an" style="padding:80px 0;background:#F8FAFC;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
-  <div class="kbds-container">
-    <div style="text-align:center;max-width:750px;margin:0 auto 40px;">
-      <div style="font-size:13px;font-weight:800;color:#D97706;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">PHÂN TÍCH CHUYÊN GIA</div>
-      <h2 style="font-size:32px;font-weight:900;color:#0F172A;">TIN TỨC & BÀI VIẾT ĐÁNH GIÁ HINODE SOLERA</h2>
-      <p style="font-size:15px;color:#64748B;line-height:1.7;">Cập nhật những góc nhìn chuyên sâu về vị trí tọa độ, mặt bằng thiết kế, tiện ích và tiềm năng tăng giá của dự án Hinode Solera Phạm Hùng từ ban biên tập Kênh Bất Động Sản.</p>
-    </div>
-
-    <!-- TỰ ĐỘNG GỌI BÀI VIẾT VỆ TINH LIÊN QUAN ĐẾN DỰ ÁN -->
-    [kbds_project_news limit="6"]
-  </div>
-</section>
+[kbds_project_news limit="12"]
 
 <!-- SECTION 9: FORM ĐĂNG KÝ BẢNG GIÁ & TƯ VẤN -->
 <section id="dang-ky" style="padding:85px 0;background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);color:#fff;">

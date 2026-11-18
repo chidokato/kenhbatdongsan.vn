@@ -33,6 +33,24 @@ KBDS_SEO_Enhancer::init();
 KBDS_Homepage_Sections::init();
 KBDS_Notification_Service::init();
 
+/**
+ * Tắt hoàn toàn việc WordPress tự động thay Emoji thành thẻ <img> SVG
+ * Loại bỏ 100% lỗi Emoji bị phóng to thành ảnh khổng lồ (300px-400px) trên Mobile & Desktop
+ */
+add_action( 'init', 'kbds_disable_wp_emojis' );
+function kbds_disable_wp_emojis() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	add_filter( 'tiny_mce_plugins', function( $plugins ) {
+		return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
+	} );
+}
+
 // Chỉ nạp Công cụ Auto-Publisher khi ở trong Trang Quản Trị (wp-admin) hoặc chạy lệnh CLI
 // -> Đảm bảo 0% tải thừa cho khách truy cập ngoài giao diện trang chủ!
 if ( is_admin() || PHP_SAPI === 'cli' ) {
