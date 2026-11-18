@@ -502,7 +502,7 @@ class KBDS_Shortcodes {
 		$atts = shortcode_atts( array(
 			'project_id'   => get_the_ID(),
 			'project_name' => get_the_title(),
-			'limit'        => 6,
+			'limit'        => 12,
 			'title'        => '',
 		), $atts );
 
@@ -591,64 +591,142 @@ class KBDS_Shortcodes {
 		?>
 		<section class="kbds-project-news-section" id="tin-tuc-du-an" style="padding:60px 0;background:#F8FAFC;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
 			<div class="kbds-container">
-				<div style="text-align:center;max-width:820px;margin:0 auto 40px;">
-					<span style="display:inline-block;background:rgba(194,86,43,0.12);color:#C2562B;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:12px;">📰 TIN TỨC &amp; GÓC NHÌN CHUYÊN GIA</span>
-					<h2 style="color:#0B2C4D;font-size:28px;font-weight:800;line-height:1.35;margin:0 0 12px;">
-						<?php echo esc_html( $section_title ); ?>
-					</h2>
-					<p style="color:#64748B;font-size:15px;margin:0;line-height:1.6;">
-						Tổng hợp các bài viết phân tích vị trí, mặt bằng, hệ thống tiện ích, thiết kế căn hộ và tiến độ dự án mới nhất do đội ngũ chuyên gia Kênh Bất Động Sản thực hiện.
-					</p>
+				<!-- Header Section với Nút Điều Hướng Slider -->
+				<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:20px;flex-wrap:wrap;">
+					<div style="max-width:760px;">
+						<span style="display:inline-block;background:rgba(194,86,43,0.12);color:#C2562B;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:10px;">📰 TIN TỨC &amp; GÓC NHÌN CHUYÊN GIA</span>
+						<h2 style="color:#0B2C4D;font-size:26px;font-weight:800;line-height:1.35;margin:0 0 8px;">
+							<?php echo esc_html( $section_title ); ?>
+						</h2>
+						<p style="color:#64748B;font-size:14.5px;margin:0;line-height:1.6;">
+							Tổng hợp các bài viết phân tích vị trí, mặt bằng, hệ thống tiện ích, thiết kế căn hộ và tiến độ dự án mới nhất do đội ngũ chuyên gia Kênh Bất Động Sản thực hiện.
+						</p>
+					</div>
+					<div class="kbds-news-nav-buttons" style="display:flex;gap:10px;align-items:center;flex-shrink:0;">
+						<button type="button" class="kbds-news-prev" aria-label="Bài trước" style="width:42px;height:42px;border-radius:50%;border:1.5px solid #CBD5E1;background:#FFFFFF;color:#0B2C4D;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.06);transition:all 0.25s;user-select:none;">‹</button>
+						<button type="button" class="kbds-news-next" aria-label="Bài tiếp" style="width:42px;height:42px;border-radius:50%;border:1.5px solid #CBD5E1;background:#FFFFFF;color:#0B2C4D;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.06);transition:all 0.25s;user-select:none;">›</button>
+					</div>
 				</div>
 
-				<div class="kbds-project-news-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;">
-					<?php foreach ( $news_posts as $post_item ) : ?>
-						<?php
-						$thumb_url = get_the_post_thumbnail_url( $post_item->ID, 'medium_large' ) ?: get_the_post_thumbnail_url( $post_item->ID, 'full' );
-						$cats = get_the_category( $post_item->ID );
-						$filtered_cats = array_filter( $cats, function( $c ) {
-							return $c->slug !== 'chua-phan-loai';
-						} );
-						$cat_name = ! empty( $filtered_cats ) ? reset( $filtered_cats )->name : 'Review Dự Án';
-						$date_str = get_the_date( 'd/m/Y', $post_item->ID );
-						$excerpt  = $post_item->post_excerpt ?: wp_strip_all_tags( $post_item->post_content );
-						?>
-						<article class="kbds-card kbds-news-card" style="margin:0;background:#FFFFFF;border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 4px 14px rgba(0,0,0,0.04);display:flex;flex-direction:column;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;">
-							<div class="kbds-card-media" style="position:relative;height:195px;overflow:hidden;background:#F1F5F9;">
-								<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>">
-									<?php if ( $thumb_url ) : ?>
-										<img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $post_item->post_title ); ?>" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" loading="lazy" />
-									<?php else : ?>
-										<div style="width:100%;height:100%;background:linear-gradient(135deg,#0B2C4D 0%,#1A4670 100%);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;font-size:14px;">Kênh Bất Động Sản</div>
-									<?php endif; ?>
-								</a>
-								<span style="position:absolute;top:12px;left:12px;background:#C2562B;color:#FFFFFF;padding:4px 12px;border-radius:6px;font-size:11.5px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-									<?php echo esc_html( $cat_name ); ?>
-								</span>
-							</div>
+				<!-- Track Slider 1 Hàng 4 Bài -->
+				<div class="kbds-project-news-slider-wrap" style="position:relative;">
+					<div class="kbds-project-news-track" style="display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;">
+						<?php foreach ( $news_posts as $post_item ) : ?>
+							<?php
+							$thumb_url = get_the_post_thumbnail_url( $post_item->ID, 'medium_large' ) ?: get_the_post_thumbnail_url( $post_item->ID, 'full' );
+							$cats = get_the_category( $post_item->ID );
+							$filtered_cats = array_filter( $cats, function( $c ) {
+								return $c->slug !== 'chua-phan-loai';
+							} );
+							$cat_name = ! empty( $filtered_cats ) ? reset( $filtered_cats )->name : 'Review Dự Án';
+							$date_str = get_the_date( 'd/m/Y', $post_item->ID );
+							$excerpt  = $post_item->post_excerpt ?: wp_strip_all_tags( $post_item->post_content );
+							?>
+							<article class="kbds-card kbds-news-card kbds-slide-card" style="margin:0;background:#FFFFFF;border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 4px 14px rgba(0,0,0,0.04);display:flex;flex-direction:column;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;scroll-snap-align:start;">
+								<div class="kbds-card-media" style="position:relative;height:175px;overflow:hidden;background:#F1F5F9;flex-shrink:0;">
+									<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>">
+										<?php if ( $thumb_url ) : ?>
+											<img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $post_item->post_title ); ?>" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" loading="lazy" />
+										<?php else : ?>
+											<div style="width:100%;height:100%;background:linear-gradient(135deg,#0B2C4D 0%,#1A4670 100%);display:flex;align-items:center;justify-content:center;color:#FFF;font-weight:700;font-size:14px;">Kênh Bất Động Sản</div>
+										<?php endif; ?>
+									</a>
+									<span style="position:absolute;top:10px;left:10px;background:#C2562B;color:#FFFFFF;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+										<?php echo esc_html( $cat_name ); ?>
+									</span>
+								</div>
 
-							<div style="padding:20px;display:flex;flex-direction:column;flex:1;">
-								<div style="font-size:12.5px;color:#64748B;margin-bottom:8px;font-weight:600;">
-									📅 <?php echo esc_html( $date_str ); ?> • ⏱️ 5 phút đọc
+								<div style="padding:16px 18px;display:flex;flex-direction:column;flex:1;">
+									<div style="font-size:12px;color:#64748B;margin-bottom:6px;font-weight:600;">
+										📅 <?php echo esc_html( $date_str ); ?> • ⏱️ 5 phút đọc
+									</div>
+									<h3 style="margin:0 0 8px;font-size:15px;line-height:1.45;font-weight:700;height:44px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+										<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>" style="color:#0B2C4D;text-decoration:none;transition:color 0.2s;">
+											<?php echo esc_html( $post_item->post_title ); ?>
+										</a>
+									</h3>
+									<p style="font-size:13px;color:#475569;line-height:1.55;margin:0 0 12px;height:40px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+										<?php echo esc_html( wp_trim_words( $excerpt, 18 ) ); ?>
+									</p>
+									<div style="margin-top:auto;padding-top:10px;border-top:1px solid #F1F5F9;display:flex;justify-content:space-between;align-items:center;">
+										<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>" style="color:#C2562B;font-weight:700;font-size:13px;text-decoration:none;">
+											Đọc chi tiết →
+										</a>
+										<span style="font-size:11.5px;color:#94A3B8;">Kênh BĐS</span>
+									</div>
 								</div>
-								<h3 style="margin:0 0 10px;font-size:16px;line-height:1.45;font-weight:700;min-height:46px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
-									<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>" style="color:#0B2C4D;text-decoration:none;transition:color 0.2s;">
-										<?php echo esc_html( $post_item->post_title ); ?>
-									</a>
-								</h3>
-								<p style="font-size:13.5px;color:#475569;line-height:1.6;margin:0 0 16px;min-height:44px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
-									<?php echo esc_html( wp_trim_words( $excerpt, 20 ) ); ?>
-								</p>
-								<div style="margin-top:auto;padding-top:12px;border-top:1px solid #F1F5F9;display:flex;justify-content:space-between;align-items:center;">
-									<a href="<?php echo esc_url( get_permalink( $post_item->ID ) ); ?>" style="color:#C2562B;font-weight:700;font-size:13.5px;text-decoration:none;">
-										Đọc chi tiết →
-									</a>
-									<span style="font-size:12px;color:#94A3B8;">Kênh BĐS</span>
-								</div>
-							</div>
-						</article>
-					<?php endforeach; ?>
+							</article>
+						<?php endforeach; ?>
+					</div>
 				</div>
+
+				<style>
+				.kbds-project-news-track::-webkit-scrollbar { display: none; }
+				.kbds-slide-card {
+					flex: 0 0 calc((100% - 60px) / 4);
+					min-width: 250px;
+				}
+				.kbds-slide-card:hover {
+					transform: translateY(-4px);
+					box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+				}
+				.kbds-news-prev:hover, .kbds-news-next:hover {
+					background: #C2562B !important;
+					color: #FFFFFF !important;
+					border-color: #C2562B !important;
+					box-shadow: 0 4px 12px rgba(194,86,43,0.3) !important;
+				}
+				@media (max-width: 1150px) {
+					.kbds-slide-card {
+						flex: 0 0 calc((100% - 40px) / 3) !important;
+					}
+				}
+				@media (max-width: 820px) {
+					.kbds-slide-card {
+						flex: 0 0 calc((100% - 20px) / 2) !important;
+					}
+				}
+				@media (max-width: 560px) {
+					.kbds-slide-card {
+						flex: 0 0 85% !important;
+					}
+				}
+				</style>
+
+				<script>
+				(function() {
+					function initNewsSliders() {
+						document.querySelectorAll('.kbds-project-news-section').forEach(function(sec) {
+							if (sec.dataset.sliderInit) return;
+							sec.dataset.sliderInit = '1';
+							var track = sec.querySelector('.kbds-project-news-track');
+							var prev = sec.querySelector('.kbds-news-prev');
+							var next = sec.querySelector('.kbds-news-next');
+							if (!track || !prev || !next) return;
+
+							function getStep() {
+								var card = track.querySelector('.kbds-slide-card');
+								return card ? (card.offsetWidth + 20) : 300;
+							}
+
+							prev.addEventListener('click', function(e) {
+								e.preventDefault();
+								track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+							});
+
+							next.addEventListener('click', function(e) {
+								e.preventDefault();
+								track.scrollBy({ left: getStep(), behavior: 'smooth' });
+							});
+						});
+					}
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', initNewsSliders);
+					} else {
+						initNewsSliders();
+					}
+				})();
+				</script>
 			</div>
 		</section>
 		<?php
