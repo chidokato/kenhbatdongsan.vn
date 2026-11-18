@@ -336,6 +336,47 @@ foreach ($local_blocks as $b) {
     }
 }
 
+// 6c. Đồng bộ Trang Đơn (page - Chính sách, Giới thiệu, Liên hệ, Quy chế)
+$local_pages = get_posts(['post_type' => 'page', 'posts_per_page' => -1, 'post_status' => 'any']);
+echo "✔ Tìm thấy " . count($local_pages) . " Trang Đơn (Pages) trên Localhost\n";
+
+foreach ($local_pages as $page) {
+    if ($page->post_name === 'trang-mau') continue;
+    $res = call_remote_api("wp/v2/pages?slug={$page->post_name}&status=any");
+    $exists = is_array($res['data']) && !empty($res['data']);
+    
+    $payload = [
+        'title'   => $page->post_title,
+        'content' => $page->post_content,
+        'excerpt' => $page->post_excerpt,
+        'status'  => $page->post_status,
+        'slug'    => $page->post_name,
+    ];
+
+    $template = get_post_meta($page->ID, '_wp_page_template', true);
+    if ($template) $payload['template'] = $template;
+
+    // Meta trang (_kbds_* & Rank Math SEO)
+    $meta = [];
+    foreach (get_post_meta($page->ID) as $mk => $mv) {
+        if (strpos($mk, '_kbds_') === 0 || strpos($mk, 'rank_math_') === 0) {
+            $meta[$mk] = maybe_unserialize($mv[0]);
+        }
+    }
+    if ($meta) {
+        $payload['kbds_meta'] = $meta;
+    }
+    
+    if ($exists) {
+        $remote_id = $res['data'][0]['id'];
+        $up = call_remote_api("wp/v2/pages/{$remote_id}", 'POST', $payload);
+        echo " ✔ Cập nhật Trang [{$page->post_title}] -> Remote ID {$remote_id} (HTTP {$up['code']})\n";
+    } else {
+        $cr = call_remote_api('wp/v2/pages', 'POST', $payload);
+        echo " + Tạo mới Trang [{$page->post_title}] -> HTTP {$cr['code']}\n";
+    }
+}
+
 // 7. Đồng bộ Thứ tự Menu Chính & Link Chỉ Căn (Menu 40)
 $menu_orders = [
     109 => 1, 110 => 2, 111 => 3, 112 => 4, 113 => 5,

@@ -51,6 +51,48 @@ function kbds_disable_wp_emojis() {
 	} );
 }
 
+/**
+ * Tối ưu Robots Meta cho các trang Pháp lý, Chính sách & Giới thiệu theo chuẩn E-E-A-T
+ * 6 trang chính sách & quy chế: noindex, follow (tránh duplicate content, bảo toàn Crawl Budget)
+ * 2 trang tín nhiệm (Giới thiệu, Liên hệ): index, follow
+ */
+add_filter( 'rank_math/frontend/robots', 'kbds_custom_policy_robots_meta' );
+function kbds_custom_policy_robots_meta( $robots ) {
+	if ( is_page( array(
+		'chinh-sach-bao-mat',
+		'dieu-khoan-su-dung',
+		'tuyen-bo-mien-tru-trach-nhiem',
+		'quy-che-hoat-dong',
+		'che-tai-xu-ly-vi-pham',
+		'giai-quyet-tranh-chap-khieu-nai',
+	) ) ) {
+		$robots['index']  = 'noindex';
+		$robots['follow'] = 'follow';
+	} elseif ( is_page( array( 'gioi-thieu', 'lien-he' ) ) ) {
+		$robots['index']  = 'index';
+		$robots['follow'] = 'follow';
+	}
+	return $robots;
+}
+
+add_filter( 'wp_robots', function( $robots ) {
+	if ( is_page( array(
+		'chinh-sach-bao-mat',
+		'dieu-khoan-su-dung',
+		'tuyen-bo-mien-tru-trach-nhiem',
+		'quy-che-hoat-dong',
+		'che-tai-xu-ly-vi-pham',
+		'giai-quyet-tranh-chap-khieu-nai',
+	) ) ) {
+		$robots['noindex'] = true;
+		$robots['follow']  = true;
+	} elseif ( is_page( array( 'gioi-thieu', 'lien-he' ) ) ) {
+		$robots['noindex'] = false;
+		$robots['follow']  = true;
+	}
+	return $robots;
+} );
+
 // Chỉ nạp Công cụ Auto-Publisher khi ở trong Trang Quản Trị (wp-admin) hoặc chạy lệnh CLI
 // -> Đảm bảo 0% tải thừa cho khách truy cập ngoài giao diện trang chủ!
 if ( is_admin() || PHP_SAPI === 'cli' ) {

@@ -48,7 +48,7 @@ class KBDS_Post_Types {
 	 * Đăng ký REST field `kbds_meta` (đọc/ghi các meta `_kbds_*` và SEO Rank Math)
 	 */
 	public static function register_rest_meta_field() {
-		foreach ( array( 'du_an', 'bat_dong_san', 'post' ) as $pt ) {
+		foreach ( array( 'du_an', 'bat_dong_san', 'post', 'page' ) as $pt ) {
 			register_rest_field( $pt, 'kbds_meta', array(
 				'get_callback'    => function ( $obj ) {
 					if ( ! current_user_can( 'edit_post', $obj['id'] ) ) {
@@ -57,7 +57,7 @@ class KBDS_Post_Types {
 					$out = array();
 					foreach ( get_post_meta( $obj['id'] ) as $k => $v ) {
 						if ( self::is_syncable_meta_key( $k ) ) {
-							$out[ $k ] = $v[0];
+							$out[ $k ] = maybe_unserialize( $v[0] );
 						}
 					}
 					return $out;
@@ -68,7 +68,11 @@ class KBDS_Post_Types {
 					}
 					foreach ( $value as $k => $v ) {
 						if ( self::is_syncable_meta_key( $k ) ) {
-							update_post_meta( $post->ID, sanitize_key( $k ), wp_kses_post( (string) $v ) );
+							if ( is_array( $v ) ) {
+								update_post_meta( $post->ID, sanitize_key( $k ), $v );
+							} else {
+								update_post_meta( $post->ID, sanitize_key( $k ), wp_kses_post( (string) $v ) );
+							}
 						}
 					}
 				},

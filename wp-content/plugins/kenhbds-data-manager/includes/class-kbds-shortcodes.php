@@ -350,9 +350,12 @@ class KBDS_Shortcodes {
 					<input type="tel" name="kbds_phone" required placeholder="Số điện thoại / Zalo nhận file *" style="height:46px;margin:0;padding:0 14px;border-radius:8px;border:none;color:#111;box-sizing:border-box;" />
 					<input type="text" name="kbds_demand" placeholder="Nhu cầu (VD: Căn 2PN, Giỏ hàng cắt lỗ...)" style="height:46px;margin:0;padding:0 14px;border-radius:8px;border:none;color:#111;box-sizing:border-box;" />
 					<button type="submit" name="kbds_lead_submit" value="1" style="height:46px;line-height:46px;margin:0;background:#d99b26;color:#fff;font-weight:700;border:none;padding:0 24px;border-radius:8px;cursor:pointer;font-size:14.5px;white-space:nowrap;box-sizing:border-box;">
-						NHẬN BẢNG GIÁ NGAY
+						<?php echo esc_html( ! empty( $atts['button_text'] ) ? $atts['button_text'] : 'NHẬN BẢNG GIÁ NGAY' ); ?>
 					</button>
 				</form>
+				<p style="font-size:12px;color:rgba(255,255,255,0.75);text-align:center;margin:12px 0 0;line-height:1.5;">
+					🔒 Bằng việc bấm đăng ký, bạn đồng ý với <a href="<?php echo esc_url( home_url( '/chinh-sach-bao-mat/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Chính sách bảo mật</a> và <a href="<?php echo esc_url( home_url( '/tuyen-bo-mien-tru-trach-nhiem/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Tuyên bố miễn trừ</a> của chúng tôi.
+				</p>
 				<script>
 				(function(){
 					function setKbdsUrls() {
@@ -476,10 +479,8 @@ class KBDS_Shortcodes {
 					<button type="submit" name="kbds_quick_lead_submit" value="1" style="width:100% !important;min-height:44px;margin:0;padding:10px 14px;background:linear-gradient(135deg,#C59B27 0%,#9E7812 100%);color:#ffffff;font-weight:800;border:none;border-radius:8px;cursor:pointer;font-size:13.5px;text-transform:uppercase;letter-spacing:0.3px;box-shadow:0 4px 12px rgba(197,155,39,0.3);box-sizing:border-box;white-space:normal;line-height:1.35;text-align:center;">
 						<?php echo esc_html( $atts['button'] ); ?>
 					</button>
-					<div style="margin-top:10px;display:flex;justify-content:center;align-items:center;gap:12px;font-size:11.5px;color:#64748b;padding-top:8px;border-top:1px dashed #e2e8f0;text-align:center;">
-						<span>🔒 Bảo mật 100%</span>
-						<span>•</span>
-						<span>⏱️ Phản hồi trong 3 phút</span>
+					<div style="margin-top:10px;text-align:center;font-size:11px;color:#64748b;line-height:1.45;padding-top:8px;border-top:1px dashed #e2e8f0;">
+						🔒 Bằng việc bấm đăng ký, bạn đồng ý với <a href="<?php echo esc_url( home_url( '/chinh-sach-bao-mat/' ) ); ?>" target="_blank" style="color:#C59B27;text-decoration:underline;font-weight:600;">Chính sách bảo mật</a> của chúng tôi.
 					</div>
 				</form>
 				<script>
