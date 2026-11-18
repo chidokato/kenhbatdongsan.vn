@@ -26,6 +26,9 @@ class KBDS_Shortcodes {
 
 		// Tự động gắn thông tin tổng quan & giỏ hàng vào cuối trang chi tiết Dự án nếu chưa chèn shortcode
 		add_filter( 'the_content', array( __CLASS__, 'auto_append_project_sections' ) );
+
+		// Đảm bảo responsive hoàn hảo trên Mobile cho tất cả trang Dự án
+		add_action( 'wp_head', array( __CLASS__, 'render_global_responsive_styles' ), 99 );
 	}
 
 	/**
@@ -770,8 +773,8 @@ class KBDS_Shortcodes {
 		if ( ! is_singular( 'du_an' ) || ! in_the_loop() || ! is_main_query() ) {
 			return $content;
 		}
-		// Nếu người dùng tự thiết kế Landing Page bằng Section của UX Builder thì tôn trọng bố cục riêng
-		if ( false !== strpos( $content, '[section' ) || false !== strpos( $content, '[ux_banner' ) ) {
+		// Nếu người dùng tự thiết kế Landing Page bằng Section UX Builder hoặc HTML Section riêng thì tôn trọng bố cục riêng
+		if ( false !== strpos( $content, '[section' ) || false !== strpos( $content, '[ux_banner' ) || false !== strpos( $content, '<section' ) || false !== strpos( $content, 'kbds-project-subnav' ) ) {
 			return $content;
 		}
 
@@ -784,5 +787,270 @@ class KBDS_Shortcodes {
 
 		$running = false;
 		return $subnav . $overview . $content . $listings . $calc . $form;
+	}
+
+	/**
+	 * Render CSS tối ưu hiển thị Mobile toàn diện trực tiếp vào wp_head
+	 * Đảm bảo 100% không bị trễ cache và ghi đè inline styles hoàn hảo trên di động
+	 */
+	public static function render_global_responsive_styles() {
+		?>
+		<style id="kbds-project-mobile-styles">
+		@media (max-width: 820px) {
+			/* Container tràn viền chuẩn & padding an toàn */
+			.single-du_an .kbds-container,
+			.post-type-archive-du_an .kbds-container {
+				width: 100% !important;
+				max-width: 100% !important;
+				padding-left: 16px !important;
+				padding-right: 16px !important;
+				box-sizing: border-box !important;
+			}
+
+			/* Tự động chuyển toàn bộ layout đa cột (2 cột) sang 1 cột xếp chồng */
+			.single-du_an [style*="grid-template-columns:1.15fr 0.85fr"],
+			.single-du_an [style*="grid-template-columns: 1.15fr 0.85fr"],
+			.single-du_an [style*="grid-template-columns:1.1fr 0.9fr"],
+			.single-du_an [style*="grid-template-columns: 1.1fr 0.9fr"],
+			.single-du_an [style*="grid-template-columns:1.2fr 0.8fr"],
+			.single-du_an [style*="grid-template-columns: 1.2fr 0.8fr"],
+			.single-du_an [style*="grid-template-columns:1fr 1fr"],
+			.single-du_an [style*="grid-template-columns: 1fr 1fr"],
+			.single-du_an [style*="grid-template-columns:1fr 1.2fr"],
+			.single-du_an [style*="grid-template-columns: 1fr 1.2fr"],
+			.single-du_an .kbds-2col-grid,
+			.single-du_an .kbds-hero-grid {
+				display: flex !important;
+				flex-direction: column !important;
+				gap: 26px !important;
+			}
+
+			/* Hero Banner padding & typography */
+			.single-du_an section:first-of-type,
+			.single-du_an .kbds-project-hero {
+				padding: 34px 0 46px !important;
+			}
+			.single-du_an section:first-of-type h1,
+			.single-du_an h1.kbds-hero-title,
+			.single-du_an h1[style*="font-size:38px"],
+			.single-du_an h1[style*="font-size: 38px"],
+			.single-du_an h1[style*="font-size:36px"],
+			.single-du_an h1[style*="font-size: 36px"] {
+				font-size: 24px !important;
+				line-height: 1.28 !important;
+				margin-bottom: 10px !important;
+				word-break: normal !important;
+			}
+			.single-du_an section:first-of-type h1 span,
+			.single-du_an h1 span[style*="font-size:23px"],
+			.single-du_an h1 span[style*="font-size: 23px"],
+			.single-du_an h1 span[style*="font-size:22px"],
+			.single-du_an h1 span[style*="font-size: 22px"],
+			.single-du_an .kbds-hero-subtitle {
+				font-size: 15px !important;
+				line-height: 1.4 !important;
+				margin-top: 6px !important;
+			}
+			.single-du_an section:first-of-type [style*="border-radius:30px"],
+			.single-du_an section:first-of-type [style*="border-radius: 30px"],
+			.single-du_an .kbds-hero-badge {
+				font-size: 11px !important;
+				padding: 4px 12px !important;
+				margin-bottom: 12px !important;
+				line-height: 1.4 !important;
+				display: inline-flex !important;
+			}
+			.single-du_an section:first-of-type p,
+			.single-du_an .kbds-hero-desc {
+				font-size: 14px !important;
+				line-height: 1.65 !important;
+				margin-bottom: 22px !important;
+			}
+			.single-du_an section:first-of-type [style*="display:flex;gap:14px"],
+			.single-du_an section:first-of-type [style*="display: flex; gap: 14px"],
+			.single-du_an .kbds-hero-actions {
+				display: flex !important;
+				flex-direction: column !important;
+				gap: 10px !important;
+				width: 100% !important;
+			}
+			.single-du_an section:first-of-type [style*="display:flex;gap:14px"] > a,
+			.single-du_an section:first-of-type [style*="display: flex; gap: 14px"] > a,
+			.single-du_an .kbds-hero-actions > a {
+				width: 100% !important;
+				text-align: center !important;
+				justify-content: center !important;
+				box-sizing: border-box !important;
+				padding: 12px 18px !important;
+				font-size: 14px !important;
+			}
+			.single-du_an section:first-of-type img,
+			.single-du_an .kbds-hero-img {
+				width: 100% !important;
+				height: 250px !important;
+				object-fit: cover !important;
+				border-radius: 14px !important;
+			}
+			.single-du_an section:first-of-type [style*="position:absolute;bottom:"],
+			.single-du_an section:first-of-type [style*="position: absolute; bottom:"],
+			.single-du_an .kbds-hero-float-badge {
+				position: static !important;
+				margin-top: 12px !important;
+				width: 100% !important;
+				box-sizing: border-box !important;
+				padding: 10px 14px !important;
+				justify-content: flex-start !important;
+			}
+
+			/* Quick Stats Bar gọn gàng 2x2 */
+			.single-du_an [style*="repeat(auto-fit,minmax(200px,1fr))"],
+			.single-du_an [style*="repeat(auto-fit, minmax(200px, 1fr))"],
+			.single-du_an .kbds-stats-grid {
+				grid-template-columns: repeat(2, 1fr) !important;
+				gap: 10px !important;
+				padding: 0 4px !important;
+			}
+			.single-du_an [style*="repeat(auto-fit,minmax(200px,1fr))"] > div,
+			.single-du_an [style*="repeat(auto-fit, minmax(200px, 1fr))"] > div {
+				border-right: none !important;
+				border: 1px solid #334155 !important;
+				border-radius: 10px !important;
+				padding: 12px 8px !important;
+				background: rgba(255, 255, 255, 0.03) !important;
+				box-sizing: border-box !important;
+			}
+			.single-du_an [style*="repeat(auto-fit,minmax(200px,1fr))"] [style*="font-size:26px"],
+			.single-du_an [style*="repeat(auto-fit, minmax(200px, 1fr))"] [style*="font-size:26px"] {
+				font-size: 20px !important;
+				line-height: 1.2 !important;
+			}
+			.single-du_an [style*="repeat(auto-fit,minmax(200px,1fr))"] [style*="font-size:13px"],
+			.single-du_an [style*="repeat(auto-fit, minmax(200px, 1fr))"] [style*="font-size:13px"] {
+				font-size: 11.5px !important;
+			}
+
+			/* Tiêu đề & Section chung */
+			.single-du_an section {
+				padding: 45px 0 !important;
+			}
+			.single-du_an section h2,
+			.single-du_an h2[style*="font-size:32px"],
+			.single-du_an h2[style*="font-size: 32px"],
+			.single-du_an h2[style*="font-size:30px"],
+			.single-du_an h2[style*="font-size: 30px"] {
+				font-size: 21px !important;
+				line-height: 1.35 !important;
+				margin-bottom: 10px !important;
+			}
+			.single-du_an section h3,
+			.single-du_an h3[style*="font-size:22px"],
+			.single-du_an h3[style*="font-size: 22px"] {
+				font-size: 17px !important;
+				line-height: 1.4 !important;
+			}
+			.single-du_an section p {
+				font-size: 14px !important;
+				line-height: 1.65 !important;
+			}
+
+			/* Lưới thẻ Tiện ích & Cơ cấu căn hộ */
+			.single-du_an [style*="repeat(auto-fit,minmax(260px,1fr))"],
+			.single-du_an [style*="repeat(auto-fit, minmax(260px, 1fr))"],
+			.single-du_an [style*="repeat(auto-fit,minmax(320px,1fr))"],
+			.single-du_an [style*="repeat(auto-fit, minmax(320px, 1fr))"] {
+				grid-template-columns: 1fr !important;
+				gap: 14px !important;
+			}
+			.single-du_an [style*="repeat(auto-fit,minmax(220px,1fr))"],
+			.single-du_an [style*="repeat(auto-fit, minmax(220px, 1fr))"] {
+				grid-template-columns: 1fr !important;
+				gap: 12px !important;
+			}
+
+			/* Bảng & Dual Key card */
+			.single-du_an [style*="padding:32px"],
+			.single-du_an [style*="padding: 32px"] {
+				padding: 20px 14px !important;
+				border-radius: 14px !important;
+				box-sizing: border-box !important;
+			}
+			.single-du_an table {
+				font-size: 13px !important;
+				width: 100% !important;
+			}
+			.single-du_an table td,
+			.single-du_an table th {
+				padding: 8px 6px !important;
+			}
+
+			/* Subnav */
+			.kbds-project-subnav {
+				top: 0 !important;
+				z-index: 99 !important;
+			}
+			.kbds-project-subnav .kbds-container {
+				padding: 10px 14px !important;
+				gap: 8px !important;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+			}
+			.kbds-project-subnav .kbds-container::-webkit-scrollbar {
+				display: none;
+			}
+			.kbds-project-subnav [style*="font-weight:800;font-size:16px"],
+			.kbds-project-subnav [style*="font-weight: 800; font-size: 16px"] {
+				font-size: 13px !important;
+			}
+			.kbds-project-subnav a[href="#dang-ky"] {
+				padding: 6px 12px !important;
+				font-size: 11px !important;
+				white-space: nowrap !important;
+			}
+
+			/* Form Đăng ký (#dang-ky) */
+			#dang-ky {
+				padding: 40px 0 !important;
+			}
+			#dang-ky [style*="padding:45px 35px"],
+			#dang-ky [style*="padding: 45px 35px"] {
+				padding: 24px 14px !important;
+				border-radius: 16px !important;
+				box-sizing: border-box !important;
+			}
+			#dang-ky h2 {
+				font-size: 20px !important;
+				line-height: 1.3 !important;
+			}
+			.kbds-lead-form-grid {
+				grid-template-columns: 1fr !important;
+				gap: 12px !important;
+			}
+			.kbds-lead-form-grid input,
+			.kbds-lead-form-grid select,
+			.kbds-lead-form-grid button {
+				width: 100% !important;
+				font-size: 14px !important;
+				height: 46px !important;
+				box-sizing: border-box !important;
+			}
+
+			/* Nút Gọi & Zalo nổi */
+			.kbds-floating-contact {
+				bottom: 18px !important;
+				left: 14px !important;
+				gap: 10px !important;
+				z-index: 9999 !important;
+			}
+			.kbds-btn-circle {
+				width: 42px !important;
+				height: 42px !important;
+			}
+			.kbds-btn-circle svg {
+				width: 20px !important;
+				height: 20px !important;
+			}
+		}
+		</style>
+		<?php
 	}
 }
