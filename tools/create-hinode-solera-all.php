@@ -47,21 +47,21 @@ $landing_html = <<<HTML
 </div>
 
 <!-- SECTION 1: HERO BANNER -->
-<section style="position:relative;background:linear-gradient(135deg,#0B132B 0%,#1C2541 50%,#3A506B 100%);color:#fff;padding:85px 0 105px;overflow:hidden;">
+<section class="kbds-project-hero" style="position:relative;background:linear-gradient(135deg,#0B132B 0%,#1C2541 50%,#3A506B 100%);color:#fff;padding:85px 0 105px;overflow:hidden;">
   <div style="position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.18;background:radial-gradient(circle at 75% 25%,#F59E0B 0%,transparent 65%);pointer-events:none;"></div>
-  <div class="kbds-container" style="position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:45px;align-items:center;">
-    <div>
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(217,119,6,0.22);border:1px solid rgba(245,158,11,0.5);padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700;color:#FDE68A;margin-bottom:20px;letter-spacing:0.5px;">
+  <div class="kbds-container kbds-hero-grid" style="position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:45px;align-items:center;">
+    <div class="kbds-hero-content">
+      <div class="kbds-hero-badge" style="display:inline-flex;align-items:center;gap:8px;background:rgba(217,119,6,0.22);border:1px solid rgba(245,158,11,0.5);padding:6px 16px;border-radius:30px;font-size:13px;font-weight:700;color:#FDE68A;margin-bottom:20px;letter-spacing:0.5px;">
         🏛️ BIỂU TƯỢNG CĂN HỘ HẠNG SANG TRUNG TÂM MỸ ĐÌNH
       </div>
-      <h1 style="font-size:38px;line-height:1.25;font-weight:900;margin-bottom:18px;color:#FFFFFF;text-shadow:0 2px 10px rgba(0,0,0,0.5);">
+      <h1 class="kbds-hero-title" style="font-size:38px;line-height:1.25;font-weight:900;margin-bottom:18px;color:#FFFFFF;text-shadow:0 2px 10px rgba(0,0,0,0.5);">
         HINODE SOLERA PHẠM HÙNG
-        <span style="display:block;font-size:23px;color:#FBBF24;font-weight:700;margin-top:6px;">Tọa Độ Kim Cương 28 Phạm Hùng – Trực Diện Hồ Điều Hòa Cầu Giấy 32ha</span>
+        <span class="kbds-hero-subtitle" style="display:block;font-size:23px;color:#FBBF24;font-weight:700;margin-top:6px;">Tọa Độ Kim Cương 28 Phạm Hùng – Trực Diện Hồ Điều Hòa Cầu Giấy 32ha</span>
       </h1>
-      <p style="font-size:16px;line-height:1.7;color:#E2E8F0;margin-bottom:28px;">
+      <p class="kbds-hero-desc" style="font-size:16px;line-height:1.7;color:#E2E8F0;margin-bottom:28px;">
         Tổ hợp căn hộ cao cấp và văn phòng thương mại chuẩn Nhật Bản tọa lạc ngay mặt tiền số 28 Phạm Hùng (Nam Từ Liêm, Hà Nội). Sở hữu tầm nhìn panorama triệu đô hướng trọn công viên hồ điều hòa Cầu Giấy 32ha, kề cận Keangnam Landmark 72 và Vinhomes Skylake, kiến tạo không gian sống thượng lưu độc bản cùng giải pháp căn hộ Dual Key đột phá.
       </p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <div class="kbds-hero-actions" style="display:flex;gap:14px;flex-wrap:wrap;">
         <a href="#dang-ky" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#0F172A;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 6px 20px rgba(245,158,11,0.4);display:inline-flex;align-items:center;gap:8px;">
           <span>Đăng Ký Tư Vấn & Bảng Giá Đợt 1</span> ➔
         </a>
@@ -70,11 +70,11 @@ $landing_html = <<<HTML
         </a>
       </div>
     </div>
-    <div style="position:relative;">
+    <div class="kbds-hero-media" style="position:relative;">
       <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 45px rgba(0,0,0,0.5);border:2px solid rgba(245,158,11,0.4);">
-        <img src="{$m['phoi_canh_toa_thap']['url']}" alt="{$m['phoi_canh_toa_thap']['alt']}" style="width:100%;height:440px;object-fit:cover;display:block;">
+        <img class="kbds-hero-img" src="{$m['phoi_canh_toa_thap']['url']}" alt="{$m['phoi_canh_toa_thap']['alt']}" style="width:100%;height:440px;object-fit:cover;display:block;">
       </div>
-      <div style="position:absolute;bottom:-18px;left:20px;background:#0F172A;border:1px solid #D97706;padding:12px 22px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.4);display:flex;align-items:center;gap:14px;">
+      <div class="kbds-hero-float-badge" style="position:absolute;bottom:-18px;left:20px;background:#0F172A;border:1px solid #D97706;padding:12px 22px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.4);display:flex;align-items:center;gap:14px;">
         <div style="background:#D97706;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">💎</div>
         <div>
           <div style="font-size:11.5px;color:#94A3B8;text-transform:uppercase;font-weight:700;">Dòng sản phẩm độc bản</div>
@@ -116,7 +116,7 @@ $landing_html = <<<HTML
       <p style="font-size:15px;color:#64748B;line-height:1.7;">Được kiến tạo bởi Tập đoàn WTO (Vietracimex) danh tiếng với chuỗi thương hiệu Hinode trứ danh, dự án là kiệt tác kiến trúc sang trọng ngay trái tim kinh tế mới Mỹ Đình.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;">
+    <div class="kbds-2col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;">
       <div style="background:#F8FAFC;padding:32px;border-radius:18px;border:1px solid #E2E8F0;box-shadow:0 4px 15px rgba(0,0,0,0.04);">
         <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
           <tbody>
@@ -181,7 +181,7 @@ $landing_html = <<<HTML
       <p style="font-size:15px;color:#64748B;line-height:1.7;">Nằm ngay tâm điểm trục giao thương kinh tế huyết mạch Vành đai 3 trên cao, liền kề các tòa cao ốc biểu tượng và tận hưởng trọn vẹn lá phổi xanh mát lành của hồ nước điều hòa.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;">
+    <div class="kbds-2col-grid" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;">
       <div style="border-radius:18px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.12);border:1px solid #CBD5E1;">
         <img src="{$m['vi_tri_ho_cau_giay']['url']}" alt="{$m['vi_tri_ho_cau_giay']['alt']}" style="width:100%;height:400px;object-fit:cover;display:block;">
         <div style="padding:14px 18px;background:#0F172A;color:#E2E8F0;font-size:13px;line-height:1.5;">
@@ -308,7 +308,7 @@ $landing_html = <<<HTML
 <!-- SECTION 7: ĐỘT PHÁ CĂN HỘ DUAL KEY -->
 <section id="can-ho-dual-key" style="padding:80px 0;background:#FFFFFF;">
   <div class="kbds-container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;">
+    <div class="kbds-2col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;">
       <div>
         <div style="font-size:13px;font-weight:800;color:#DC2626;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">MÔ HÌNH BẤT ĐỘNG SẢN TƯƠNG LAI</div>
         <h2 style="font-size:32px;font-weight:900;color:#0F172A;line-height:1.3;margin-bottom:20px;">

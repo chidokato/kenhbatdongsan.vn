@@ -11,7 +11,9 @@ get_header();
 		$raw_content = get_post_field( 'post_content', get_the_ID() );
 		$is_ux_landing = ( function_exists( 'ux_builder_is_active' ) && ux_builder_is_active() )
 			|| false !== strpos( $raw_content, '[section' )
-			|| false !== strpos( $raw_content, '[ux_banner' );
+			|| false !== strpos( $raw_content, '[ux_banner' )
+			|| false !== strpos( $raw_content, '<section' )
+			|| false !== strpos( $raw_content, 'kbds-project-subnav' );
 		?>
 
 		<?php if ( $is_ux_landing ) : ?>
