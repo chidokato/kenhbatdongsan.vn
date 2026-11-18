@@ -32,6 +32,16 @@ class KBDS_SEO_Enhancer {
 		if ( is_singular( 'bds_lead' ) || is_post_type_archive( 'bds_lead' ) ) {
 			return array( 'noindex' => true, 'nofollow' => true );
 		}
+		if ( is_page( array(
+			'chinh-sach-bao-mat',
+			'dieu-khoan-su-dung',
+			'tuyen-bo-mien-tru-trach-nhiem',
+			'quy-che-hoat-dong',
+			'che-tai-xu-ly-vi-pham',
+			'giai-quyet-tranh-chap-khieu-nai',
+		) ) ) {
+			return array( 'noindex' => true, 'follow' => true );
+		}
 		if ( is_array( $robots ) ) {
 			$robots['noindex']  = false;
 			$robots['nofollow'] = false;
@@ -43,11 +53,21 @@ class KBDS_SEO_Enhancer {
 	}
 
 	/**
-	 * Tương thích Rank Math SEO: Buộc index cho mọi trang công khai
+	 * Tương thích Rank Math SEO: Buộc index cho mọi trang công khai, loại trừ 6 trang chính sách & quy chế
 	 */
 	public static function force_rank_math_robots_index( $robots ) {
 		if ( is_singular( 'bds_lead' ) || is_post_type_archive( 'bds_lead' ) ) {
 			return array( 'noindex' => 'noindex', 'nofollow' => 'nofollow' );
+		}
+		if ( is_page( array(
+			'chinh-sach-bao-mat',
+			'dieu-khoan-su-dung',
+			'tuyen-bo-mien-tru-trach-nhiem',
+			'quy-che-hoat-dong',
+			'che-tai-xu-ly-vi-pham',
+			'giai-quyet-tranh-chap-khieu-nai',
+		) ) ) {
+			return array( 'noindex' => 'noindex', 'follow' => 'follow' );
 		}
 		if ( is_array( $robots ) ) {
 			unset( $robots['noindex'], $robots['nofollow'] );

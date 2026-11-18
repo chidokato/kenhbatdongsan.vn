@@ -161,7 +161,7 @@ $recent_attachments = get_posts([
     'posts_per_page' => -1,
     'post_status'    => 'inherit',
     'date_query'     => [
-        ['after' => '14 days ago']
+        ['after' => '1 day ago']
     ]
 ]);
 if ($recent_attachments) {
