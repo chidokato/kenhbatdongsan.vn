@@ -52,7 +52,10 @@ $target_slugs = [
     'che-tai-xu-ly-vi-pham',
     'giai-quyet-tranh-chap-khieu-nai',
     'gioi-thieu',
-    'lien-he'
+    'lien-he',
+    'bao-gia-va-tu-van-du-an',
+    'cam-nang-dau-tu-phap-ly',
+    'so-do-website'
 ];
 
 foreach ($target_slugs as $slug) {
