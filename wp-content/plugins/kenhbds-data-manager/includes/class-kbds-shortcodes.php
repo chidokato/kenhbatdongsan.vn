@@ -824,18 +824,55 @@ class KBDS_Shortcodes {
 			object-fit: contain !important;
 		}
 
-		/* --- Thanh Subnav Cố Định Chuẩn Dự Án (Sticky Subnav Desktop) --- */
+		/* --- Thanh Subnav Cố Định Chuẩn Dự Án (Sticky Subnav Desktop & Mobile) --- */
+		:root {
+			--kbds-subnav-top: 70px;
+			--kbds-scroll-offset: 125px;
+		}
+		body.admin-bar {
+			--kbds-subnav-top: 102px;
+		}
+		@media (max-width: 782px) {
+			body.admin-bar {
+				--kbds-subnav-top: 116px;
+			}
+		}
+		@media (max-width: 600px) {
+			body.admin-bar {
+				--kbds-subnav-top: 70px !important;
+			}
+		}
 		.kbds-project-subnav {
 			position: sticky !important;
-			top: 78px !important;
+			top: 70px !important;
+			top: var(--kbds-subnav-top, 70px) !important;
 			z-index: 99 !important;
 			background: #0F172A !important;
 			border-bottom: 1px solid #1E293B !important;
 			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
 			width: 100% !important;
+			margin: 0 !important;
 		}
-		.admin-bar .kbds-project-subnav {
-			top: 110px !important;
+		.single-du_an .kbds-project-subnav {
+			top: 70px !important;
+			top: var(--kbds-subnav-top, 70px) !important;
+		}
+		.single-du_an.admin-bar .kbds-project-subnav {
+			top: 102px !important;
+			top: var(--kbds-subnav-top, 102px) !important;
+		}
+		@media (max-width: 782px) {
+			.single-du_an.admin-bar .kbds-project-subnav {
+				top: 116px !important;
+				top: var(--kbds-subnav-top, 116px) !important;
+			}
+		}
+		@media (max-width: 600px) {
+			.single-du_an .kbds-project-subnav,
+			.single-du_an.admin-bar .kbds-project-subnav {
+				top: 70px !important;
+				top: var(--kbds-subnav-top, 70px) !important;
+			}
 		}
 		.kbds-project-subnav .kbds-container,
 		.kbds-subnav-container {
@@ -1161,51 +1198,68 @@ class KBDS_Shortcodes {
 				padding: 8px 6px !important;
 			}
 
-			/* Subnav Mobile */
+			/* Subnav Mobile (Trượt ngang mượt mà, không cắt chữ, không khoảng trống) */
 			.kbds-project-subnav {
-				top: 60px !important;
+				top: 70px !important;
+				top: var(--kbds-subnav-top, 70px) !important;
 				z-index: 99 !important;
+				margin: 0 !important;
 			}
 			.admin-bar .kbds-project-subnav {
-				top: 106px !important;
+				top: 70px !important;
+				top: var(--kbds-subnav-top, 70px) !important;
+			}
+			.kbds-subnav-brand {
+				display: none !important;
 			}
 			.kbds-project-subnav .kbds-container,
 			.kbds-subnav-container {
-				padding: 8px 12px !important;
-				gap: 8px !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: flex-start !important;
+				padding: 8px 10px !important;
+				gap: 6px !important;
 				overflow-x: auto !important;
+				white-space: nowrap !important;
 				scrollbar-width: none !important;
 				-webkit-overflow-scrolling: touch !important;
+				flex-wrap: nowrap !important;
 			}
 			.kbds-project-subnav .kbds-container::-webkit-scrollbar,
 			.kbds-subnav-container::-webkit-scrollbar {
 				display: none !important;
 			}
 			.kbds-subnav-links {
-				justify-content: flex-start !important;
-				gap: 4px !important;
-			}
-			.kbds-subnav-brand,
-			.kbds-project-subnav [style*="font-weight:800;font-size:16px"],
-			.kbds-project-subnav [style*="font-weight: 800; font-size: 16px"] {
-				font-size: 12.5px !important;
+				display: contents !important;
 			}
 			.kbds-subnav-link,
 			.kbds-project-subnav [style*="display:flex;gap:18px"] > a,
 			.kbds-project-subnav [style*="display: flex; gap: 18px"] > a {
 				font-size: 12px !important;
-				padding: 5px 8px !important;
+				padding: 6px 10px !important;
+				border-radius: 6px !important;
+				flex-shrink: 0 !important;
+				white-space: nowrap !important;
+				background: rgba(255, 255, 255, 0.05) !important;
+			}
+			.kbds-subnav-link.active {
+				color: #F59E0B !important;
+				background: rgba(245, 158, 11, 0.15) !important;
+				font-weight: 700 !important;
 			}
 			.kbds-subnav-cta,
 			.kbds-project-subnav a[href="#dang-ky"] {
 				padding: 6px 12px !important;
-				font-size: 11px !important;
+				font-size: 11.5px !important;
 				white-space: nowrap !important;
+				flex-shrink: 0 !important;
+				margin-left: 2px !important;
 			}
 			.single-du_an section[id],
 			.single-du_an div[id],
 			#tong-quan, #vi-tri, #phan-khu, #tien-ich, #mat-bang, #can-ho-mau, #can-ho-dual-key, #bang-gia, #tien-do, #tin-tuc-du-an, #dang-ky {
-				scroll-margin-top: 115px !important;
+				scroll-margin-top: 120px !important;
+				scroll-margin-top: var(--kbds-scroll-offset, 120px) !important;
 			}
 
 			/* Form Đăng ký (#dang-ky) */

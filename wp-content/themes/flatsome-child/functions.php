@@ -216,7 +216,7 @@ add_filter( 'gettext', function( $translation, $text, $domain ) {
 }, 20, 3 );
 
 /**
- * 7. Tối ưu ScrollSpy & Cuộn mượt chuẩn vị trí cho Menu phụ Subnav trên trang Dự án (du_an)
+ * 7. Tối ưu ScrollSpy & Cố định Menu phụ Subnav chính xác 100% dưới Header (Desktop & Mobile)
  */
 add_action( 'wp_footer', function() {
 	if ( ! is_singular( 'du_an' ) ) {
@@ -230,6 +230,38 @@ add_action( 'wp_footer', function() {
 		var links = subnav.querySelectorAll('a[href^="#"]');
 		if (!links.length) return;
 
+		// Đo chính xác vị trí đáy Header để triệt tiêu 100% khoảng trống (Zero Gap) trên mọi màn hình
+		function syncSubnavTop() {
+			var header = document.querySelector('.header-wrapper.stuck')
+					  || document.querySelector('#header .header-main')
+					  || document.querySelector('#header');
+
+			var adminBar = document.getElementById('wpadminbar');
+			var adminBarH = 0;
+			if (adminBar && window.getComputedStyle(adminBar).position === 'fixed') {
+				adminBarH = adminBar.offsetHeight || 0;
+			}
+
+			var headerH = 70;
+			if (header) {
+				headerH = header.offsetHeight || 70;
+			}
+
+			var totalTop = adminBarH + headerH;
+			subnav.style.top = totalTop + 'px';
+			document.documentElement.style.setProperty('--kbds-subnav-top', totalTop + 'px');
+
+			var subnavH = subnav.offsetHeight || 42;
+			var totalOffset = totalTop + subnavH + 8;
+			document.documentElement.style.setProperty('--kbds-scroll-offset', totalOffset + 'px');
+		}
+
+		window.addEventListener('scroll', syncSubnavTop, { passive: true });
+		window.addEventListener('resize', syncSubnavTop);
+		syncSubnavTop();
+		setTimeout(syncSubnavTop, 200);
+		setTimeout(syncSubnavTop, 800);
+
 		// Cuộn mượt với độ lệch (offset) chính xác dưới Header & Subnav cố định
 		links.forEach(function(link) {
 			link.addEventListener('click', function(e) {
@@ -238,7 +270,8 @@ add_action( 'wp_footer', function() {
 				var target = document.querySelector(targetId);
 				if (target) {
 					e.preventDefault();
-					var headerOffset = window.innerWidth <= 849 ? 115 : 135;
+					syncSubnavTop();
+					var headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--kbds-scroll-offset')) || (window.innerWidth <= 849 ? 115 : 125);
 					var elementPosition = target.getBoundingClientRect().top;
 					var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 					window.scrollTo({
@@ -254,7 +287,7 @@ add_action( 'wp_footer', function() {
 			});
 		});
 
-		// ScrollSpy: Tự động đánh dấu mục đang xem khi cuộn trang
+		// ScrollSpy: Tự động đánh dấu mục đang xem khi cuộn trang và căn chỉnh menu mobile
 		var sections = [];
 		links.forEach(function(link) {
 			var targetId = link.getAttribute('href');
@@ -268,7 +301,8 @@ add_action( 'wp_footer', function() {
 
 		if (sections.length) {
 			window.addEventListener('scroll', function() {
-				var scrollPos = window.pageYOffset + (window.innerWidth <= 849 ? 140 : 160);
+				var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--kbds-scroll-offset')) || (window.innerWidth <= 849 ? 120 : 130);
+				var scrollPos = window.pageYOffset + offset + 20;
 				var current = null;
 				for (var i = 0; i < sections.length; i++) {
 					var top = sections[i].el.offsetTop;
@@ -281,6 +315,9 @@ add_action( 'wp_footer', function() {
 				if (current) {
 					links.forEach(function(l) { l.classList.remove('active'); });
 					current.classList.add('active');
+					if (window.innerWidth <= 768 && current.scrollIntoView) {
+						current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+					}
 				}
 			}, { passive: true });
 		}
