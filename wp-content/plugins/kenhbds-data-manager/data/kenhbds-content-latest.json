@@ -1,6 +1,6 @@
 {
     "site": "kenhbatdongsan.vn",
-    "exported_at": "2026-11-19 08:58:22",
+    "exported_at": "2026-11-19 10:25:17",
     "version": "1.0",
     "theme_mods": {
         "0": false,
@@ -3308,7 +3308,7 @@
             "post_title": "Trang Chủ - Kênh Bất Động Sản",
             "post_name": "trang-chu",
             "post_excerpt": "",
-            "post_content": "<!-- KÊNH BẤT ĐỘNG SẢN (KENHBATDONGSAN.VN) - BỐ CỤC CÁC SECTION ĐỘC LẬP DỄ QUẢN LÝ -->\n[block id=\"sec-1-hero-search\"]\n\n[block id=\"sec-2a-du-an-ha-noi\"]\n\n[block id=\"sec-2b-du-an-tphcm\"]\n\n[block id=\"sec-2c-du-an-tinh-thanh\"]\n\n[block id=\"sec-3-gio-hang-xac-thuc\"]\n\n[block id=\"sec-4-tin-tuc-quy-hoach\"]\n\n[block id=\"sec-5-khu-vuc-chu-dau-tu\"]\n\n[block id=\"sec-6-cong-cu-tai-chinh\"]\n\n[block id=\"sec-7-dang-ky-nhan-bang-gia\"]",
+            "post_content": "<!-- KÊNH BẤT ĐỘNG SẢN (KENHBATDONGSAN.VN) - BỐ CỤC CÁC SECTION ĐỘC LẬP DỄ QUẢN LÝ -->\n[block id=\"sec-1-hero-search\"]\n\n[block id=\"sec-2a-du-an-ha-noi\"]\n\n[block id=\"sec-2b-du-an-tphcm\"]\n\n[block id=\"sec-2c-du-an-tinh-thanh\"]\n\n<!-- [TAM_AN] sec-3-gio-hang-xac-thuc -->\n\n[block id=\"sec-4-tin-tuc-quy-hoach\"]\n\n[block id=\"sec-5-khu-vuc-chu-dau-tu\"]\n\n[block id=\"sec-6-cong-cu-tai-chinh\"]\n\n[block id=\"sec-7-dang-ky-nhan-bang-gia\"]",
             "post_date": "2026-11-10 07:39:27",
             "meta": {
                 "_wp_page_template": "page-blank.php",
