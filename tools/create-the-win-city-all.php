@@ -55,6 +55,7 @@ $landing_html = <<<HTML
       <span class="kbds-subnav-dot"></span>
       THE WIN CITY
     </div>
+    <a href="#dang-ky" class="kbds-subnav-cta">Nhận Báo Giá Gốc</a>
     <nav class="kbds-subnav-links">
       <a href="#tong-quan" class="kbds-subnav-link">Tổng Quan</a>
       <a href="#vi-tri" class="kbds-subnav-link">Vị Trí</a>
@@ -66,7 +67,6 @@ $landing_html = <<<HTML
       <a href="#tien-do" class="kbds-subnav-link">Tiến Độ</a>
       <a href="#tin-tuc-du-an" class="kbds-subnav-link">Tin Tức</a>
     </nav>
-    <a href="#dang-ky" class="kbds-subnav-cta">Nhận Báo Giá Gốc</a>
   </div>
 </div>
 

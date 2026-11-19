@@ -1764,26 +1764,18 @@ body.admin-bar {
     width: 100% !important;
     margin: 0 !important;
 }
-.single-du_an .kbds-project-subnav {
+.single-du_an .kbds-project-subnav,
+.single-du_an.admin-bar .kbds-project-subnav {
     top: 70px !important;
     top: var(--kbds-subnav-top, 70px) !important;
 }
-.single-du_an.admin-bar .kbds-project-subnav {
-    top: 102px !important;
-    top: var(--kbds-subnav-top, 102px) !important;
+.kbds-project-subnav p {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: contents !important;
 }
-@media (max-width: 782px) {
-    .single-du_an.admin-bar .kbds-project-subnav {
-        top: 116px !important;
-        top: var(--kbds-subnav-top, 116px) !important;
-    }
-}
-@media (max-width: 600px) {
-    .single-du_an .kbds-project-subnav,
-    .single-du_an.admin-bar .kbds-project-subnav {
-        top: 70px !important;
-        top: var(--kbds-subnav-top, 70px) !important;
-    }
+.kbds-project-subnav br {
+    display: none !important;
 }
 .kbds-project-subnav .kbds-container,
 .kbds-subnav-container {
@@ -2101,68 +2093,129 @@ body.admin-bar {
         padding: 8px 6px !important;
     }
 
-    /* --- Thanh Menu phụ Subnav Mobile (Trượt ngang mượt mà, không cắt chữ, không khoảng trống) --- */
+    /* =========================================================================
+       SUBNAV DỰ ÁN TRÊN MOBILE: TỐI ƯU CHUẨN 2 HÀNG (ROW 1: BRAND + CTA | ROW 2: TABS SCROLL)
+       ========================================================================= */
     .kbds-project-subnav {
         top: 70px !important;
         top: var(--kbds-subnav-top, 70px) !important;
         z-index: 99 !important;
         margin: 0 !important;
+        padding: 0 !important;
     }
     .admin-bar .kbds-project-subnav {
         top: 70px !important;
         top: var(--kbds-subnav-top, 70px) !important;
     }
-    .kbds-subnav-brand {
-        display: none !important; /* Ẩn brand trên mobile để nhường 100% không gian cho các nút tab */
-    }
+
+    /* Container flex 2 hàng */
     .kbds-project-subnav .kbds-container,
     .kbds-subnav-container {
         display: flex !important;
+        flex-wrap: wrap !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        padding: 8px 10px !important;
+        justify-content: space-between !important;
+        padding: 7px 12px 6px !important;
+        gap: 0 !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    /* HÀNG 1 - BÊN TRÁI: Tên dự án (Brand) */
+    .kbds-subnav-brand,
+    .kbds-project-subnav .kbds-container > div:first-child,
+    .kbds-project-subnav [style*="font-weight:800;font-size:16px"],
+    .kbds-project-subnav [style*="font-weight: 800; font-size: 16px"] {
+        order: 1 !important;
+        display: flex !important;
+        align-items: center !important;
         gap: 6px !important;
+        font-size: 12.5px !important;
+        font-weight: 800 !important;
+        color: #F8FAFC !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: calc(100% - 130px) !important;
+        flex: 0 1 auto !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+    .kbds-subnav-dot,
+    .kbds-project-subnav [style*="border-radius:50%"] {
+        width: 8px !important;
+        height: 8px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* HÀNG 1 - BÊN PHẢI: Nút CTA Nhận Báo Giá */
+    .kbds-subnav-cta,
+    .kbds-project-subnav a[href="#dang-ky"] {
+        order: 2 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 5px 12px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+        border-radius: 18px !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3) !important;
+        line-height: 1.3 !important;
+    }
+
+    /* HÀNG 2: Thanh trượt ngang các Tab đề mục */
+    .kbds-subnav-links,
+    .kbds-project-subnav [style*="display:flex;gap:18px"],
+    .kbds-project-subnav [style*="display: flex; gap: 18px"] {
+        order: 3 !important;
+        display: flex !important;
+        flex: 0 0 100% !important;
+        width: 100% !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
+        gap: 5px !important;
+        padding: 6px 0 2px !important;
+        margin-top: 6px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         scrollbar-width: none !important;
         -webkit-overflow-scrolling: touch !important;
-        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
     }
-    .kbds-project-subnav .kbds-container::-webkit-scrollbar,
-    .kbds-subnav-container::-webkit-scrollbar {
+    .kbds-subnav-links::-webkit-scrollbar,
+    .kbds-project-subnav [style*="display:flex;gap:18px"]::-webkit-scrollbar,
+    .kbds-project-subnav [style*="display: flex; gap: 18px"]::-webkit-scrollbar {
         display: none !important;
     }
-    .kbds-subnav-links {
-        display: contents !important; /* Đưa toàn bộ các link ra ngoài thanh cuộn ngang mượt mà */
-    }
+
+    /* Các nút Tab đề mục (Pill Links) */
     .kbds-subnav-link,
     .kbds-project-subnav [style*="display:flex;gap:18px"] > a,
     .kbds-project-subnav [style*="display: flex; gap: 18px"] > a {
-        font-size: 12px !important;
-        padding: 6px 10px !important;
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        padding: 5px 9px !important;
         border-radius: 6px !important;
         flex-shrink: 0 !important;
         white-space: nowrap !important;
-        background: rgba(255, 255, 255, 0.05) !important;
+        color: #CBD5E1 !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        transition: all 0.2s ease !important;
     }
-    .kbds-subnav-link.active {
+    .kbds-subnav-link.active,
+    .kbds-project-subnav [style*="display:flex;gap:18px"] > a.active,
+    .kbds-project-subnav [style*="display: flex; gap: 18px"] > a.active {
         color: #F59E0B !important;
-        background: rgba(245, 158, 11, 0.15) !important;
+        background: rgba(245, 158, 11, 0.2) !important;
         font-weight: 700 !important;
-    }
-    .kbds-subnav-cta,
-    .kbds-project-subnav a[href="#dang-ky"] {
-        padding: 6px 12px !important;
-        font-size: 11.5px !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        margin-left: 2px !important;
     }
     .single-du_an section[id],
     .single-du_an div[id],
     #tong-quan, #vi-tri, #phan-khu, #tien-ich, #mat-bang, #can-ho-mau, #can-ho-dual-key, #bang-gia, #tien-do, #tin-tuc-du-an, #dang-ky {
-        scroll-margin-top: 120px !important;
-        scroll-margin-top: var(--kbds-scroll-offset, 120px) !important;
+        scroll-margin-top: 135px !important;
+        scroll-margin-top: var(--kbds-scroll-offset, 135px) !important;
     }
 
     /* --- Form Đăng ký Bảng giá (#dang-ky) --- */

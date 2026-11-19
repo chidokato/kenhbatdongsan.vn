@@ -34,24 +34,24 @@ if (!term_exists('Phát Đạt', 'chu_dau_tu')) {
 
 // 2. SOẠN NỘI DUNG LANDING PAGE 10 SECTION CHUẨN UX CHO MONREI SAIGON
 $landing_html = <<<HTML
-<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN -->
-<div class="kbds-project-subnav" style="position:sticky;top:0;z-index:99;background:#0F172A;box-shadow:0 4px 20px rgba(0,0,0,0.15);border-bottom:1px solid #1E293B;">
-  <div class="kbds-container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;overflow-x:auto;white-space:nowrap;gap:12px;">
-    <div style="font-weight:800;font-size:16px;color:#F8FAFC;display:flex;align-items:center;gap:8px;">
-      <span style="display:inline-block;width:10px;height:10px;background:#0284C7;border-radius:50%;box-shadow:0 0 10px #0284C7;"></span>
+<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN MONREI SAIGON -->
+<div class="kbds-project-subnav">
+  <div class="kbds-container kbds-subnav-container">
+    <div class="kbds-subnav-brand">
+      <span class="kbds-subnav-dot" style="background:#0284C7;box-shadow:0 0 10px #0284C7"></span>
       MONREI SAIGON
     </div>
-    <div style="display:flex;gap:18px;font-size:13.5px;font-weight:600;">
-      <a href="#tong-quan" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Tổng Quan</a>
-      <a href="#vi-tri" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Vị Trí Cửa Ngõ</a>
-      <a href="#thuy-lieu" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Thành Phố Thủy Liệu</a>
-      <a href="#onsen-sento" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Onsen & Sento</a>
-      <a href="#aqua-massage" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Aqua Massage Bed</a>
-      <a href="#tien-ich-kodomo" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Sân Chơi Kodomo</a>
-      <a href="#tien-do" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Tiến Độ Thực Tế</a>
-      <a href="#tin-tuc-du-an" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#38BDF8'" onmouseout="this.style.color='#CBD5E1'">Tin Tức Đánh Giá</a>
-    </div>
-    <a href="#dang-ky" style="background:linear-gradient(135deg,#0284C7,#0369A1);color:#fff;padding:8px 18px;border-radius:24px;font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(2,132,199,0.35);">Nhận Báo Giá Gốc</a>
+    <a href="#dang-ky" class="kbds-subnav-cta" style="background:linear-gradient(135deg,#0284C7,#0369A1);box-shadow:0 4px 12px rgba(2,132,199,0.35)">Nhận Báo Giá Gốc</a>
+    <nav class="kbds-subnav-links">
+      <a href="#tong-quan" class="kbds-subnav-link">Tổng Quan</a>
+      <a href="#vi-tri" class="kbds-subnav-link">Vị Trí Cửa Ngõ</a>
+      <a href="#thuy-lieu" class="kbds-subnav-link">Thành Phố Thủy Liệu</a>
+      <a href="#onsen-sento" class="kbds-subnav-link">Onsen &amp; Sento</a>
+      <a href="#aqua-massage" class="kbds-subnav-link">Aqua Massage Bed</a>
+      <a href="#tien-ich-kodomo" class="kbds-subnav-link">Sân Chơi Kodomo</a>
+      <a href="#tien-do" class="kbds-subnav-link">Tiến Độ Thực Tế</a>
+      <a href="#tin-tuc-du-an" class="kbds-subnav-link">Tin Tức Đánh Giá</a>
+    </nav>
   </div>
 </div>
 

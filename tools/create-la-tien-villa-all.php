@@ -27,24 +27,24 @@ if (!term_exists('KDI Holdings', 'chu_dau_tu')) {
 
 // 2. SOẠN NỘI DUNG 10 SECTION LANDING PAGE LA TIÊN VILLA
 $landing_html = <<<HTML
-<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN -->
-<div class="kbds-project-subnav" style="position:sticky;top:0;z-index:99;background:#0F172A;box-shadow:0 4px 20px rgba(0,0,0,0.15);border-bottom:1px solid #1E293B;">
-  <div class="kbds-container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;overflow-x:auto;white-space:nowrap;gap:12px;">
-    <div style="font-weight:800;font-size:16px;color:#F8FAFC;display:flex;align-items:center;gap:8px;">
-      <span style="display:inline-block;width:10px;height:10px;background:#EA580C;border-radius:50%;box-shadow:0 0 10px #EA580C;"></span>
+<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN LA TIÊN VILLA -->
+<div class="kbds-project-subnav">
+  <div class="kbds-container kbds-subnav-container">
+    <div class="kbds-subnav-brand">
+      <span class="kbds-subnav-dot" style="background:#EA580C;box-shadow:0 0 10px #EA580C"></span>
       LA TIÊN VILLA
     </div>
-    <div style="display:flex;gap:18px;font-size:13.5px;font-weight:600;">
-      <a href="#tong-quan" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Tổng Quan</a>
-      <a href="#vi-tri" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Vị Trí Bãi Tiên</a>
-      <a href="#tien-ich" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Tiện Ích 5 Sao</a>
-      <a href="#quang-truong" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Quảng Trường Âm Nhạc</a>
-      <a href="#yacht-club" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Yacht Clubhouse</a>
-      <a href="#san-pham" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Biệt Thự & Phố Thương Mại</a>
-      <a href="#hoang-hon-bai-tien" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Vịnh Biển Bãi Tiên</a>
-      <a href="#tin-tuc-du-an" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#EA580C'" onmouseout="this.style.color='#CBD5E1'">Tin Tức Phân Tích</a>
-    </div>
-    <a href="#dang-ky" style="background:linear-gradient(135deg,#EA580C,#C2410C);color:#fff;padding:8px 18px;border-radius:24px;font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(234,88,12,0.35);">Đăng Ký Tư Vấn</a>
+    <a href="#dang-ky" class="kbds-subnav-cta" style="background:linear-gradient(135deg,#EA580C,#C2410C);box-shadow:0 4px 12px rgba(234,88,12,0.35)">Đăng Ký Tư Vấn</a>
+    <nav class="kbds-subnav-links">
+      <a href="#tong-quan" class="kbds-subnav-link">Tổng Quan</a>
+      <a href="#vi-tri" class="kbds-subnav-link">Vị Trí Bãi Tiên</a>
+      <a href="#tien-ich" class="kbds-subnav-link">Tiện Ích 5 Sao</a>
+      <a href="#quang-truong" class="kbds-subnav-link">Quảng Trường Âm Nhạc</a>
+      <a href="#yacht-club" class="kbds-subnav-link">Yacht Clubhouse</a>
+      <a href="#san-pham" class="kbds-subnav-link">Biệt Thự &amp; Phố Thương Mại</a>
+      <a href="#hoang-hon-bai-tien" class="kbds-subnav-link">Vịnh Biển Bãi Tiên</a>
+      <a href="#tin-tuc-du-an" class="kbds-subnav-link">Tin Tức Phân Tích</a>
+    </nav>
   </div>
 </div>
 

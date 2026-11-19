@@ -27,22 +27,22 @@ if (!term_exists('WTO (Vietracimex)', 'chu_dau_tu')) {
 
 // 2. SOẠN NỘI DUNG LANDING PAGE 10 SECTION CHUẨN UX CHO HINODE SOLERA PHẠM HÙNG
 $landing_html = <<<HTML
-<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN -->
-<div class="kbds-project-subnav" style="position:sticky;top:0;z-index:99;background:#0F172A;box-shadow:0 4px 20px rgba(0,0,0,0.25);border-bottom:1px solid #1E293B;">
-  <div class="kbds-container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;overflow-x:auto;white-space:nowrap;gap:12px;">
-    <div style="font-weight:800;font-size:16px;color:#F8FAFC;display:flex;align-items:center;gap:8px;">
-      <span style="display:inline-block;width:10px;height:10px;background:#D97706;border-radius:50%;box-shadow:0 0 10px #D97706;"></span>
+<!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN HINODE SOLERA PHẠM HÙNG -->
+<div class="kbds-project-subnav">
+  <div class="kbds-container kbds-subnav-container">
+    <div class="kbds-subnav-brand">
+      <span class="kbds-subnav-dot"></span>
       HINODE SOLERA PHẠM HÙNG
     </div>
-    <div style="display:flex;gap:18px;font-size:13.5px;font-weight:600;">
-      <a href="#tong-quan" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tổng Quan</a>
-      <a href="#vi-tri" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Vị Trí Kim Cương</a>
-      <a href="#tien-ich" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tiện Ích 5 Sao</a>
-      <a href="#mat-bang" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Mặt Bằng Tầng</a>
-      <a href="#can-ho-dual-key" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Căn Hộ Dual Key</a>
-      <a href="#tin-tuc-du-an" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tin Tức Đánh Giá</a>
-    </div>
-    <a href="#dang-ky" style="background:linear-gradient(135deg,#D97706,#B45309);color:#fff;padding:8px 18px;border-radius:24px;font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(217,119,6,0.35);">Nhận Báo Giá Gốc</a>
+    <a href="#dang-ky" class="kbds-subnav-cta">Nhận Báo Giá Gốc</a>
+    <nav class="kbds-subnav-links">
+      <a href="#tong-quan" class="kbds-subnav-link">Tổng Quan</a>
+      <a href="#vi-tri" class="kbds-subnav-link">Vị Trí Kim Cương</a>
+      <a href="#tien-ich" class="kbds-subnav-link">Tiện Ích 5 Sao</a>
+      <a href="#mat-bang" class="kbds-subnav-link">Mặt Bằng Tầng</a>
+      <a href="#can-ho-dual-key" class="kbds-subnav-link">Căn Hộ Dual Key</a>
+      <a href="#tin-tuc-du-an" class="kbds-subnav-link">Tin Tức Đánh Giá</a>
+    </nav>
   </div>
 </div>
 

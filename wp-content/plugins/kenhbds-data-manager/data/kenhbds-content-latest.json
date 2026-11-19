@@ -1,6 +1,6 @@
 {
     "site": "kenhbatdongsan.vn",
-    "exported_at": "2026-11-19 04:26:32",
+    "exported_at": "2026-11-19 04:34:41",
     "version": "1.0",
     "theme_mods": {
         "0": false,
@@ -113,7 +113,12 @@
         "blog_posts_date": 0,
         "blog_posts_category": 0,
         "blog_share": 1,
-        "site_logo_sticky": "https:\/\/kenhbatdongsan.vn\/wp-content\/uploads\/kbds-brand-logo-white.svg"
+        "site_logo_sticky": "https:\/\/kenhbatdongsan.vn\/wp-content\/uploads\/kbds-brand-logo-white.svg",
+        "blog_style": "3-col",
+        "blog_style_archive": "3-col",
+        "blog_style_type": "row",
+        "blog_badge": 0,
+        "blog_show_excerpt": 1
     },
     "taxonomies": {
         "category": [
