@@ -49,24 +49,24 @@ if (!term_exists('Long An', 'khu_vuc_bds')) {
 // 2. SOẠN THẢO NỘI DUNG LANDING PAGE 10 SECTION CHUẨN UX CHO THE WIN CITY
 $landing_html = <<<HTML
 <!-- SUBNAV ĐIỀU HƯỚNG DỰ ÁN THE WIN CITY -->
-<div class="kbds-project-subnav" style="position:sticky;top:0;z-index:99;background:#0F172A;box-shadow:0 4px 20px rgba(0,0,0,0.15);border-bottom:1px solid #1E293B;">
-  <div class="kbds-container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;overflow-x:auto;white-space:nowrap;gap:12px;">
-    <div style="font-weight:800;font-size:16px;color:#F8FAFC;display:flex;align-items:center;gap:8px;">
-      <span style="display:inline-block;width:10px;height:10px;background:#D97706;border-radius:50%;box-shadow:0 0 10px #D97706;"></span>
+<div class="kbds-project-subnav">
+  <div class="kbds-container kbds-subnav-container">
+    <div class="kbds-subnav-brand">
+      <span class="kbds-subnav-dot"></span>
       THE WIN CITY
     </div>
-    <div style="display:flex;gap:18px;font-size:13.5px;font-weight:600;">
-      <a href="#tong-quan" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tổng Quan</a>
-      <a href="#vi-tri" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Vị Trí Mặt Tiền</a>
-      <a href="#phan-khu" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">3 Phân Khu</a>
-      <a href="#tien-ich" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tiện Ích 5.500m²</a>
-      <a href="#mat-bang" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Mặt Bằng VIC 1.2</a>
-      <a href="#can-ho-mau" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Căn Hộ Mẫu An Cường</a>
-      <a href="#bang-gia" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Bảng Giá & CSBH</a>
-      <a href="#tien-do" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tiến Độ Thi Công</a>
-      <a href="#tin-tuc-du-an" style="color:#CBD5E1;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='#CBD5E1'">Tin Tức Đánh Giá</a>
-    </div>
-    <a href="#dang-ky" style="background:linear-gradient(135deg,#D97706,#B45309);color:#fff;padding:8px 18px;border-radius:24px;font-size:12.5px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(217,119,6,0.35);">Nhận Báo Giá Gốc</a>
+    <nav class="kbds-subnav-links">
+      <a href="#tong-quan" class="kbds-subnav-link">Tổng Quan</a>
+      <a href="#vi-tri" class="kbds-subnav-link">Vị Trí</a>
+      <a href="#phan-khu" class="kbds-subnav-link">Phân Khu</a>
+      <a href="#tien-ich" class="kbds-subnav-link">Tiện Ích</a>
+      <a href="#mat-bang" class="kbds-subnav-link">Mặt Bằng</a>
+      <a href="#can-ho-mau" class="kbds-subnav-link">Căn Hộ Mẫu</a>
+      <a href="#bang-gia" class="kbds-subnav-link">Bảng Giá</a>
+      <a href="#tien-do" class="kbds-subnav-link">Tiến Độ</a>
+      <a href="#tin-tuc-du-an" class="kbds-subnav-link">Tin Tức</a>
+    </nav>
+    <a href="#dang-ky" class="kbds-subnav-cta">Nhận Báo Giá Gốc</a>
   </div>
 </div>
 

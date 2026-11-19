@@ -214,3 +214,77 @@ add_filter( 'gettext', function( $translation, $text, $domain ) {
 	}
 	return $translation;
 }, 20, 3 );
+
+/**
+ * 7. Tối ưu ScrollSpy & Cuộn mượt chuẩn vị trí cho Menu phụ Subnav trên trang Dự án (du_an)
+ */
+add_action( 'wp_footer', function() {
+	if ( ! is_singular( 'du_an' ) ) {
+		return;
+	}
+	?>
+	<script id="kbds-subnav-scrollspy">
+	document.addEventListener('DOMContentLoaded', function() {
+		var subnav = document.querySelector('.kbds-project-subnav');
+		if (!subnav) return;
+		var links = subnav.querySelectorAll('a[href^="#"]');
+		if (!links.length) return;
+
+		// Cuộn mượt với độ lệch (offset) chính xác dưới Header & Subnav cố định
+		links.forEach(function(link) {
+			link.addEventListener('click', function(e) {
+				var targetId = this.getAttribute('href');
+				if (targetId === '#' || targetId === '') return;
+				var target = document.querySelector(targetId);
+				if (target) {
+					e.preventDefault();
+					var headerOffset = window.innerWidth <= 849 ? 115 : 135;
+					var elementPosition = target.getBoundingClientRect().top;
+					var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: 'smooth'
+					});
+					links.forEach(function(l) { l.classList.remove('active'); });
+					link.classList.add('active');
+					if (history.pushState) {
+						history.pushState(null, null, targetId);
+					}
+				}
+			});
+		});
+
+		// ScrollSpy: Tự động đánh dấu mục đang xem khi cuộn trang
+		var sections = [];
+		links.forEach(function(link) {
+			var targetId = link.getAttribute('href');
+			if (targetId && targetId.indexOf('#') === 0 && targetId.length > 1) {
+				var sec = document.querySelector(targetId);
+				if (sec) {
+					sections.push({ el: sec, link: link });
+				}
+			}
+		});
+
+		if (sections.length) {
+			window.addEventListener('scroll', function() {
+				var scrollPos = window.pageYOffset + (window.innerWidth <= 849 ? 140 : 160);
+				var current = null;
+				for (var i = 0; i < sections.length; i++) {
+					var top = sections[i].el.offsetTop;
+					var height = sections[i].el.offsetHeight;
+					if (scrollPos >= top && scrollPos < top + height) {
+						current = sections[i].link;
+						break;
+					}
+				}
+				if (current) {
+					links.forEach(function(l) { l.classList.remove('active'); });
+					current.classList.add('active');
+				}
+			}, { passive: true });
+		}
+	});
+	</script>
+	<?php
+}, 99 );
