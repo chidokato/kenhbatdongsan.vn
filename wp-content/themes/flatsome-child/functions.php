@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * 1. Nạp Google Font 'Be Vietnam Pro' & CSS Sang trọng của Child Theme
+ * 1. Nạp Google Font 'Be Vietnam Pro' & 'Playfair Display' (Phong cách 1: Luxury & Heritage) & CSS Child Theme
  */
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style(
 		'kbds-google-fonts',
-		'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap',
 		array(),
 		null
 	);

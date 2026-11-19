@@ -1,6 +1,6 @@
 {
     "site": "kenhbatdongsan.vn",
-    "exported_at": "2026-11-19 07:23:15",
+    "exported_at": "2026-11-19 08:58:22",
     "version": "1.0",
     "theme_mods": {
         "0": false,
@@ -150,6 +150,16 @@
         ],
         "post_tag": [
             {
+                "name": "Ansana by Kita",
+                "slug": "ansana-by-kita",
+                "description": ""
+            },
+            {
+                "name": "Ansana Võ Văn Kiệt",
+                "slug": "ansana-vo-van-kiet",
+                "description": ""
+            },
+            {
                 "name": "AVA Center",
                 "slug": "ava-center",
                 "description": ""
@@ -175,6 +185,11 @@
                 "description": ""
             },
             {
+                "name": "Căn hộ Ansana",
+                "slug": "can-ho-ansana",
+                "description": ""
+            },
+            {
                 "name": "Căn hộ AVA Center",
                 "slug": "can-ho-ava-center",
                 "description": ""
@@ -187,6 +202,11 @@
             {
                 "name": "CityLand Mễ Trì",
                 "slug": "cityland-me-tri",
+                "description": ""
+            },
+            {
+                "name": "KITA Group",
+                "slug": "kita-group",
                 "description": ""
             },
             {
@@ -247,6 +267,11 @@
                 "description": ""
             },
             {
+                "name": "Bình Tân",
+                "slug": "binh-tan",
+                "description": "Quận Bình Tân, TP. Hồ Chí Minh - Cửa ngõ kết nối giao thương phía Tây sầm uất"
+            },
+            {
                 "name": "Đà Nẵng",
                 "slug": "da-nang",
                 "description": ""
@@ -300,6 +325,11 @@
                 "name": "Thuận An",
                 "slug": "thuan-an",
                 "description": "Thành phố Thuận An, Bình Dương - Cửa ngõ kết nối trực tiếp với TP. Hồ Chí Minh"
+            },
+            {
+                "name": "TP. Hồ Chí Minh",
+                "slug": "tp-ho-chi-minh",
+                "description": "Thị trường Bất Động Sản TP. Hồ Chí Minh"
             }
         ],
         "loai_hinh_bds": [
@@ -383,6 +413,11 @@
                 "description": ""
             },
             {
+                "name": "KITA Group",
+                "slug": "kita-group",
+                "description": "Tập đoàn KITA (KITA Group \/ Kita Homes) - Nhà phát triển bất động sản uy tín với chuỗi dự án đô thị và căn hộ cao cấp hàng đầu Việt Nam"
+            },
+            {
                 "name": "Masterise Homes",
                 "slug": "masterise-homes",
                 "description": ""
@@ -451,8 +486,257 @@
             }
         ]
     },
-    "items_count": 101,
+    "items_count": 108,
     "items": [
+        {
+            "ID": 362,
+            "post_type": "bat_dong_san",
+            "post_status": "publish",
+            "post_title": "Căn Hộ 2PN-2WC View Trực Diện Hồ Bơi Resort Tầng Trung Ansana by Kita Võ Văn Kiệt",
+            "post_name": "can-ho-2pn-view-ho-boi-resort-ansana-by-kita",
+            "post_excerpt": "Căn hộ 2 phòng ngủ 2WC tầng 12 tháp A dự án Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt. Ban công hướng Nam thoáng mát view trọn hồ bơi resort nhiệt đới, thiết kế chuẩn Wellness Luxury sang trọng.",
+            "post_content": "Căn hộ 2 phòng ngủ 2WC tầng 12 tháp A dự án Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt. Ban công hướng Nam thoáng mát view trọn hồ bơi resort nhiệt đới, thiết kế chuẩn Wellness Luxury sang trọng.\n\n[kbds_lead_form project=\"Ansana by Kita Võ Văn Kiệt\"]",
+            "post_date": "2026-11-19 08:56:24",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "355",
+                "_kbds_parent_project_id": "357",
+                "_kbds_is_verified": "1",
+                "_kbds_listing_code": "ANS-A-1206",
+                "_kbds_listing_price": "6.8 Tỷ (Giá gốc CĐT đợt 1)",
+                "_kbds_price_billion": "6.8",
+                "_kbds_area_m2": "68.0",
+                "_kbds_bedrooms": "2"
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "binh-tan",
+                    "tp-ho-chi-minh"
+                ],
+                "loai_hinh_bds": [
+                    "can-ho-chung-cu"
+                ],
+                "loai_giao_dich": [
+                    "chuyen-nhuong"
+                ]
+            }
+        },
+        {
+            "ID": 363,
+            "post_type": "bat_dong_san",
+            "post_status": "publish",
+            "post_title": "Căn Hộ 1PN+1 Đa Năng Thiết Kế Wellness Sang Trọng Ansana by Kita",
+            "post_name": "can-ho-1pn1-thiet-ke-wellness-ansana-by-kita",
+            "post_excerpt": "Suất ngoại giao căn 1PN+1 diện tích 54m² tháp B Ansana by Kita. Thiết kế không gian mở đa năng có thể làm phòng làm việc hoặc phòng ngủ thứ 2, tối ưu công năng cho gia đình trẻ và chuyên gia.",
+            "post_content": "Suất ngoại giao căn 1PN+1 diện tích 54m² tháp B Ansana by Kita. Thiết kế không gian mở đa năng có thể làm phòng làm việc hoặc phòng ngủ thứ 2, tối ưu công năng cho gia đình trẻ và chuyên gia.\n\n[kbds_lead_form project=\"Ansana by Kita Võ Văn Kiệt\"]",
+            "post_date": "2026-11-19 08:56:24",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "353",
+                "_kbds_parent_project_id": "357",
+                "_kbds_is_verified": "1",
+                "_kbds_listing_code": "ANS-B-0805",
+                "_kbds_listing_price": "5.3 Tỷ (Hỗ trợ vay 70% LS 0%)",
+                "_kbds_price_billion": "5.3",
+                "_kbds_area_m2": "54.0",
+                "_kbds_bedrooms": "1"
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "binh-tan",
+                    "tp-ho-chi-minh"
+                ],
+                "loai_hinh_bds": [
+                    "can-ho-chung-cu"
+                ],
+                "loai_giao_dich": [
+                    "chuyen-nhuong"
+                ]
+            }
+        },
+        {
+            "ID": 361,
+            "post_type": "post",
+            "post_status": "publish",
+            "post_title": "Cập Nhật Bảng Giá Bán &amp; Chính Sách Ưu Đãi Căn Hộ Ansana by Kita Năm 2026: Đòn Bẩy Tài Chính Từ KITA Group",
+            "post_name": "bang-gia-chinh-sach-ban-hang-ansana-by-kita-2026",
+            "post_excerpt": "Cập nhật bảng giá bán tham khảo và chính sách ưu đãi tài chính mới nhất năm 2026 của dự án căn hộ cao cấp Ansana by Kita Võ Văn Kiệt do KITA Group phát triển.",
+            "post_content": "<p>Là một trong những dự án căn hộ cao cấp quy mô bậc nhất chuẩn bị ra mắt tại khu Tây TP.HCM trong năm 2026, <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Ansana by Kita<\/a><\/strong> đang nhận được sự quan tâm rất lớn từ khách hàng có nhu cầu ở thực lẫn các nhà đầu tư sành sỏi. Dưới đây là tổng hợp bảng giá dự kiến và các gói giải pháp tài chính tối ưu từ Chủ đầu tư KITA Group.<\/p>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/phoi-canh-toan-canh-toa-thap-ban-dem-ansana-by-kita.jpg\" alt=\"Phối cảnh ban đêm toàn cảnh quần thể các tòa tháp căn hộ Ansana by Kita rực sáng trên mặt tiền Đại lộ Võ Văn Kiệt\" \/><figcaption>Quần thể tháp căn hộ biểu tượng cao 24 tầng Ansana by Kita rực sáng lộng lẫy tại cửa ngõ phía Tây TP.HCM<\/figcaption><\/figure><\/div>\n\n<h2>1. Bảng Giá Dự Kiến Căn Hộ Ansana by Kita Đợt 1<\/h2>\n<p>Đơn giá rumor của dự án dao động từ <strong>90 – 100 triệu\/m²<\/strong> (đã bao gồm VAT và hoàn thiện nội thất cơ bản cao cấp):<\/p>\n<table style=\"width:100%;border-collapse:collapse;margin:20px 0;font-size:15px\">\n  <thead>\n    <tr style=\"background:#0F172A;color:#fff\">\n      <th style=\"padding:12px 16px;border:1px solid #CBD5E1\">Loại Căn Hộ<\/th>\n      <th style=\"padding:12px 16px;border:1px solid #CBD5E1\">Diện Tích<\/th>\n      <th style=\"padding:12px 16px;border:1px solid #CBD5E1\">Giá Bán Dự Kiến (VAT)<\/th>\n    <\/tr>\n  <\/thead>\n  <tbody>\n    <tr>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;font-weight:700\">Căn hộ 1PN + 1<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1\">51 – 57 m²<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;color:#D97706;font-weight:700\">Từ 5,2 – 5,6 Tỷ<\/td>\n    <\/tr>\n    <tr style=\"background:#F8FAFC\">\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;font-weight:700\">Căn hộ 2PN - 2WC<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1\">67 – 88 m²<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;color:#D97706;font-weight:700\">Từ 6,7 – 8,5 Tỷ<\/td>\n    <\/tr>\n    <tr>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;font-weight:700\">Căn hộ 3PN - 2WC (Góc)<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1\">97 – 115 m²<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;color:#D97706;font-weight:700\">Từ 9,7 – 11,8 Tỷ<\/td>\n    <\/tr>\n    <tr style=\"background:#F8FAFC\">\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;font-weight:700\">Penthouse Thượng Lưu<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1\">149 – 301 m²<\/td>\n      <td style=\"padding:12px 16px;border:1px solid #CBD5E1;color:#D97706;font-weight:700\">Từ 15 Tỷ trở lên<\/td>\n    <\/tr>\n  <\/tbody>\n<\/table>\n\n<h2>2. Chính Sách Bán Hàng &amp; Hỗ Trợ Tài Chính Ưu Việt<\/h2>\n<p>KITA Group hợp tác cùng các ngân hàng thương mại hàng đầu mang đến giải pháp tài chính vượt trội:<\/p>\n<ul>\n  <li><strong>Hỗ trợ vay vốn ngân hàng:<\/strong> Ngân hàng giải ngân lên tới 70% giá trị hợp đồng mua bán.<\/li>\n  <li><strong>Hỗ trợ lãi suất 0%:<\/strong> Áp dụng trong thời gian dài lên tới 24 tháng hoặc đến thời điểm bàn giao nhà thực tế.<\/li>\n  <li><strong>Ân hạn nợ gốc:<\/strong> Khách hàng không phải trả tiền gốc trong suốt thời gian hỗ trợ lãi suất.<\/li>\n  <li><strong>Chiết khấu thanh toán sớm:<\/strong> Nhận mức chiết khấu hấp dẫn lên tới 8% dành cho khách hàng thanh toán sớm bằng vốn tự có.<\/li>\n<\/ul>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/ho-boi-tran-bo-resort-ansana-by-kita.jpg\" alt=\"Phối cảnh hồ bơi tràn bờ phong cách resort nhiệt đới tại tầng tiện ích khối đế dự án Ansana by Kita Bình Tân\" \/><figcaption>Hồ bơi tràn bờ phong cách resort xanh mát mang lại đặc quyền thư giãn chuẩn Wellness cho cư dân Ansana by Kita<\/figcaption><\/figure><\/div>\n\n<p>Đăng ký nhận giỏ hàng ưu đãi đợt 1 tại <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Hồ Sơ Ansana by Kita Võ Văn Kiệt<\/a><\/strong>.<\/p>",
+            "post_date": "2026-11-19 08:55:59",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "353",
+                "_kbds_project_ref": "357",
+                "_kbds_project_slug": "ansana-by-kita",
+                "rank_math_title": "Cập Nhật Bảng Giá Bán & Chính Sách Ưu Đãi Căn Hộ Ansana by Kita Năm 2026: Đòn Bẩy Tài Chính Từ KITA Group | Kênh Bất Động Sản",
+                "rank_math_description": "Cập nhật bảng giá bán tham khảo và chính sách ưu đãi tài chính mới nhất năm 2026 của dự án căn hộ cao cấp Ansana by Kita Võ Văn Kiệt do KITA Group phát triển.",
+                "rank_math_focus_keyword": "bảng giá ansana by kita, giá bán căn hộ ansana by kita, chính sách bán hàng ansana by kita, giá căn hộ võ văn kiệt",
+                "rank_math_robots": [
+                    "index",
+                    "follow"
+                ]
+            },
+            "terms": {
+                "category": [
+                    "review-du-an"
+                ],
+                "post_tag": [
+                    "ansana-by-kita",
+                    "ansana-vo-van-kiet",
+                    "can-ho-ansana",
+                    "kita-group"
+                ]
+            }
+        },
+        {
+            "ID": 360,
+            "post_type": "post",
+            "post_status": "publish",
+            "post_title": "Phân Tích Mặt Bằng Tổng Thể &amp; Layout Căn Hộ Ansana by Kita Võ Văn Kiệt: Tối Ưu Nắng Gió Chuẩn Xanh",
+            "post_name": "mat-bang-thiet-ke-can-ho-ansana-by-kita",
+            "post_excerpt": "Đánh giá chi tiết mặt bằng quy hoạch tổng thể 2,43ha và layout thiết kế các loại căn hộ 1PN, 2PN, 3PN tại dự án Ansana by Kita mặt tiền Võ Văn Kiệt Bình Tân.",
+            "post_content": "<p>Được quy hoạch trên quỹ đất rộng lớn <strong>2,43 ha<\/strong> ngay mặt tiền Đại lộ Võ Văn Kiệt, <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Ansana by Kita<\/a><\/strong> gây ấn tượng mạnh mẽ bởi thiết kế mặt bằng thông minh, cân bằng hoàn hảo giữa mật độ xây dựng thấp và cảnh quan thiên nhiên sinh thái.<\/p>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/mat-bang-tong-the-masterplan-ansana-by-kita-vo-van-kiet.jpg\" alt=\"Mặt bằng quy hoạch tổng thể Masterplan dự án căn hộ Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt Bình Tân TP.HCM\" \/><figcaption>Mặt bằng tổng thể 2,43ha dự án Ansana by Kita với hệ sinh thái công viên, hồ bơi resort và các khối tháp hiện đại<\/figcaption><\/figure><\/div>\n\n<h2>1. Quy Hoạch Mặt Bằng Tổng Thể Masterplan Đồng Bộ<\/h2>\n<p>Mặt bằng tổng thể của Ansana by Kita được bố trí gồm các khối tháp cao 24 tầng nổi so le khoa học, giúp 100% căn hộ không bị che chắn tầm nhìn:<\/p>\n<ul>\n  <li>Khối đế thương mại dịch vụ sầm uất tiếp giáp mặt tiền đường lớn và đường quy hoạch 13m nội khu.<\/li>\n  <li>Lõi trung tâm dự án là công viên cây xanh, hồ bơi tràn resort và cụm tiện ích thể thao biệt lập, đảm bảo sự yên tĩnh tuyệt đối cho cư dân sinh sống.<\/li>\n  <li>2 tầng hầm đậu xe rộng rãi thông suốt toàn khu đất, đáp ứng đầy đủ nhu cầu đỗ xe ô tô và xe máy của mọi gia đình.<\/li>\n<\/ul>\n\n<h2>2. Phân Tích Layout Thiết Kế Các Loại Căn Hộ<\/h2>\n<p>Từng căn hộ tại Ansana by Kita đều được kiến tạo theo tiêu chuẩn công thái học hiện đại:<\/p>\n<ul>\n  <li><strong>Căn hộ 1PN + 1 (51 – 57 m²):<\/strong> Không gian mở linh hoạt, có thể bố trí phòng làm việc, phòng đọc sách hoặc giường đơn phụ cho con nhỏ.<\/li>\n  <li><strong>Căn hộ 2PN - 2WC (67 – 88 m²):<\/strong> Sản phẩm chủ lực với phòng khách nối liền ban công đón trọn gió trời, 2 phòng ngủ riêng tư đón ánh sáng tự nhiên, khu bếp nấu kết nối logia giặt phơi thông thoáng.<\/li>\n  <li><strong>Căn hộ 3PN - 2WC (97 – 115 m²):<\/strong> Tọa lạc tại các vị trí góc với 2 mặt thoáng view toàn cảnh đại lộ và hồ bơi, lý tưởng cho các gia đình đa thế hệ cùng chung sống.<\/li>\n  <li><strong>Penthouse thượng lưu (149 – 301 m²):<\/strong> Dinh thự trên mây với trần cao khoáng đạt và sân vườn riêng biệt, khẳng định vị thế đỉnh cao của chủ nhân.<\/li>\n<\/ul>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/phoi-canh-toan-canh-toa-thap-ban-dem-ansana-by-kita.jpg\" alt=\"Phối cảnh ban đêm toàn cảnh quần thể các tòa tháp căn hộ Ansana by Kita rực sáng trên mặt tiền Đại lộ Võ Văn Kiệt\" \/><figcaption>Quần thể tháp căn hộ biểu tượng cao 24 tầng Ansana by Kita rực sáng lộng lẫy tại cửa ngõ phía Tây TP.HCM<\/figcaption><\/figure><\/div>\n\n<p>Đăng ký nhận trọn bộ mặt bằng cad và layout chi tiết tại <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Trang Dự Án Ansana by Kita<\/a><\/strong>.<\/p>",
+            "post_date": "2026-11-19 08:55:58",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "354",
+                "_kbds_project_ref": "357",
+                "_kbds_project_slug": "ansana-by-kita",
+                "rank_math_title": "Phân Tích Mặt Bằng Tổng Thể & Layout Căn Hộ Ansana by Kita Võ Văn Kiệt: Tối Ưu Nắng Gió Chuẩn Xanh | Kênh Bất Động Sản",
+                "rank_math_description": "Đánh giá chi tiết mặt bằng quy hoạch tổng thể 2,43ha và layout thiết kế các loại căn hộ 1PN, 2PN, 3PN tại dự án Ansana by Kita mặt tiền Võ Văn Kiệt Bình Tân.",
+                "rank_math_focus_keyword": "mặt bằng ansana by kita, thiết kế căn hộ ansana by kita, layout ansana by kita, masterplan ansana by kita",
+                "rank_math_robots": [
+                    "index",
+                    "follow"
+                ]
+            },
+            "terms": {
+                "category": [
+                    "review-du-an"
+                ],
+                "post_tag": [
+                    "ansana-by-kita",
+                    "ansana-vo-van-kiet",
+                    "can-ho-ansana",
+                    "kita-group"
+                ]
+            }
+        },
+        {
+            "ID": 359,
+            "post_type": "post",
+            "post_status": "publish",
+            "post_title": "Hệ Tiện Ích Chuẩn Wellness Luxury Tại Ansana by Kita: Hồ Bơi Resort Nhiệt Đới &amp; Không Gian Tái Tạo Năng Lượng",
+            "post_name": "tien-ich-wellness-luxury-ansana-by-kita",
+            "post_excerpt": "Trải nghiệm hệ tiện ích chuẩn Wellness Luxury tại Ansana by Kita Bình Tân: Hồ bơi resort nhiệt đới, công viên sinh thái, phòng gym yoga hiện đại tái tạo trọn vẹn năng lượng sống.",
+            "post_content": "<p>Giữa nhịp sống đô thị hối hả và ô nhiễm khói bụi, nhu cầu tìm kiếm một chốn an cư có thể \"chữa lành\", phục hồi sức khỏe và nuôi dưỡng tâm hồn trở thành ưu tiên hàng đầu của giới thượng lưu. Tại <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Ansana by Kita<\/a><\/strong>, Chủ đầu tư KITA Group đã tiên phong đưa mô hình <strong>Wellness Luxury<\/strong> vào từng ngóc ngách của dự án.<\/p>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/ho-boi-tran-bo-resort-ansana-by-kita.jpg\" alt=\"Phối cảnh hồ bơi tràn bờ phong cách resort nhiệt đới tại tầng tiện ích khối đế dự án Ansana by Kita Bình Tân\" \/><figcaption>Hồ bơi tràn bờ phong cách resort xanh mát mang lại đặc quyền thư giãn chuẩn Wellness cho cư dân Ansana by Kita<\/figcaption><\/figure><\/div>\n\n<h2>1. Hồ Bơi Tràn Bờ Phong Cách Resort Nhiệt Đới Độc Bản<\/h2>\n<p>Điểm nhấn đắt giá nhất trong quần thể tiện ích của Ansana by Kita là <strong>Hồ bơi tràn bờ phong cách Resort (Podium Pool)<\/strong> tọa lạc tại tầng tiện ích khối đế:<\/p>\n<ul>\n  <li>Thiết kế uốn lượn mềm mại như dòng suối tự nhiên giữa những rặng cọ xanh mát và thảm thực vật phong phú.<\/li>\n  <li>Làn nước được xử lý bằng công nghệ điện phân muối khoáng tự nhiên, bảo vệ tối đa sức khỏe làn da và đôi mắt của cư dân.<\/li>\n  <li>Khu vực sảnh lounge ngắm cảnh, quầy bar ngoài trời và sàn tắm nắng mang lại cảm giác nghỉ dưỡng 5 sao ngay tại gia đình.<\/li>\n<\/ul>\n\n<h2>2. Chuỗi Tiện Ích Chăm Sóc Thân – Tâm – Trí Toàn Diện<\/h2>\n<p>Ansana by Kita trang bị hệ sinh thái tiện ích khép kín đáp ứng trọn vẹn mọi nhu cầu chăm sóc sức khỏe:<\/p>\n<ul>\n  <li><strong>Vườn thiền &amp; Đường dạo bộ sinh thái:<\/strong> Nơi cư dân tản bộ dưới những tán cây xanh rợp bóng, hít thở bầu không khí trong lành vào mỗi sớm mai.<\/li>\n  <li><strong>Phòng Gym hiện đại &amp; Sân tập Yoga ngoài trời:<\/strong> Trang bị hệ thống máy móc tập luyện tiên tiến nhập khẩu, phòng tập Yoga đón ánh nắng sớm tái tạo sinh khí dồi dào.<\/li>\n  <li><strong>Khu vui chơi trẻ em &amp; Trường mầm non nội khu:<\/strong> Đem lại không gian phát triển thể chất và trí tuệ an toàn tuyệt đối cho các cư dân nhí.<\/li>\n<\/ul>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/mat-bang-tong-the-masterplan-ansana-by-kita-vo-van-kiet.jpg\" alt=\"Mặt bằng quy hoạch tổng thể Masterplan dự án căn hộ Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt Bình Tân TP.HCM\" \/><figcaption>Mặt bằng tổng thể 2,43ha dự án Ansana by Kita với hệ sinh thái công viên, hồ bơi resort và các khối tháp hiện đại<\/figcaption><\/figure><\/div>\n\n<h2>3. Mô Hình Green – Smart Tower Tối Ưu Năng Lượng<\/h2>\n<p>Bên cạnh các tiện ích xanh, dự án còn ứng dụng công nghệ <strong>Smart Tower<\/strong> tiên tiến trong quản lý vận hành: hệ thống pin năng lượng mặt trời cho các khu vực công cộng, camera an ninh AI đa lớp và ứng dụng cư dân thông minh, tạo nên một chuẩn mực sống bền vững vượt thời gian.<\/p>\n\n<p>Khám phá trọn bộ tiện ích tại <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Hồ Sơ Ansana by Kita Bình Tân<\/a><\/strong>.<\/p>",
+            "post_date": "2026-11-19 08:55:57",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "355",
+                "_kbds_project_ref": "357",
+                "_kbds_project_slug": "ansana-by-kita",
+                "rank_math_title": "Hệ Tiện Ích Chuẩn Wellness Luxury Tại Ansana by Kita: Hồ Bơi Resort Nhiệt Đới & Không Gian Tái Tạo Năng Lượng | Kênh Bất Động Sản",
+                "rank_math_description": "Trải nghiệm hệ tiện ích chuẩn Wellness Luxury tại Ansana by Kita Bình Tân: Hồ bơi resort nhiệt đới, công viên sinh thái, phòng gym yoga hiện đại tái tạo trọn vẹn năng lượng sống.",
+                "rank_math_focus_keyword": "tiện ích ansana by kita, wellness luxury ansana by kita, hồ bơi resort ansana by kita, căn hộ xanh ansana",
+                "rank_math_robots": [
+                    "index",
+                    "follow"
+                ]
+            },
+            "terms": {
+                "category": [
+                    "review-du-an"
+                ],
+                "post_tag": [
+                    "ansana-by-kita",
+                    "ansana-vo-van-kiet",
+                    "can-ho-ansana",
+                    "kita-group"
+                ]
+            }
+        },
+        {
+            "ID": 357,
+            "post_type": "du_an",
+            "post_status": "publish",
+            "post_title": "Ansana by Kita Võ Văn Kiệt - Bình Tân | Căn Hộ KITA Group",
+            "post_name": "ansana-by-kita",
+            "post_excerpt": "Ansana by Kita (Stella En Tropic) là tổ hợp căn hộ cao cấp 24 tầng quy mô 2,43ha tại số 69-79-89 mặt tiền Đại lộ Võ Văn Kiệt, P. An Lạc, Q. Bình Tân, TP.HCM do KITA Group phát triển và Newtecons thi công. Chuẩn sống Wellness Luxury, hồ bơi resort, 15 phút về Quận 1.",
+            "post_content": "<div class=\"kbds-project-subnav\"><div class=\"kbds-container kbds-subnav-container\"><div class=\"kbds-subnav-brand\"><span class=\"kbds-subnav-dot\"><\/span>ANSANA BY KITA<\/div><a href=\"#dang-ky\" class=\"kbds-subnav-cta\">Nhận Báo Giá Gốc<\/a><nav class=\"kbds-subnav-links\"><a href=\"#tong-quan\" class=\"kbds-subnav-link\">Tổng Quan<\/a><a href=\"#vi-tri\" class=\"kbds-subnav-link\">Vị Trí<\/a><a href=\"#tien-ich\" class=\"kbds-subnav-link\">Tiện Ích Wellness<\/a><a href=\"#mat-bang\" class=\"kbds-subnav-link\">Mặt Bằng Masterplan<\/a><a href=\"#can-ho\" class=\"kbds-subnav-link\">Căn Hộ<\/a><a href=\"#bang-gia\" class=\"kbds-subnav-link\">Bảng Giá<\/a><a href=\"#phap-ly\" class=\"kbds-subnav-link\">Pháp Lý &amp; CĐT<\/a><a href=\"#tin-tuc-du-an\" class=\"kbds-subnav-link\">Tin Tức<\/a><\/nav><\/div><\/div>\n\n<!-- SECTION 1: HERO BANNER -->\n<section style=\"position:relative;background:linear-gradient(135deg,#0a192f 0%,#1e3a5f 50%,#B45309 100%);color:#fff;padding:80px 0 100px;overflow:hidden\">\n  <div style=\"position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.22;background:radial-gradient(circle at 75% 25%,#F59E0B 0%,transparent 65%);pointer-events:none\"><\/div>\n  <div class=\"kbds-container\" style=\"position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center\">\n    <div>\n      <div style=\"display:inline-flex;align-items:center;gap:8px;color:#FDE68A;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px\">\n        💎 KITA GROUP • BIỂU TƯỢNG SỐNG WELLNESS LUXURY KHU TÂY\n      <\/div>\n      <h1 style=\"color:#FFFFFF;font-size:42px;font-weight:900;line-height:1.2;margin:0 0 18px\">\n        ANSANA BY KITA\n        <span style=\"display:block;font-size:22px;font-weight:600;color:#F59E0B;margin-top:6px\">Căn Hộ Hạng Sang Mặt Tiền Đại Lộ Võ Văn Kiệt, TP. Hồ Chí Minh<\/span>\n      <\/h1>\n      <p style=\"color:#E2E8F0;font-size:16px;line-height:1.7;margin:0 0 28px;max-width:620px\">\n        Tọa lạc kiêu hãnh tại số <strong>69 – 79 – 89 Đại lộ Võ Văn Kiệt<\/strong>, phường An Lạc, quận Bình Tân, TP.HCM. <strong>Ansana by Kita<\/strong> (tiền thân là Stella En Tropic) là quần thể căn hộ cao cấp quy mô <strong>2,43 ha<\/strong> do <strong>Tập đoàn KITA Group<\/strong> phát triển cùng tổng thầu <strong>Newtecons<\/strong>. Kiến tạo không gian sống chuẩn <strong>Wellness Luxury<\/strong> kết hợp mô hình <strong>Green – Smart Tower<\/strong> với hồ bơi resort nhiệt đới và chuỗi tiện ích chăm sóc sức khỏe toàn diện.\n      <\/p>\n      <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px\">\n        <div style=\"padding:14px 12px;border-radius:10px;text-align:center\">\n          <div style=\"font-size:18px;font-weight:800;color:#FDE68A\">2,43 ha<\/div>\n          <div style=\"font-size:12px;color:#CBD5E1;margin-top:4px\">Quy mô đại dự án<\/div>\n        <\/div>\n        <div style=\"padding:14px 12px;border-radius:10px;text-align:center\">\n          <div style=\"font-size:18px;font-weight:800;color:#38BDF8\">24 Tầng<\/div>\n          <div style=\"font-size:12px;color:#CBD5E1;margin-top:4px\">Tháp căn hộ hiện đại<\/div>\n        <\/div>\n        <div style=\"padding:14px 12px;border-radius:10px;text-align:center\">\n          <div style=\"font-size:18px;font-weight:800;color:#4ADE80\">15 Phút<\/div>\n          <div style=\"font-size:12px;color:#CBD5E1;margin-top:4px\">Về thẳng Quận 1<\/div>\n        <\/div>\n        <div style=\"padding:14px 12px;border-radius:10px;text-align:center\">\n          <div style=\"font-size:18px;font-weight:800;color:#F472B6\">Sổ Hồng<\/div>\n          <div style=\"font-size:12px;color:#CBD5E1;margin-top:4px\">Sở hữu lâu dài<\/div>\n        <\/div>\n      <\/div>\n      <div style=\"display:flex;gap:14px;flex-wrap:wrap\">\n        <a href=\"#dang-ky\" style=\"background:#D97706;color:#fff;font-weight:700;padding:14px 28px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px\">\n          <span>Nhận Bảng Giá Đợt 1 &amp; Chính Sách Gốc CĐT<\/span> →\n        <\/a>\n        <a href=\"#mat-bang\" style=\"background:transparent;color:#fff;font-weight:600;padding:14px 24px;border-radius:8px;text-decoration:none\">\n          Xem Mặt Bằng Masterplan\n        <\/a>\n      <\/div>\n    <\/div>\n    <div>\n      <div style=\"position:relative;border-radius:16px;overflow:hidden\">\n        <img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/phoi-canh-toan-canh-toa-thap-ban-dem-ansana-by-kita.jpg\" alt=\"Phối cảnh ban đêm toàn cảnh quần thể các tòa tháp căn hộ Ansana by Kita rực sáng trên mặt tiền Đại lộ Võ Văn Kiệt\" style=\"width:100%;height:auto;display:block\" \/>\n        <div style=\"position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);padding:20px;text-align:center;color:#FDE68A;font-weight:600;font-size:14px\">\n          Ansana by Kita – Quần Thể Căn Hộ Biểu Tượng Mặt Tiền Đại Lộ Võ Văn Kiệt\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 2: TỔNG QUAN DỰ ÁN -->\n<section id=\"tong-quan\" style=\"padding:80px 0;background:#F8FAFC\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:800px;margin:0 auto 50px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">HỒ SƠ PHÁP LÝ &amp; QUY HOẠCH CHI TIẾT<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">TỔNG QUAN DỰ ÁN ANSANA BY KITA<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Tổ hợp căn hộ cao cấp 24 tầng tọa lạc tại tâm điểm giao thương mặt tiền Võ Văn Kiệt, mang lại giá trị an cư thượng lưu và tiềm năng gia tăng giá trị bền vững.\n      <\/p>\n    <\/div>\n\n    <div style=\"background:#fff;border-radius:16px;overflow:hidden;border:1px solid #E2E8F0\">\n      <div>\n        <table style=\"width:100%;border-collapse:collapse;text-align:left;font-size:15px\">\n          <tbody>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;width:28%;background:#F8FAFC\">Tên thương mại<\/td>\n              <td style=\"padding:16px 24px;font-weight:700;color:#B45309\">ANSANA BY KITA<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Tên trước đây \/ Pháp lý<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Stella En Tropic (Khu căn hộ Stella Võ Văn Kiệt)<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Chủ đầu tư<\/td>\n              <td style=\"padding:16px 24px;color:#334155\"><strong>Tập đoàn KITA Group (Kita Homes)<\/strong> – Đơn vị phát triển BĐS uy tín hàng đầu<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Tổng thầu thi công<\/td>\n              <td style=\"padding:16px 24px;color:#334155\"><strong>Newtecons<\/strong> – Tổng thầu xây dựng chất lượng số 1 Việt Nam<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Vị trí dự án<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Số 69 – 79 – 89 Đại lộ Võ Văn Kiệt, P. An Lạc, Q. Bình Tân, TP. Hồ Chí Minh (ngay nút giao An Dương Vương – Hồ Học Lãm)<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Quy mô khu đất<\/td>\n              <td style=\"padding:16px 24px;color:#334155\"><strong>2,43 ha (hơn 30.000 m²)<\/strong><\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Mật độ xây dựng<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Khoảng <strong>34%<\/strong> (66% dành cho công viên sinh thái, hồ bơi resort, cây xanh mặt nước và tiện ích nội khu)<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Quy mô công trình<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Các khối tháp căn hộ cao <strong>24 tầng nổi + 2 tầng hầm<\/strong> để xe rộng rãi<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Số lượng sản phẩm<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Khoảng <strong>hơn 1.500 căn hộ cao cấp<\/strong>, shophouse và penthouse<\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Cơ cấu diện tích<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">\n                • <strong>Căn hộ 1PN+1:<\/strong> 51 m² – 57 m²<br \/>\n                • <strong>Căn hộ 2PN - 2WC:<\/strong> 67 m² – 88 m²<br \/>\n                • <strong>Căn hộ 3PN - 2WC:<\/strong> 97 m² – 115 m²<br \/>\n                • <strong>Penthouse thượng lưu:<\/strong> 149 m² – 301 m²\n              <\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Định vị &amp; Tiêu chuẩn sống<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Căn hộ chuẩn <strong>Wellness Luxury<\/strong> kết hợp mô hình <strong>Green – Smart Tower<\/strong><\/td>\n            <\/tr>\n            <tr style=\"border-bottom:1px solid #E2E8F0\">\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Hình thức sở hữu<\/td>\n              <td style=\"padding:16px 24px;color:#334155\"><strong>Sổ hồng sở hữu lâu dài<\/strong> (người Việt Nam); 50 năm (người nước ngoài theo luật định)<\/td>\n            <\/tr>\n            <tr>\n              <td style=\"padding:16px 24px;font-weight:700;color:#0F172A;background:#F8FAFC\">Thời gian bàn giao dự kiến<\/td>\n              <td style=\"padding:16px 24px;color:#334155\">Dự kiến Quý IV\/2026 – Quý II\/2027 (Bàn giao hoàn thiện cao cấp)<\/td>\n            <\/tr>\n          <\/tbody>\n        <\/table>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 3: VỊ TRÍ ĐẮC ĐỊA MẶT TIỀN VÕ VĂN KIỆT -->\n<section id=\"vi-tri\" style=\"padding:80px 0;background:#FFFFFF\">\n  <div class=\"kbds-container\">\n    <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center\">\n      <div>\n        <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">TÂM ĐIỂM GIAO THƯƠNG CỬA NGÕ PHÍA TÂY<\/span>\n        <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 20px\">VỊ TRÍ KIM CƯƠNG MẶT TIỀN ĐẠI LỘ ĐÔNG TÂY<\/h2>\n        <p style=\"color:#475569;font-size:16px;line-height:1.7;margin-bottom:20px\">\n          <strong>Ansana by Kita<\/strong> tọa lạc ngay mặt tiền tuyến đường đẹp và thông thoáng nhất TP.HCM – <strong>Đại lộ Võ Văn Kiệt<\/strong> (số 69 – 79 – 89 Võ Văn Kiệt), thuộc phường An Lạc, quận Bình Tân. Tuyến đại lộ có lộ giới lên đến 60 mét, với 10 làn xe chạy thông suốt không có đèn đỏ giao cắt, không lo kẹt xe hay ngập nước.\n        <\/p>\n        <div style=\"background:#F8FAFC;border-left:4px solid #D97706;padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:24px\">\n          <h4 style=\"margin:0 0 8px;color:#0F172A;font-size:16px\">Mạng Lưới Siêu Kết Nối Trực Tiếp Trong Bán Kính 2 – 5km:<\/h4>\n          <ul style=\"margin:0;padding-left:18px;color:#475569;font-size:14px;line-height:1.8\">\n            <li><strong>Chỉ 5 – 7 phút:<\/strong> Đến Bến xe Miền Tây, Bệnh viện Triều An, Bệnh viện Quốc tế City (CIH), Siêu thị Mega Market Bình Phú.<\/li>\n            <li><strong>Chỉ 8 – 10 phút:<\/strong> Đến TTTM Aeon Mall Bình Tân, Công viên Phú Lâm, trung tâm Quận 6 (Chợ Lớn), Quận 5.<\/li>\n            <li><strong>Chỉ 15 – 20 phút:<\/strong> Chạy thẳng trục Võ Văn Kiệt đến trung tâm Quận 1 (Chợ Bến Thành, Bitexco), Quận 4 và qua Hầm Thủ Thiêm sang KĐT mới Thủ Thiêm (TP. Thủ Đức).<\/li>\n            <li><strong>Chỉ 15 phút:<\/strong> Kết nối qua trục Nguyễn Văn Linh sang Khu dân cư Trung Sơn, ĐH RMIT và Khu đô thị Phú Mỹ Hưng (Quận 7).<\/li>\n            <li><strong>Dễ dàng kết nối liên tỉnh:<\/strong> Tiếp cận nhanh chóng Quốc lộ 1A và Cao tốc TP.HCM – Trung Lương để đi về các tỉnh miền Tây Nam Bộ.<\/li>\n          <\/ul>\n        <\/div>\n        <p style=\"color:#475569;font-size:15px;line-height:1.7\">\n          Sở hữu vị trí mặt tiền đại lộ huyết mạch liên kết các quận trung tâm cùng hạ tầng giao thông ngày càng đồng bộ, Ansana by Kita không chỉ mang lại cuộc sống thuận tiện mỗi ngày mà còn là bảo chứng vững chắc cho tiềm năng tăng giá trị bất động sản theo thời gian.\n        <\/p>\n      <\/div>\n      <div>\n        <div style=\"border-radius:16px;overflow:hidden;border:1px solid #CBD5E1\">\n          <img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/so-do-vi-tri-mat-tien-vo-van-kiet-ansana-by-kita.jpg\" alt=\"Sơ đồ vị trí dự án Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt kết nối Quận 1 Quận 5 Quận 6 và Aeon Mall Bình Tân\" style=\"width:100%;height:auto;display:block\" \/>\n        <\/div>\n        <div style=\"margin-top:12px;font-size:13px;color:#64748B;text-align:center;font-style:italic\">\n          Vị trí kim cương mặt tiền Đại lộ Võ Văn Kiệt, tâm điểm siêu kết nối giao thương giữa trung tâm TP.HCM và khu Tây\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 4: HỆ TIỆN ÍCH WELLNESS LUXURY &amp; HỒ BƠI RESORT -->\n<section id=\"tien-ich\" style=\"padding:80px 0;background:#F8FAFC\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:850px;margin:0 auto 50px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">CHUẨN SỐNG TÁI TẠO NĂNG LƯỢNG MỖI NGÀY<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">HỆ TIỆN ÍCH WELLNESS LUXURY ĐẲNG CẤP<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Tại Ansana by Kita, mỗi ngày trở về nhà là một kỳ nghỉ dưỡng đích thực với tổ hợp tiện ích All-in-one được may đo riêng cho sức khỏe thể chất và tinh thần của cư dân.\n      <\/p>\n    <\/div>\n\n    <!-- HÌNH HỒ BƠI RESORT LỚN -->\n    <div style=\"margin-bottom:40px;border-radius:16px;overflow:hidden;border:1px solid #E2E8F0\">\n      <img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/ho-boi-tran-bo-resort-ansana-by-kita.jpg\" alt=\"Phối cảnh hồ bơi tràn bờ phong cách resort nhiệt đới tại tầng tiện ích khối đế dự án Ansana by Kita Bình Tân\" style=\"width:100%;height:auto;display:block\" \/>\n      <div style=\"padding:16px 24px;background:#fff;text-align:center;font-size:14px;color:#334155;font-weight:600\">\n        Hồ bơi tràn bờ phong cách resort xanh mát mang lại đặc quyền thư giãn chuẩn Wellness cho cư dân Ansana by Kita\n      <\/div>\n    <\/div>\n\n    <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:20px\">\n      <div style=\"background:#fff;padding:24px;border-radius:12px;border:1px solid #E2E8F0\">\n        <div style=\"font-size:28px;margin-bottom:12px\">🏊<\/div>\n        <h4 style=\"font-size:17px;font-weight:700;color:#0F172A;margin:0 0 8px\">Hồ Bơi Resort Nhiệt Đới<\/h4>\n        <p style=\"color:#64748B;font-size:13px;line-height:1.6;margin:0\">\n          Hồ bơi tràn bờ uốn lượn tại khối đế tiện ích với làn nước trong xanh, ốc đảo cọ nhiệt đới, quầy pool bar và sàn tắm nắng thư thái.\n        <\/p>\n      <\/div>\n\n      <div style=\"background:#fff;padding:24px;border-radius:12px;border:1px solid #E2E8F0\">\n        <div style=\"font-size:28px;margin-bottom:12px\">🌿<\/div>\n        <h4 style=\"font-size:17px;font-weight:700;color:#0F172A;margin:0 0 8px\">Công Viên Xanh Sinh Thái<\/h4>\n        <p style=\"color:#64748B;font-size:13px;line-height:1.6;margin:0\">\n          Không gian cảnh quan xanh mát bao bọc các khối tháp với vườn thiền, đồi cỏ dạo bộ và vườn nướng BBQ gia đình ngoài trời.\n        <\/p>\n      <\/div>\n\n      <div style=\"background:#fff;padding:24px;border-radius:12px;border:1px solid #E2E8F0\">\n        <div style=\"font-size:28px;margin-bottom:12px\">🧘<\/div>\n        <h4 style=\"font-size:17px;font-weight:700;color:#0F172A;margin:0 0 8px\">Gym, Yoga &amp; Spa VIP<\/h4>\n        <p style=\"color:#64748B;font-size:13px;line-height:1.6;margin:0\">\n          Phòng tập thể hình trang bị máy tập Technogym hiện đại, phòng tập Yoga kính tràn ngắm cảnh quan và khu xông hơi thư giãn.\n        <\/p>\n      <\/div>\n\n      <div style=\"background:#fff;padding:24px;border-radius:12px;border:1px solid #E2E8F0\">\n        <div style=\"font-size:28px;margin-bottom:12px\">🛍️<\/div>\n        <h4 style=\"font-size:17px;font-weight:700;color:#0F172A;margin:0 0 8px\">Shophouse Thương Mại<\/h4>\n        <p style=\"color:#64748B;font-size:13px;line-height:1.6;margin:0\">\n          Tuyến phố mua sắm sầm uất ngay dưới khối đế quy tụ chuỗi siêu thị, nhà hàng, cafe thương hiệu và dịch vụ tiện ích 24\/7.\n        <\/p>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 5: MẶT BẰNG MASTERPLAN TỔNG THỂ -->\n<section id=\"mat-bang\" style=\"padding:80px 0;background:#FFFFFF\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:850px;margin:0 auto 40px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">QUY HOẠCH ĐỒNG BỘ 2,43 HECTA<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">MẶT BẰNG MASTERPLAN ANSANA BY KITA<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Các tòa tháp được bố trí so le thông minh nhằm mở rộng tối đa tầm nhìn, đón trọn luồng gió mát lành từ kênh rạch tự nhiên và đại lộ Võ Văn Kiệt.\n      <\/p>\n    <\/div>\n\n    <!-- HÌNH ẢNH MASTERPLAN -->\n    <div style=\"border-radius:16px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:30px\">\n      <img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/mat-bang-tong-the-masterplan-ansana-by-kita-vo-van-kiet.jpg\" alt=\"Mặt bằng quy hoạch tổng thể Masterplan dự án căn hộ Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt Bình Tân TP.HCM\" style=\"width:100%;height:auto;display:block\" \/>\n    <\/div>\n    <div style=\"text-align:center;font-size:14px;color:#64748B;font-style:italic\">\n      Mặt bằng tổng thể 2,43ha dự án Ansana by Kita với hệ sinh thái công viên, hồ bơi resort và các khối tháp hiện đại\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 6: CƠ CẤU CĂN HỘ CHUẨN XANH -->\n<section id=\"can-ho\" style=\"padding:80px 0;background:#F8FAFC\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:850px;margin:0 auto 50px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">THIẾT KẾ THÔNG MINH – TỐI ƯU CÔNG NĂNG<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">CƠ CẤU CĂN HỘ ANSANA BY KITA<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Tất cả các căn hộ đều được thiết kế ban công rộng mở, logia phơi đồ riêng biệt và cửa sổ lớn chạm sàn, đón trọn ánh sáng tự nhiên và luồng sinh khí thịnh vượng.\n      <\/p>\n    <\/div>\n\n    <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px\">\n      <div style=\"background:#fff;border-radius:14px;padding:24px;border:1px solid #E2E8F0;text-align:center\">\n        <div style=\"font-size:14px;font-weight:700;color:#D97706;text-transform:uppercase;margin-bottom:8px\">Căn Hộ 1PN + 1<\/div>\n        <h4 style=\"font-size:18px;color:#0F172A;margin:0 0 12px\">Đa Năng Tinh Tế<\/h4>\n        <div style=\"font-size:24px;font-weight:800;color:#0F172A;margin-bottom:8px\">51 – 57 m²<\/div>\n        <div style=\"font-size:13px;color:#64748B;line-height:1.5\">Thêm không gian làm việc hoặc giường phụ cho bé, phù hợp chuyên gia trẻ<\/div>\n      <\/div>\n\n      <div style=\"background:#fff;border-radius:14px;padding:24px;border:1px solid #E2E8F0;text-align:center\">\n        <div style=\"font-size:14px;font-weight:700;color:#D97706;text-transform:uppercase;margin-bottom:8px\">Căn Hộ 2PN - 2WC<\/div>\n        <h4 style=\"font-size:18px;color:#0F172A;margin:0 0 12px\">Dòng Căn Hộ Chủ Lực<\/h4>\n        <div style=\"font-size:24px;font-weight:800;color:#0F172A;margin-bottom:8px\">67 – 88 m²<\/div>\n        <div style=\"font-size:13px;color:#64748B;line-height:1.5\">2 phòng ngủ rộng rãi, view hồ bơi resort hoặc đại lộ, tối ưu cho gia đình hiện đại<\/div>\n      <\/div>\n\n      <div style=\"background:#fff;border-radius:14px;padding:24px;border:1px solid #E2E8F0;text-align:center\">\n        <div style=\"font-size:14px;font-weight:700;color:#D97706;text-transform:uppercase;margin-bottom:8px\">Căn Hộ 3PN - 2WC<\/div>\n        <h4 style=\"font-size:18px;color:#0F172A;margin:0 0 12px\">Không Gian Đa Thế Hệ<\/h4>\n        <div style=\"font-size:24px;font-weight:800;color:#0F172A;margin-bottom:8px\">97 – 115 m²<\/div>\n        <div style=\"font-size:13px;color:#64748B;line-height:1.5\">Vị trí căn góc 2 mặt thoáng, phòng khách nối liền ban công Panorama tráng lệ<\/div>\n      <\/div>\n\n      <div style=\"background:#fff;border-radius:14px;padding:24px;border:1px solid #E2E8F0;text-align:center\">\n        <div style=\"font-size:14px;font-weight:700;color:#D97706;text-transform:uppercase;margin-bottom:8px\">Penthouse \/ Sky Villa<\/div>\n        <h4 style=\"font-size:18px;color:#0F172A;margin:0 0 12px\">Dinh Thự Trên Không<\/h4>\n        <div style=\"font-size:24px;font-weight:800;color:#0F172A;margin-bottom:8px\">149 – 301 m²<\/div>\n        <div style=\"font-size:13px;color:#64748B;line-height:1.5\">Tầng thượng đỉnh tháp, sân vườn riêng, tầm nhìn triệu đô bao trọn Sài Gòn<\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 7: BẢNG GIÁ DỰ KIẾN &amp; CHÍNH SÁCH THANH TOÁN 2026 -->\n<section id=\"bang-gia\" style=\"padding:80px 0;background:#FFFFFF\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:850px;margin:0 auto 40px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">GIÁ GỐC &amp; CHÍNH SÁCH ƯU ĐÃI KITA GROUP<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">BẢNG GIÁ DỰ KIẾN ANSANA BY KITA<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Mức giá tham khảo cạnh tranh tại khu vực mặt tiền Võ Văn Kiệt cùng chính sách hỗ trợ tài chính đặc quyền từ các ngân hàng lớn (Vietcombank, MB, VPBank).\n      <\/p>\n    <\/div>\n\n    <div style=\"background:#fff;border-radius:16px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:40px\">\n      <table style=\"width:100%;border-collapse:collapse;font-size:15px;text-align:left\">\n        <thead>\n          <tr style=\"background:#0F172A;color:#fff\">\n            <th style=\"padding:16px 20px\">Loại Căn Hộ<\/th>\n            <th style=\"padding:16px 20px\">Diện Tích Tim Tường<\/th>\n            <th style=\"padding:16px 20px\">Đơn Giá Dự Kiến<\/th>\n            <th style=\"padding:16px 20px\">Tổng Giá Bán (VAT)<\/th>\n            <th style=\"padding:16px 20px\">Chính Sách Hỗ Trợ<\/th>\n          <\/tr>\n        <\/thead>\n        <tbody>\n          <tr style=\"border-bottom:1px solid #E2E8F0\">\n            <td style=\"padding:16px 20px;font-weight:700;color:#0F172A\">Căn Hộ 1PN + 1<\/td>\n            <td style=\"padding:16px 20px\">51 – 57 m²<\/td>\n            <td style=\"padding:16px 20px\">Từ 90 – 95 Tr\/m²<\/td>\n            <td style=\"padding:16px 20px;font-weight:700;color:#D97706\">Từ 5,2 – 5,6 Tỷ<\/td>\n            <td style=\"padding:16px 20px\">Vay 70%, LS 0% đến 24 tháng<\/td>\n          <\/tr>\n          <tr style=\"border-bottom:1px solid #E2E8F0;background:#F8FAFC\">\n            <td style=\"padding:16px 20px;font-weight:700;color:#0F172A\">Căn Hộ 2PN - 2WC<\/td>\n            <td style=\"padding:16px 20px\">67 – 88 m²<\/td>\n            <td style=\"padding:16px 20px\">Từ 92 – 98 Tr\/m²<\/td>\n            <td style=\"padding:16px 20px;font-weight:700;color:#D97706\">Từ 6,7 – 8,5 Tỷ<\/td>\n            <td style=\"padding:16px 20px\">Ân hạn nợ gốc suốt thời gian ưu đãi<\/td>\n          <\/tr>\n          <tr style=\"border-bottom:1px solid #E2E8F0\">\n            <td style=\"padding:16px 20px;font-weight:700;color:#0F172A\">Căn Hộ 3PN - 2WC (Góc)<\/td>\n            <td style=\"padding:16px 20px\">97 – 115 m²<\/td>\n            <td style=\"padding:16px 20px\">Từ 95 – 102 Tr\/m²<\/td>\n            <td style=\"padding:16px 20px;font-weight:700;color:#D97706\">Từ 9,7 – 11,8 Tỷ<\/td>\n            <td style=\"padding:16px 20px\">Chiết khấu thanh toán sớm lên tới 8%<\/td>\n          <\/tr>\n          <tr style=\"background:#F8FAFC\">\n            <td style=\"padding:16px 20px;font-weight:700;color:#0F172A\">Penthouse Thượng Lưu<\/td>\n            <td style=\"padding:16px 20px\">149 – 301 m²<\/td>\n            <td style=\"padding:16px 20px\">Thỏa thuận<\/td>\n            <td style=\"padding:16px 20px;font-weight:700;color:#D97706\">Từ 15 Tỷ trở lên<\/td>\n            <td style=\"padding:16px 20px\">Đặc quyền thiết kế riêng biệt<\/td>\n          <\/tr>\n        <\/tbody>\n      <\/table>\n    <\/div>\n\n    <!-- CÔNG CỤ TÍNH LÃI VAY -->\n    <div style=\"margin-top:36px\">\n      [kbds_loan_calculator]\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 8: PHÁP LÝ MINH BẠCH &amp; UY TÍN CHỦ ĐẦU TƯ KITA GROUP -->\n<section id=\"phap-ly\" style=\"padding:80px 0;background:#F8FAFC\">\n  <div class=\"kbds-container\">\n    <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center\">\n      <div>\n        <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">NĂNG LỰC &amp; UY TÍN BẢO CHỨNG<\/span>\n        <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 20px\">PHÁP LÝ VỮNG VÀNG – SỞ HỮU LÂU DÀI<\/h2>\n        <p style=\"color:#475569;font-size:16px;line-height:1.7;margin-bottom:20px\">\n          Dự án <strong>Ansana by Kita<\/strong> sở hữu pháp lý hoàn chỉnh, được cấp phép xây dựng và phát triển đúng quy định của Nhà nước:\n        <\/p>\n        <ul style=\"color:#475569;font-size:15px;line-height:1.8;padding-left:20px;margin-bottom:24px\">\n          <li>Quy hoạch chi tiết 1\/500 đã được phê duyệt chính thức.<\/li>\n          <li>Quyết định giao đất, hoàn thành nghĩa vụ tài chính tiền sử dụng đất.<\/li>\n          <li>Hình thức sở hữu: <strong>Sổ hồng sở hữu lâu dài<\/strong> cho người Việt Nam.<\/li>\n          <li>Đồng hành bởi tổng thầu xây dựng <strong>Newtecons<\/strong> – bảo chứng thép cho tiến độ và chất lượng kết cấu công trình.<\/li>\n        <\/ul>\n        <h4 style=\"font-size:18px;font-weight:700;color:#0F172A;margin:20px 0 10px\">Về Tập Đoàn KITA Group:<\/h4>\n        <p style=\"color:#475569;font-size:15px;line-height:1.7\">\n          Thành lập từ năm 2014, KITA Group đã khẳng định vị thế vững chắc trên thị trường bất động sản với tiềm lực tài chính dồi dào và chuỗi dự án quy mô lớn (tiêu biểu như Stella Mega City 150ha tại Cần Thơ, KITA Airport City, Golden Hills...). Ansana by Kita là dự án chiến lược mang tính biểu tượng của KITA tại thị trường TP. Hồ Chí Minh.\n        <\/p>\n      <\/div>\n      <div>\n        <div style=\"background:#fff;border-radius:16px;padding:36px;border:1px solid #E2E8F0\">\n          <h3 style=\"font-size:20px;font-weight:800;color:#0F172A;margin:0 0 20px;text-align:center\">5 GIÁ TRỊ VÀNG TẠO NÊN SỨC HÚT ANSANA BY KITA<\/h3>\n          <div style=\"display:flex;gap:16px;margin-bottom:18px\">\n            <div style=\"font-size:20px;font-weight:800;color:#D97706;line-height:1\">01<\/div>\n            <div>\n              <div style=\"font-weight:700;color:#0F172A;font-size:15px\">Mặt Tiền Đại Lộ Đẹp Nhất TP.HCM<\/div>\n              <div style=\"font-size:13px;color:#64748B;margin-top:2px\">Mặt tiền Võ Văn Kiệt 60m thông thoáng, không ngập nước, chạy thẳng về Quận 1 chỉ 15 – 20 phút.<\/div>\n            <\/div>\n          <\/div>\n          <div style=\"display:flex;gap:16px;margin-bottom:18px\">\n            <div style=\"font-size:20px;font-weight:800;color:#D97706;line-height:1\">02<\/div>\n            <div>\n              <div style=\"font-weight:700;color:#0F172A;font-size:15px\">Quy Mô 2,43ha Hiếm Hoi Nội Đô<\/div>\n              <div style=\"font-size:13px;color:#64748B;margin-top:2px\">Quỹ đất lớn hiếm hoi còn sót lại tại khu Tây, mật độ xây dựng chỉ 34% nhiều mảng xanh sinh thái.<\/div>\n            <\/div>\n          <\/div>\n          <div style=\"display:flex;gap:16px;margin-bottom:18px\">\n            <div style=\"font-size:20px;font-weight:800;color:#D97706;line-height:1\">03<\/div>\n            <div>\n              <div style=\"font-weight:700;color:#0F172A;font-size:15px\">Chuẩn Sống Wellness Luxury &amp; Green Smart<\/div>\n              <div style=\"font-size:13px;color:#64748B;margin-top:2px\">Hồ bơi resort nhiệt đới, công viên xanh mát, công nghệ quản lý tòa nhà thông minh tiết kiệm năng lượng.<\/div>\n            <\/div>\n          <\/div>\n          <div style=\"display:flex;gap:16px;margin-bottom:18px\">\n            <div style=\"font-size:20px;font-weight:800;color:#D97706;line-height:1\">04<\/div>\n            <div>\n              <div style=\"font-weight:700;color:#0F172A;font-size:15px\">Bộ Đôi Bảo Chứng: KITA Group &amp; Newtecons<\/div>\n              <div style=\"font-size:13px;color:#64748B;margin-top:2px\">Chủ đầu tư tiềm lực tài chính mạnh kết hợp cùng tổng thầu xây dựng đẳng cấp hàng đầu Việt Nam.<\/div>\n            <\/div>\n          <\/div>\n          <div style=\"display:flex;gap:16px\">\n            <div style=\"font-size:20px;font-weight:800;color:#D97706;line-height:1\">05<\/div>\n            <div>\n              <div style=\"font-weight:700;color:#0F172A;font-size:15px\">Pháp Lý Sổ Hồng Sở Hữu Lâu Dài<\/div>\n              <div style=\"font-size:13px;color:#64748B;margin-top:2px\">Quyền sở hữu vĩnh viễn, bảo toàn và gia tăng giá trị tài sản truyền đời cho thế hệ tương lai.<\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/section>\n\n<!-- SECTION 9: TIN TỨC DỰ ÁN LIÊN QUAN (TOPIC CLUSTER) -->\n<section id=\"tin-tuc-du-an\" style=\"padding:80px 0;background:#FFFFFF\">\n  <div class=\"kbds-container\">\n    <div style=\"text-align:center;max-width:850px;margin:0 auto 40px\">\n      <span style=\"color:#D97706;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">CẨM NANG &amp; THỊ TRƯỜNG<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#0F172A;margin:8px 0 16px\">TIN TỨC &amp; ĐÁNH GIÁ DỰ ÁN ANSANA BY KITA<\/h2>\n      <p style=\"color:#64748B;font-size:16px;line-height:1.6\">\n        Cập nhật liên tục tiến độ thi công, phân tích thị trường căn hộ Võ Văn Kiệt và bảng giá mới nhất từ các chuyên gia Kênh Bất Động Sản.\n      <\/p>\n    <\/div>\n\n    [kbds_project_news limit=\"12\"]\n  <\/div>\n<\/section>\n\n<!-- SECTION 10: FORM ĐĂNG KÝ TƯ VẤN &amp; NHẬN BẢNG GIÁ GỐC -->\n<section id=\"dang-ky\" style=\"padding:80px 0;background:linear-gradient(135deg,#0a192f 0%,#1e3a5f 100%);color:#fff\">\n  <div class=\"kbds-container\" style=\"max-width:800px;margin:0 auto\">\n    <div style=\"text-align:center;margin-bottom:36px\">\n      <span style=\"color:#F59E0B;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px\">ĐĂNG KÝ THAM QUAN &amp; NHẬN BẢNG GIÁ GỐC<\/span>\n      <h2 style=\"font-size:32px;font-weight:800;color:#fff;margin:8px 0 16px\">LIÊN HỆ PHÒNG KINH DOANH ANSANA BY KITA<\/h2>\n      <p style=\"color:#94A3B8;font-size:15px;line-height:1.6\">\n        Để lại thông tin chính xác, chuyên viên tư vấn dự án Ansana by Kita sẽ gửi trọn bộ tài liệu gồm Mặt bằng layout chi tiết, Bảng giá đợt 1 và Giỏ hàng căn view đẹp qua Zalo trong vòng 3 phút.\n      <\/p>\n    <\/div>\n\n    <div style=\"border-radius:16px;padding:36px\">\n      [kbds_lead_form project=\"Ansana by Kita Võ Văn Kiệt\"]\n    <\/div>\n  <\/div>\n<\/section>",
+            "post_date": "2026-11-19 08:55:56",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "353",
+                "_kbds_project_code": "DA-ANSANA",
+                "_kbds_price_from": "Từ 90 – 100 triệu\/m² (Căn hộ từ ~5,2 tỷ\/căn)",
+                "_kbds_price_min_num": "90",
+                "_kbds_address": "Số 69 – 79 – 89 Đại lộ Võ Văn Kiệt, P. An Lạc, Q. Bình Tân, TP. Hồ Chí Minh (ngay nút giao An Dương Vương – Hồ Học Lãm)",
+                "_kbds_total_area": "2,43 ha (Mật độ xây dựng ~34%)",
+                "_kbds_scale": "Các khối tháp căn hộ cao 24 tầng nổi + 2 tầng hầm, quy mô hơn 1.500 sản phẩm (1PN+1, 2PN, 3PN, Penthouse & Shophouse)",
+                "_kbds_legal_status": "Quy hoạch 1\/500 hoàn thiện, Giấy phép xây dựng đầy đủ, Sổ hồng sở hữu lâu dài",
+                "_kbds_handover_time": "Dự kiến Quý IV\/2026 – Quý II\/2027 (Bàn giao hoàn thiện cao cấp)",
+                "_kbds_bank_support": "Ngân hàng hỗ trợ vay 70%, ân hạn nợ gốc và hỗ trợ lãi suất 0% lên tới 24 tháng",
+                "_kbds_review_score": "9.5",
+                "_kbds_pros_cons": "+ Vị trí đắc địa mặt tiền Đại lộ Võ Văn Kiệt 60m thông thoáng, không ngập nước, di chuyển về Quận 1 chỉ 15 – 20 phút\n+ Quy mô 2,43ha hiếm hoi còn lại tại khu Tây với mật độ xây dựng chỉ 34%\n+ Chuẩn sống Wellness Luxury và Green - Smart Tower với hồ bơi resort nhiệt đới và công viên sinh thái\n+ Bảo chứng thép từ chủ đầu tư KITA Group và tổng thầu xây dựng Newtecons\n+ Pháp lý hoàn chỉnh, Sổ hồng sở hữu lâu dài\n- Phân khúc cao cấp, đơn giá thuộc top đầu khu Tây TP.HCM",
+                "rank_math_title": "Ansana by Kita Võ Văn Kiệt Bình Tân | Bảng Giá Căn Hộ KITA 2026",
+                "rank_math_description": "Đánh giá chi tiết dự án Ansana by Kita (Stella En Tropic 2,43ha, 24 tầng) mặt tiền Đại lộ Võ Văn Kiệt Bình Tân TP.HCM. Cập nhật bảng giá từ 90 triệu\/m², mặt bằng và chính sách ưu đãi KITA Group.",
+                "rank_math_focus_keyword": "ansana by kita, ansana võ văn kiệt, căn hộ ansana by kita, kita group võ văn kiệt",
+                "rank_math_robots": [
+                    "index",
+                    "follow"
+                ]
+            },
+            "terms": {
+                "khu_vuc_bds": [
+                    "binh-tan",
+                    "tp-ho-chi-minh"
+                ],
+                "loai_hinh_bds": [
+                    "can-ho-chung-cu"
+                ],
+                "trang_thai_du_an": [
+                    "sap-mo-ban"
+                ],
+                "chu_dau_tu": [
+                    "kita-group"
+                ]
+            }
+        },
+        {
+            "ID": 358,
+            "post_type": "post",
+            "post_status": "publish",
+            "post_title": "Đánh Giá Vị Trí Ansana by Kita Mặt Tiền Đại Lộ Võ Văn Kiệt: Tâm Điểm Siêu Kết Nối Cửa Ngõ Phía Tây TP.HCM",
+            "post_name": "vi-tri-ansana-by-kita-mat-tien-vo-van-kiet-binh-tan",
+            "post_excerpt": "Phân tích chi tiết vị trí kim cương mặt tiền Đại lộ Võ Văn Kiệt của dự án Ansana by Kita Bình Tân: Lợi thế kết nối Quận 1, Quận 5, Quận 6 và cửa ngõ giao thương phía Tây.",
+            "post_content": "<p>Trong bản đồ quy hoạch đô thị của TP. Hồ Chí Minh, Đại lộ Võ Văn Kiệt (trục Đại lộ Đông Tây) luôn được đánh giá là một trong những tuyến giao thông đẹp, hiện đại và thông thoáng bậc nhất thành phố. Tọa lạc tại số <strong>69 – 79 – 89 Đại lộ Võ Văn Kiệt<\/strong>, phường An Lạc, quận Bình Tân, dự án <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Ansana by Kita<\/a><\/strong> sở hữu vị trí mặt tiền đắt giá mang lại tiềm năng kết nối và gia tăng giá trị vượt bậc.<\/p>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/so-do-vi-tri-mat-tien-vo-van-kiet-ansana-by-kita.jpg\" alt=\"Sơ đồ vị trí dự án Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt kết nối Quận 1 Quận 5 Quận 6 và Aeon Mall Bình Tân\" \/><figcaption>Vị trí kim cương mặt tiền Đại lộ Võ Văn Kiệt, tâm điểm siêu kết nối giao thương giữa trung tâm TP.HCM và khu Tây<\/figcaption><\/figure><\/div>\n\n<h2>1. Trục Đại Lộ Đắc Địa Không Đèn Đỏ – Không Ngập Nước<\/h2>\n<p>Khác biệt hoàn toàn với những tuyến đường nội đô thường xuyên ùn ứ, Đại lộ Võ Văn Kiệt sở hữu lộ giới rộng tới 60 mét với 10 làn xe chạy riêng biệt. Điểm đắt giá nhất của tuyến đường này là hầu như không có đèn đỏ giao cắt trực tiếp ở làn xe ô tô tốc độ cao, giúp cư dân Ansana by Kita di chuyển:<\/p>\n<ul>\n  <li>Chỉ <strong>15 – 20 phút<\/strong> chạy thẳng một mạch đến trung tâm Quận 1 (Chợ Bến Thành, Phố đi bộ Nguyễn Huệ, Bitexco).<\/li>\n  <li>Chỉ <strong>10 phút<\/strong> tiếp cận trung tâm thương mại sầm uất Quận 5 và Quận 6 (khu vực Chợ Lớn).<\/li>\n  <li>Kết nối nhanh chóng sang Khu đô thị mới Thủ Thiêm (TP. Thủ Đức) qua hầm vượt sông Sài Gòn chỉ trong 20 phút.<\/li>\n<\/ul>\n\n<h2>2. Tâm Điểm Giao Thoa Của Mạng Lưới Hạ Tầng Khu Tây<\/h2>\n<p>Ansana by Kita nằm ngay giao điểm của các tuyến đường huyết mạch: <strong>Võ Văn Kiệt, An Dương Vương, Hồ Học Lãm và Quốc lộ 1A<\/strong>. Nhờ đó, việc tiếp cận các tiện ích ngoại khu hiện hữu chỉ diễn ra trong vòng vài phút:<\/p>\n<ul>\n  <li><strong>Y tế:<\/strong> Bệnh viện Triều An, Bệnh viện Quốc tế City (CIH), Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y Dược TP.HCM.<\/li>\n  <li><strong>Thương mại &amp; Giải trí:<\/strong> TTTM Aeon Mall Bình Tân, Siêu thị Mega Market Bình Phú, Siêu thị Co.opmart, Công viên văn hóa Phú Lâm.<\/li>\n  <li><strong>Giáo dục:<\/strong> Hệ thống trường học các cấp từ mầm non đến THPT, kề cận các trường đại học lớn như ĐH Kinh Tế TP.HCM, ĐH Y Dược.<\/li>\n<\/ul>\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter\"><img src=\"http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/phoi-canh-toan-canh-toa-thap-ban-dem-ansana-by-kita.jpg\" alt=\"Phối cảnh ban đêm toàn cảnh quần thể các tòa tháp căn hộ Ansana by Kita rực sáng trên mặt tiền Đại lộ Võ Văn Kiệt\" \/><figcaption>Quần thể tháp căn hộ biểu tượng cao 24 tầng Ansana by Kita rực sáng lộng lẫy tại cửa ngõ phía Tây TP.HCM<\/figcaption><\/figure><\/div>\n\n<h2>3. Tiềm Năng Tăng Giá Từ Các Quy Hoạch Tương Lai<\/h2>\n<p>Khu Tây TP.HCM đang là tâm điểm đón dòng vốn đầu tư công mạnh mẽ với các dự án mở rộng đường Hồ Học Lãm, nâng cấp đường An Dương Vương và tuyến xe buýt nhanh BRT số 1 dọc hành lang Võ Văn Kiệt – Mai Chí Thọ. Sự bứt phá về hạ tầng sẽ tạo đòn bẩy kép thúc đẩy mặt bằng giá căn hộ tại Ansana by Kita gia tăng mạnh mẽ trong những năm tới.<\/p>\n\n<p>Xem thông tin chi tiết bảng giá và chính sách từng phân khu tại trang <strong><a href=\"http:\/\/localhost\/www\/kenhbds\/du-an\/ansana-by-kita\/\">Dự Án Ansana by Kita Võ Văn Kiệt<\/a><\/strong>.<\/p>",
+            "post_date": "2026-11-19 08:55:56",
+            "meta": {
+                "rank_math_internal_links_processed": "1",
+                "_thumbnail_id": "356",
+                "_kbds_project_ref": "357",
+                "_kbds_project_slug": "ansana-by-kita",
+                "rank_math_title": "Đánh Giá Vị Trí Ansana by Kita Mặt Tiền Đại Lộ Võ Văn Kiệt: Tâm Điểm Siêu Kết Nối Cửa Ngõ Phía Tây TP.HCM | Kênh Bất Động Sản",
+                "rank_math_description": "Phân tích chi tiết vị trí kim cương mặt tiền Đại lộ Võ Văn Kiệt của dự án Ansana by Kita Bình Tân: Lợi thế kết nối Quận 1, Quận 5, Quận 6 và cửa ngõ giao thương phía Tây.",
+                "rank_math_focus_keyword": "vị trí ansana by kita, ansana võ văn kiệt, căn hộ võ văn kiệt bình tân, ansana by kita bình tân",
+                "rank_math_robots": [
+                    "index",
+                    "follow"
+                ]
+            },
+            "terms": {
+                "category": [
+                    "quy-hoach-ha-tang"
+                ],
+                "post_tag": [
+                    "ansana-by-kita",
+                    "ansana-vo-van-kiet",
+                    "can-ho-ansana",
+                    "kita-group"
+                ]
+            }
+        },
         {
             "ID": 352,
             "post_type": "bat_dong_san",
