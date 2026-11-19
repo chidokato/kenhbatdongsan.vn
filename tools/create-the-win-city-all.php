@@ -528,7 +528,10 @@ $landing_html = <<<HTML
   </div>
 </section>
 
-<!-- SECTION 10: FORM ĐĂNG KÝ TƯ VẤN & NHẬN BẢNG GIÁ GỐC -->
+<!-- SECTION 10: TIN TỨC & BÀI VIẾT VỆ TINH DỰ ÁN (#tin-tuc-du-an) -->
+[kbds_project_news limit="12"]
+
+<!-- SECTION 11: FORM ĐĂNG KÝ TƯ VẤN & NHẬN BẢNG GIÁ GỐC -->
 <section id="dang-ky" style="padding:70px 0;background:linear-gradient(135deg,#071526 0%,#0F2B48 100%);color:#fff;">
   <div class="kbds-container" style="max-width:800px;text-align:center;">
     <span style="background:rgba(217,119,6,0.25);border:1px solid rgba(217,119,6,0.5);color:#FDE68A;font-size:12px;font-weight:700;padding:5px 16px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:12px;">Ưu đãi độc quyền đợt 1</span>
@@ -821,6 +824,11 @@ foreach ($satellites as $idx => $art) {
     if (!empty($art['thumb'])) {
         set_post_thumbnail($art_id, $art['thumb']);
     }
+
+    // Gắn Meta _kbds_project_ref liên kết ngược về trang dự án Hub
+    update_post_meta($art_id, '_kbds_project_ref', $project_id);
+    update_post_meta($art_id, '_kbds_project_slug', $project_slug);
+    wp_set_post_tags($art_id, ['The Win City', 'The Win City Đức Hòa', 'Căn hộ The Win City', 'Bình An Đức Hòa'], true);
 
     // Rank Math SEO
     update_post_meta($art_id, 'rank_math_title', $art['title'] . ' | Kênh Bất Động Sản');
