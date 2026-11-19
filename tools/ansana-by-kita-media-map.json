@@ -1,0 +1,30 @@
+{
+    "phoi_canh_dem_tong_the": {
+        "id": 353,
+        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/phoi-canh-toan-canh-toa-thap-ban-dem-ansana-by-kita.jpg",
+        "title": "Phối Cảnh Toàn Cảnh Các Tòa Tháp Ban Đêm Ansana by Kita Võ Văn Kiệt",
+        "alt": "Phối cảnh ban đêm toàn cảnh quần thể các tòa tháp căn hộ Ansana by Kita rực sáng trên mặt tiền Đại lộ Võ Văn Kiệt",
+        "caption": "Quần thể tháp căn hộ biểu tượng cao 24 tầng Ansana by Kita rực sáng lộng lẫy tại cửa ngõ phía Tây TP.HCM"
+    },
+    "masterplan_tong_the": {
+        "id": 354,
+        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/mat-bang-tong-the-masterplan-ansana-by-kita-vo-van-kiet.jpg",
+        "title": "Mặt Bằng Tổng Thể Masterplan Dự Án Ansana by Kita Mặt Tiền Võ Văn Kiệt",
+        "alt": "Mặt bằng quy hoạch tổng thể Masterplan dự án căn hộ Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt Bình Tân TP.HCM",
+        "caption": "Mặt bằng tổng thể 2,43ha dự án Ansana by Kita với hệ sinh thái công viên, hồ bơi resort và các khối tháp hiện đại"
+    },
+    "ho_boi_resort": {
+        "id": 355,
+        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/ho-boi-tran-bo-resort-ansana-by-kita.jpg",
+        "title": "Hồ Bơi Tràn Bờ Phong Cách Resort Nhiệt Đới Ansana by Kita",
+        "alt": "Phối cảnh hồ bơi tràn bờ phong cách resort nhiệt đới tại tầng tiện ích khối đế dự án Ansana by Kita Bình Tân",
+        "caption": "Hồ bơi tràn bờ phong cách resort xanh mát mang lại đặc quyền thư giãn chuẩn Wellness cho cư dân Ansana by Kita"
+    },
+    "so_do_vi_tri": {
+        "id": 356,
+        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/so-do-vi-tri-mat-tien-vo-van-kiet-ansana-by-kita.jpg",
+        "title": "Sơ Đồ Vị Trí Kim Cương Mặt Tiền Đại Lộ Võ Văn Kiệt Ansana by Kita",
+        "alt": "Sơ đồ vị trí dự án Ansana by Kita mặt tiền Đại lộ Võ Văn Kiệt kết nối Quận 1 Quận 5 Quận 6 và Aeon Mall Bình Tân",
+        "caption": "Vị trí kim cương mặt tiền Đại lộ Võ Văn Kiệt, tâm điểm siêu kết nối giao thương giữa trung tâm TP.HCM và khu Tây"
+    }
+}
