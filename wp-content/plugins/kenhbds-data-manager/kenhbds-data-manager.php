@@ -93,6 +93,39 @@ add_filter( 'wp_robots', function( $robots ) {
 	return $robots;
 } );
 
+/**
+ * Tự động chèn CSS chuyên dụng cho 11 trang Pháp lý, Chính sách & Dịch vụ chuẩn E-E-A-T
+ * Đảm bảo 100% trang hiển thị mượt mà, chuẩn Responsive và không phụ thuộc vào bộ nhớ đệm (Cache) của trình duyệt.
+ */
+add_action( 'wp_head', 'kbds_inject_legal_and_guide_page_css', 95 );
+function kbds_inject_legal_and_guide_page_css() {
+	if ( ! is_page( array(
+		'chinh-sach-bao-mat',
+		'dieu-khoan-su-dung',
+		'tuyen-bo-mien-tru-trach-nhiem',
+		'quy-che-hoat-dong',
+		'che-tai-xu-ly-vi-pham',
+		'giai-quyet-tranh-chap-khieu-nai',
+		'gioi-thieu',
+		'lien-he',
+		'bao-gia-va-tu-van-du-an',
+		'cam-nang-dau-tu-phap-ly',
+		'so-do-website',
+	) ) ) {
+		return;
+	}
+	$css_file = get_stylesheet_directory() . '/style.css';
+	if ( file_exists( $css_file ) ) {
+		$css = file_get_contents( $css_file );
+		$pos = strpos( $css, 'KBDS LEGAL & POLICY PAGES STYLES' );
+		if ( $pos !== false ) {
+			$rules = substr( $css, $pos );
+			echo '<style id="kbds-legal-guide-inline-css">' . "\n" . $rules . "\n" . '</style>' . "\n";
+			return;
+		}
+	}
+}
+
 // Chỉ nạp Công cụ Auto-Publisher khi ở trong Trang Quản Trị (wp-admin) hoặc chạy lệnh CLI
 // -> Đảm bảo 0% tải thừa cho khách truy cập ngoài giao diện trang chủ!
 if ( is_admin() || PHP_SAPI === 'cli' ) {
