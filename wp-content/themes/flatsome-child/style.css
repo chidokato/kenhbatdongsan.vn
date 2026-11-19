@@ -2594,3 +2594,101 @@ body.admin-bar {
     .kbds-data-table { font-size: 13px; }
     .kbds-data-table th, .kbds-data-table td { padding: 9px 10px; }
 }
+
+/* =========================================================================
+   KBDS ARCHIVE 3 COLUMNS GRID - BỐ CỤC 3 BÀI / HÀNG CHUẨN CARD BĐS HIỆN ĐẠI
+   ========================================================================= */
+.kbds-archive-3col-wrapper .post-item {
+    margin-bottom: 24px !important;
+}
+
+.kbds-archive-3col-wrapper .box {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.kbds-archive-3col-wrapper .box:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1) !important;
+    border-color: #CBD5E1 !important;
+}
+
+.kbds-archive-3col-wrapper .box-image {
+    border-radius: 12px 12px 0 0 !important;
+    overflow: hidden !important;
+}
+
+.kbds-archive-3col-wrapper .box-text {
+    padding: 16px 18px 20px !important;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+}
+
+.kbds-archive-3col-wrapper .post-title,
+.kbds-archive-3col-wrapper .box-text h5 {
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+    color: #0F172A !important;
+    margin: 0 0 10px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    min-height: 44px !important;
+}
+
+.kbds-archive-3col-wrapper .box-text h5 a:hover,
+.kbds-archive-3col-wrapper .post-title a:hover {
+    color: #D97706 !important;
+}
+
+.kbds-archive-3col-wrapper .from-the-blog-excerpt,
+.kbds-archive-3col-wrapper .box-text p {
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    color: #64748B !important;
+    margin: 0 0 14px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    flex: 1 1 auto !important;
+}
+
+.kbds-archive-3col-wrapper .badge,
+.kbds-archive-3col-wrapper .post-date {
+    display: none !important; /* Ẩn triệt để khối lịch to đè lên ảnh */
+}
+
+.kbds-archive-3col-wrapper .cat-label {
+    background: rgba(217, 119, 6, 0.1) !important;
+    color: #B45309 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+}
+
+.kbds-archive-3col-wrapper .post-meta {
+    font-size: 12px !important;
+    color: #94A3B8 !important;
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed #F1F5F9 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}

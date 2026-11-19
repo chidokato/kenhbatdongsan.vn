@@ -325,3 +325,23 @@ add_action( 'wp_footer', function() {
 	</script>
 	<?php
 }, 99 );
+
+/**
+ * 8. Cấu hình hiển thị 3 bài / hàng chuẩn Grid Card cho toàn bộ Chuyên mục & Lưu trữ bài viết
+ */
+add_filter( 'theme_mod_blog_style', function( $val ) {
+	return '3-col';
+} );
+add_filter( 'theme_mod_blog_style_archive', function( $val ) {
+	return '3-col';
+} );
+add_filter( 'theme_mod_blog_style_type', function( $val ) {
+	return 'row';
+} );
+add_filter( 'theme_mod_blog_badge', function( $val ) {
+	return 0; // Tắt khối lịch ngày tháng to đè lên ảnh
+} );
+add_filter( 'theme_mod_blog_show_excerpt', function( $val ) {
+	return 1;
+} );
+
