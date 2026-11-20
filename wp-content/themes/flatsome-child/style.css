@@ -3,7 +3,7 @@ Theme Name: Kênh Bất Động Sản (Flatsome Child)
 Description: Giao diện Child Theme sang trọng, sáng và hiện đại cho kenhbatdongsan.vn (Mô hình B + D: Cổng thông tin Dự án, Review, Quy hoạch & Giỏ hàng chọn lọc).
 Author: KenhBatDongSan.vn
 Template: flatsome
-Version: 2.1.0
+Version: 2.1.1
 Text Domain: flatsome-child
 */
 
@@ -34,22 +34,22 @@ Text Domain: flatsome-child
  * - Tiêu đề H1, H2, H3, Hero Titles, Tên Dự án, Entry Titles: Playfair Display (Serif xa xỉ, uy tín)
  * - Nội dung Body, H4, H5, H6, UI, Menu, Subnav, Bảng thông số, Nút bấm: Be Vietnam Pro (Sans-serif sắc nét, công thái học)
  *******************************************************************/
-body,
-input,
-textarea,
-select,
-button,
-.nav,
-.header-nav > li > a,
-.kbds-project-subnav,
-.kbds-quick-specs,
-.kbds-contact-card,
-.kbds-sidebar-box {
+body {
     font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     color: var(--kbds-text-main);
     background-color: var(--kbds-white);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+}
+
+input,
+textarea,
+select,
+button,
+.kbds-quick-specs,
+.kbds-contact-card,
+.kbds-sidebar-box {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Tiêu đề Serif sang trọng bậc nhất dành cho Bất động sản cao cấp */
@@ -93,9 +93,7 @@ h4, h5, h6,
 .kbds-meta-item,
 .single-du_an .kbds-hero-badge,
 .button,
-.btn,
-.nav-dropdown,
-.header-nav > li > a {
+.btn {
     font-family: 'Be Vietnam Pro', sans-serif !important;
     font-weight: 600;
     color: var(--kbds-navy);
@@ -116,6 +114,13 @@ h4, h5, h6,
     font-size: 13px;
     font-weight: 500;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar .nav,
+.header-main .nav,
+ul.header-nav {
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 .header-main .header-inner.container,
