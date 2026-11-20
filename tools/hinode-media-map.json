@@ -1,7 +1,7 @@
 {
     "phoi_canh_toa_thap": {
         "id": 233,
-        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/phoi-canh-toa-thap-can-ho-cao-cap-hinode-solera-pham-hung.jpg",
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/phoi-canh-toa-thap-can-ho-cao-cap-hinode-solera-pham-hung.jpg",
         "title": "Phối Cảnh Tòa Tháp Căn Hộ Cao Cấp Hinode Solera Phạm Hùng",
         "alt": "Phối cảnh tòa tháp căn hộ hạng sang Hinode Solera 28 Phạm Hùng Nam Từ Liêm Hà Nội",
         "caption": "Phối cảnh kiến trúc hiện đại, sang trọng của tòa tháp căn hộ Hinode Solera Phạm Hùng",
@@ -9,7 +9,7 @@
     },
     "vi_tri_ho_cau_giay": {
         "id": 234,
-        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/vi-tri-du-an-hinode-solera-28-pham-hung-view-ho-cau-giay.jpg",
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/vi-tri-du-an-hinode-solera-28-pham-hung-view-ho-cau-giay.jpg",
         "title": "Vị Trí Dự Án Hinode Solera Số 28 Phạm Hùng Đối Diện Công Viên Hồ Cầu Giấy 32ha",
         "alt": "Vị trí dự án Hinode Solera số 28 Phạm Hùng nhìn từ công viên hồ điều hòa Cầu Giấy 32ha đối diện Keangnam và Skylake",
         "caption": "Vị trí thực tế dự án Hinode Solera số 28 Phạm Hùng kế cận Keangnam Landmark 72, Vinhomes Skylake và hồ Cầu Giấy 32ha",
@@ -17,10 +17,42 @@
     },
     "mat_bang_dien_hinh": {
         "id": 235,
-        "url": "http://localhost/www/kenhbds/wp-content/uploads/2026/11/mat-bang-tang-dien-hinh-can-ho-hinode-solera-pham-hung.jpg",
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/mat-bang-tang-dien-hinh-can-ho-hinode-solera-pham-hung.jpg",
         "title": "Mặt Bằng Tầng Điển Hình Dự Án Hinode Solera Phạm Hùng",
         "alt": "Mặt bằng tầng điển hình 16 căn hộ Hinode Solera Phạm Hùng gồm căn 1PN, 2PN, 3PN và Dual Key",
         "caption": "Mặt bằng tầng điển hình căn hộ cao cấp và Dual Key tại dự án Hinode Solera Phạm Hùng",
         "slug": "mat-bang-tang-dien-hinh-can-ho-hinode-solera-pham-hung"
+    },
+    "view_ho_cau_giay_panorama": {
+        "id": 365,
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/tam-nhin-panorama-view-ho-dieu-hoa-cau-giay-tu-hinode-solera.jpg",
+        "title": "Tầm Nhìn Panorama View Hồ Điều Hòa Cầu Giấy 32ha Và Tuyến Đường Phạm Hùng Từ Hinode Solera",
+        "alt": "Tầm nhìn panorama thực tế hướng trọn công viên hồ điều hòa Cầu Giấy 32ha và Cung thiếu nhi Hà Nội từ Hinode Solera 28 Phạm Hùng",
+        "caption": "Tầm nhìn không giới hạn hướng trọn công viên hồ điều hòa Cầu Giấy 32ha và tuyến Vành đai 3 trên cao từ Hinode Solera 28 Phạm Hùng",
+        "slug": "tam-nhin-panorama-view-ho-dieu-hoa-cau-giay-tu-hinode-solera-jpg"
+    },
+    "thuc_te_cat_noc_toa_thap": {
+        "id": 366,
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/tien-do-thuc-te-cat-noc-toa-thap-hinode-solera-28-pham-hung.jpg",
+        "title": "Tiến Độ Thực Tế Tòa Tháp Hinode Solera 28 Phạm Hùng Đã Cất Nóc Hoàn Thiện Phần Thô",
+        "alt": "Hình ảnh thực tế tòa nhà Hinode Solera 28 Phạm Hùng đã cất nóc xong phần thô đang tiến hành hoàn thiện mặt ngoài và nội thất",
+        "caption": "Hình ảnh thực tế công trường Hinode Solera số 28 Phạm Hùng: Tòa tháp đã cất nóc hoàn thiện phần thô và đang lắp đặt hoàn thiện",
+        "slug": "tien-do-thuc-te-cat-noc-toa-thap-hinode-solera-28-pham-hung-jpg"
+    },
+    "ha_tang_khu_vuc_my_dinh": {
+        "id": 367,
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/khu-do-thi-my-dinh-me-tri-ke-can-hinode-solera-pham-hung.jpg",
+        "title": "Khu Đô Thị Mỹ Đình - Mễ Trì Và Hệ Thống Hạ Tầng Kề Cận Hinode Solera Phạm Hùng",
+        "alt": "Quần thể khu đô thị Mỹ Đình Mễ Trì với hạ tầng đồng bộ kế cận dự án Hinode Solera 28 Phạm Hùng",
+        "caption": "Hệ thống hạ tầng giao thông và khu đô thị Mỹ Đình - Mễ Trì sầm uất kế cận dự án Hinode Solera",
+        "slug": "khu-do-thi-my-dinh-me-tri-ke-can-hinode-solera-pham-hung-jpg"
+    },
+    "toan_canh_toa_thap_pham_hung": {
+        "id": 368,
+        "url": "http:\/\/localhost\/www\/kenhbds\/wp-content\/uploads\/2026\/11\/toan-canh-thuc-te-toa-thap-hinode-solera-28-pham-hung-my-dinh.jpg",
+        "title": "Toàn Cảnh Thực Tế Tòa Tháp Hinode Solera 28 Phạm Hùng Kế Cận Tòa Nhà VNPT Net",
+        "alt": "Toàn cảnh thực tế từ trên cao tòa tháp chung cư cao cấp Hinode Solera số 28 Phạm Hùng kế cận tòa nhà VNPT Net và trục đường vành đai 3",
+        "caption": "Góc nhìn toàn cảnh từ trên cao tòa tháp Hinode Solera 28 Phạm Hùng tọa lạc ngay mặt tiền đại lộ huyết mạch phía Tây Hà Nội",
+        "slug": "toan-canh-thuc-te-toa-thap-hinode-solera-28-pham-hung-my-dinh-jpg"
     }
 }

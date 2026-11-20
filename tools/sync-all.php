@@ -256,6 +256,7 @@ foreach ($local_posts as $p) {
         'excerpt' => $p->post_excerpt,
         'status'  => $p->post_status,
         'slug'    => $p->post_name,
+        'date'    => $p->post_date,
     ];
 
     // Chuyên mục (categories)
