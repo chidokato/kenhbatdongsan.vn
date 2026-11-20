@@ -71,6 +71,12 @@ class KBDS_URL_Normalizer {
 			return;
 		}
 
+		// 0. Điều hướng các link mẫu mặc định hoặc link rác cũ về trang chủ
+		if ( 'trang-mau' === $path || 'sample-page' === $path ) {
+			wp_safe_redirect( home_url( '/' ), 301 );
+			exit;
+		}
+
 		// 1. Kiểm tra xem slug có trùng với một Dự án BĐS (du_an) nào không
 		$proj = get_page_by_path( $path, OBJECT, 'du_an' );
 		if ( $proj && 'publish' === $proj->post_status ) {
