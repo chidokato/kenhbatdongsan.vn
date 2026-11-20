@@ -46,6 +46,44 @@ class KBDS_URL_Normalizer {
 		// 7. Tự động kiểm tra và đảm bảo Database options luôn lưu domain chuẩn
 		add_action( 'admin_init', array( __CLASS__, 'ensure_database_options' ) );
 		add_action( 'admin_init', array( __CLASS__, 'ensure_chi_can_menu' ) );
+
+		// 8. Tự động chuyển hướng 301 khi truy cập URL Dự án thiếu tiền tố `/du-an/` hoặc URL bài viết tránh 404
+		add_action( 'template_redirect', array( __CLASS__, 'handle_404_smart_redirects' ), 2 );
+	}
+
+	/**
+	 * Tự động chuyển hướng 301 khi gặp 404 nếu slug trùng khớp với Dự án hoặc Bài viết
+	 */
+	public static function handle_404_smart_redirects() {
+		if ( ! is_404() ) {
+			return;
+		}
+
+		$request_uri = $_SERVER['REQUEST_URI'] ?? '';
+		$path = trim( (string) parse_url( $request_uri, PHP_URL_PATH ), '/' );
+
+		// Loại bỏ base subfolder nếu chạy trên localhost (/www/kenhbds/...)
+		if ( false !== strpos( $path, 'www/kenhbds/' ) ) {
+			$path = trim( str_replace( 'www/kenhbds/', '', $path ), '/' );
+		}
+
+		if ( empty( $path ) ) {
+			return;
+		}
+
+		// 1. Kiểm tra xem slug có trùng với một Dự án BĐS (du_an) nào không
+		$proj = get_page_by_path( $path, OBJECT, 'du_an' );
+		if ( $proj && 'publish' === $proj->post_status ) {
+			wp_safe_redirect( get_permalink( $proj->ID ), 301 );
+			exit;
+		}
+
+		// 2. Kiểm tra xem slug có trùng với Bài viết (post) nào không
+		$post_obj = get_page_by_path( $path, OBJECT, 'post' );
+		if ( $post_obj && 'publish' === $post_obj->post_status ) {
+			wp_safe_redirect( get_permalink( $post_obj->ID ), 301 );
+			exit;
+		}
 	}
 
 	private static $buffer_started = false;
