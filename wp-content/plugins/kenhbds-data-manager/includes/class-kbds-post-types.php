@@ -388,7 +388,13 @@ class KBDS_Post_Types {
 			'_kbds_pros_cons'         => array( 'label' => 'Tóm tắt Điểm mạnh / Lưu ý đầu tư (Mỗi ý 1 dòng)', 'type' => 'textarea', 'placeholder' => '+ Vị trí kết nối trực tiếp Vành Đai 3\n+ Pháp lý hoàn chỉnh, chủ đầu tư uy tín\n- Giá bán cao hơn mặt bằng khu vực khoảng 10%' ),
 		);
 		self::render_fields_table( $post->ID, $fields );
-		echo '<p style="background:#eef6ff;padding:10px 14px;border-radius:4px;margin-top:12px;">💡 <strong>Mẹo sử dụng Shortcode trong bài viết/Dự án:</strong> Chèn <code>[kbds_project_overview]</code> để hiển thị bảng thông số dự án, <code>[kbds_project_listings]</code> để hiển thị các căn đang bán của dự án này, <code>[kbds_loan_calculator]</code> để chèn bảng tính lãi vay, và <code>[kbds_lead_form]</code> để chèn form thu thập SĐT khách hàng.</p>';
+		echo '<p style="background:#eef6ff;padding:12px 16px;border-radius:6px;margin-top:12px;line-height:1.6;">💡 <strong>Mẹo sử dụng Shortcode trong bài viết/Dự án/Trang:</strong><br/>'
+			. '• <code>[kbds_project_overview]</code>: Bảng thông số kỹ thuật dự án.<br/>'
+			. '• <code>[kbds_project_listings]</code>: Giỏ hàng căn đang bán (đã xác thực).<br/>'
+			. '• <code>[kbds_loan_calculator]</code>: Bảng tính lãi suất vay mua nhà ngân hàng.<br/>'
+			. '• <code>[kbds_lead_form_cao_tang]</code>: Form đăng ký dòng Cao tầng (Studio, 1PN, 2PN, 3PN).<br/>'
+			. '• <code>[kbds_lead_form_thap_tang]</code>: Form đăng ký dòng Thấp tầng (Liền kề, Biệt thự, Shophouse).<br/>'
+			. '• <code>[kbds_quick_lead_card]</code>: Card đăng ký dọc đặt tại Sidebar / Hero Landing Page.</p>';
 	}
 
 	/**

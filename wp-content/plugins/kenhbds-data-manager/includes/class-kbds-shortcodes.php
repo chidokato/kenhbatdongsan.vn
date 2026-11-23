@@ -20,7 +20,11 @@ class KBDS_Shortcodes {
 		add_shortcode( 'kbds_project_listings', array( __CLASS__, 'shortcode_project_listings' ) );
 		add_shortcode( 'kbds_loan_calculator', array( __CLASS__, 'shortcode_loan_calculator' ) );
 		add_shortcode( 'kbds_lead_form', array( __CLASS__, 'shortcode_lead_form' ) );
+		add_shortcode( 'kbds_lead_form_cao_tang', array( __CLASS__, 'shortcode_lead_form_cao_tang' ) );
+		add_shortcode( 'kbds_lead_form_thap_tang', array( __CLASS__, 'shortcode_lead_form_thap_tang' ) );
 		add_shortcode( 'kbds_quick_lead_card', array( __CLASS__, 'shortcode_quick_lead_card' ) );
+		add_shortcode( 'kbds_quick_lead_card_cao_tang', array( __CLASS__, 'shortcode_quick_lead_card_cao_tang' ) );
+		add_shortcode( 'kbds_quick_lead_card_thap_tang', array( __CLASS__, 'shortcode_quick_lead_card_thap_tang' ) );
 		add_shortcode( 'kbds_project_news', array( __CLASS__, 'shortcode_project_news' ) );
 		add_shortcode( 'kbds_project_subnav', array( __CLASS__, 'shortcode_project_subnav' ) );
 
@@ -260,7 +264,88 @@ class KBDS_Shortcodes {
 	}
 
 	/**
+	 * Tự động nhận diện loại hình BĐS (cao_tang hoặc thap_tang)
+	 */
+	public static function detect_property_type( $post_id = 0 ) {
+		if ( ! $post_id ) {
+			$post_id = get_the_ID();
+		}
+		if ( ! $post_id ) {
+			return 'general';
+		}
+
+		$check_id = $post_id;
+		$proj_ref = get_post_meta( $post_id, '_kbds_project_ref', true );
+		if ( $proj_ref && is_numeric( $proj_ref ) ) {
+			$check_id = (int) $proj_ref;
+		}
+
+		// 1. Kiểm tra taxonomy loai_hinh_bds
+		$terms = wp_get_post_terms( $check_id, 'loai_hinh_bds', array( 'fields' => 'slugs' ) );
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+			foreach ( $terms as $slug ) {
+				if ( in_array( $slug, array( 'biet-thu-nha-pho', 'khu-do-thi', 'biet-thu', 'nha-pho', 'shophouse', 'bds-nghi-duong' ), true ) ) {
+					return 'thap_tang';
+				}
+				if ( in_array( $slug, array( 'can-ho-cao-cap', 'can-ho-chung-cu', 'chung-cu', 'can-ho' ), true ) ) {
+					return 'cao_tang';
+				}
+			}
+		}
+
+		// 2. Kiểm tra từ khóa trong tiêu đề
+		$title = mb_strtolower( get_the_title( $post_id ) . ' ' . get_the_title( $check_id ), 'UTF-8' );
+		if ( preg_match( '/(biệt thự|liền kề|shophouse|nhà phố|dinh thự|thấp tầng)/iu', $title ) ) {
+			return 'thap_tang';
+		}
+		if ( preg_match( '/(căn hộ|chung cư|officetel|studio|cao tầng)/iu', $title ) ) {
+			return 'cao_tang';
+		}
+
+		return is_front_page() ? 'general' : 'cao_tang';
+	}
+
+	/**
+	 * Wrapper: Form riêng biệt cho Dòng Sản Phẩm Cao Tầng
+	 */
+	public static function shortcode_lead_form_cao_tang( $atts ) {
+		$atts = is_array( $atts ) ? $atts : array();
+		$atts['type'] = 'cao_tang';
+		return self::shortcode_lead_form( $atts );
+	}
+
+	/**
+	 * Wrapper: Form riêng biệt cho Dòng Sản Phẩm Thấp Tầng
+	 */
+	public static function shortcode_lead_form_thap_tang( $atts ) {
+		$atts = is_array( $atts ) ? $atts : array();
+		$atts['type'] = 'thap_tang';
+		return self::shortcode_lead_form( $atts );
+	}
+
+	/**
+	 * Wrapper: Card nhanh riêng biệt cho Dòng Sản Phẩm Cao Tầng
+	 */
+	public static function shortcode_quick_lead_card_cao_tang( $atts ) {
+		$atts = is_array( $atts ) ? $atts : array();
+		$atts['type'] = 'cao_tang';
+		return self::shortcode_quick_lead_card( $atts );
+	}
+
+	/**
+	 * Wrapper: Card nhanh riêng biệt cho Dòng Sản Phẩm Thấp Tầng
+	 */
+	public static function shortcode_quick_lead_card_thap_tang( $atts ) {
+		$atts = is_array( $atts ) ? $atts : array();
+		$atts['type'] = 'thap_tang';
+		return self::shortcode_quick_lead_card( $atts );
+	}
+
+	/**
 	 * 4. Form Đăng ký Nhận Bảng giá / Pháp lý lưu thẳng vào CRM Database
+	 * Hỗ trợ chuyên sâu cho:
+	 * - Dòng cao tầng (Studio, Căn hộ 1PN, Căn hộ 2PN, Căn hộ 3PN)
+	 * - Dòng thấp tầng (Liền kề, Biệt thự, Shophouse)
 	 */
 	public static function shortcode_lead_form( $atts ) {
 		$default_title   = is_singular() ? get_the_title() : ( is_front_page() ? 'Trang Chủ - kenhbatdongsan.vn' : 'Tư vấn Kênh BĐS' );
@@ -268,12 +353,21 @@ class KBDS_Shortcodes {
 		$default_type    = is_singular( 'du_an' ) ? 'Dự án con' : ( is_singular( 'post' ) ? 'Bài viết tin tức' : ( is_front_page() ? 'Trang chủ' : 'Trang đơn' ) );
 
 		$atts = shortcode_atts( array(
-			'title'        => '📥 Tải Trọn Bộ Bảng Giá, Mặt Bằng & Pháp Lý Mới Nhất',
+			'type'         => '', // 'cao_tang' hoặc 'thap_tang'
+			'title'        => '',
+			'subtitle'     => '',
 			'project'      => $default_title,
 			'source_url'   => $default_url,
 			'source_title' => $default_title,
 			'source_type'  => $default_type,
+			'button_text'  => '',
 		), $atts );
+
+		// Xác định loại sản phẩm
+		$form_type = sanitize_key( $atts['type'] );
+		if ( empty( $form_type ) || ! in_array( $form_type, array( 'cao_tang', 'thap_tang', 'general' ), true ) ) {
+			$form_type = self::detect_property_type( get_the_ID() );
+		}
 
 		$submitted = false;
 		if ( isset( $_POST['kbds_lead_submit'] ) && isset( $_POST['kbds_lead_nonce'] ) ) {
@@ -285,7 +379,7 @@ class KBDS_Shortcodes {
 				$source_url   = sanitize_text_field( wp_unslash( $_POST['kbds_source_url'] ?? $_SERVER['HTTP_REFERER'] ?? '' ) );
 				$source_title = sanitize_text_field( wp_unslash( $_POST['kbds_source_title'] ?? '' ) );
 				$source_type  = sanitize_text_field( wp_unslash( $_POST['kbds_source_type'] ?? '' ) );
-				$demand       = sanitize_textarea_field( wp_unslash( $_POST['kbds_demand'] ?? '' ) );
+				$demand       = sanitize_text_field( wp_unslash( $_POST['kbds_demand'] ?? '' ) );
 				$ip           = sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '' );
 
 				if ( ! $project || 'Tư vấn dự án Kênh BĐS' === $project ) {
@@ -308,6 +402,7 @@ class KBDS_Shortcodes {
 						update_post_meta( $lead_id, '_kbds_lead_demand', $demand );
 						update_post_meta( $lead_id, '_kbds_lead_status', 'new' );
 						update_post_meta( $lead_id, '_kbds_lead_ip', $ip );
+						update_post_meta( $lead_id, '_kbds_lead_product_group', $form_type );
 						$submitted = true;
 
 						// GỬI THÔNG BÁO TỨC THỜI (EMAIL ADMIN + TELEGRAM)
@@ -329,32 +424,92 @@ class KBDS_Shortcodes {
 			}
 		}
 
+		// Thiết lập nội dung & màu sắc theo phân loại sản phẩm
+		if ( 'thap_tang' === $form_type ) {
+			$badge_text     = '🏡 DÀNH CHO DÒNG SẢN PHẨM THẤP TẦNG';
+			$badge_bg       = 'rgba(212, 175, 55, 0.2)';
+			$badge_color    = '#FDE68A';
+			$box_bg         = 'linear-gradient(135deg, #0B241E 0%, #134338 50%, #1A5C4D 100%)';
+			$box_border     = '1px solid rgba(212, 175, 55, 0.4)';
+			$default_h3     = '📥 Đăng Ký Nhận Bảng Giá & Quỹ Căn Ngoại Giao Thấp Tầng';
+			$default_p      = 'Chuyên viên Kênh BĐS sẽ gửi trực tiếp Mặt bằng phân lô 1/500, Hồ sơ pháp lý sở hữu & Bảng giá suất đẹp qua Zalo/Email trong 3 phút (Bảo mật 100%).';
+			$default_btn    = 'NHẬN BẢNG GIÁ THẤP TẦNG ➔';
+		} else {
+			// Mặc định cao tầng
+			$badge_text     = '🏢 DÀNH CHO DÒNG CĂN HỘ CAO TẦNG';
+			$badge_bg       = 'rgba(212, 175, 55, 0.2)';
+			$badge_color    = '#FDE68A';
+			$box_bg         = 'linear-gradient(135deg, #071D36 0%, #0B2C4D 50%, #124375 100%)';
+			$box_border     = '1px solid rgba(212, 175, 55, 0.4)';
+			$default_h3     = '📥 Đăng Ký Nhận Bảng Giá Gốc & Mặt Bằng Căn Hộ Đợt 1';
+			$default_p      = 'Chuyên viên Kênh BĐS sẽ gửi trực tiếp trọn bộ Layout 3D, Bảng giá gốc CĐT & Bảng tính dòng tiền qua Zalo/Email trong 3 phút (Bảo mật 100%).';
+			$default_btn    = 'NHẬN BẢNG GIÁ CĂN HỘ ➔';
+		}
+
+		$title_text  = ! empty( $atts['title'] ) ? $atts['title'] : $default_h3;
+		$sub_text    = ! empty( $atts['subtitle'] ) ? $atts['subtitle'] : $default_p;
+		$btn_text    = ! empty( $atts['button_text'] ) ? $atts['button_text'] : $default_btn;
+
 		ob_start();
 		?>
-		<div class="kbds-lead-box" style="background:linear-gradient(135deg,#0f3e6d 0%,#16538f 100%);color:#fff;padding:28px;border-radius:12px;margin:28px 0;">
-			<h3 style="margin-top:0;color:#fff;font-size:20px;"><?php echo esc_html( $atts['title'] ); ?></h3>
-			<p style="color:#e2e8f0;margin-bottom:18px;">Chuyên viên Kênh BĐS sẽ gửi trực tiếp bộ tài liệu PDF nét cao & Bảng tính dòng tiền qua Zalo/Email trong 3 phút (Cam kết bảo mật 100%).</p>
+		<div class="kbds-lead-box kbds-lead-box-<?php echo esc_attr( $form_type ); ?>" style="background:<?php echo esc_attr( $box_bg ); ?>;border:<?php echo esc_attr( $box_border ); ?>;color:#fff;padding:28px 24px;border-radius:14px;margin:28px 0;box-shadow:0 10px 30px rgba(0,0,0,0.18);box-sizing:border-box;">
+			<div style="margin-bottom:14px;">
+				<span style="display:inline-block;background:<?php echo esc_attr( $badge_bg ); ?>;color:<?php echo esc_attr( $badge_color ); ?>;border:1px solid #D4AF37;padding:4px 12px;border-radius:20px;font-size:11.5px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">
+					<?php echo esc_html( $badge_text ); ?>
+				</span>
+			</div>
+			<h3 style="margin:0 0 8px;color:#fff;font-size:22px;font-weight:800;font-family:'Playfair Display',Georgia,serif;line-height:1.35;"><?php echo esc_html( $title_text ); ?></h3>
+			<p style="color:#CBD5E1;margin:0 0 20px;font-size:14px;line-height:1.55;"><?php echo esc_html( $sub_text ); ?></p>
 
 			<?php if ( $submitted ) : ?>
-				<div style="background:#1b8a4b;color:#fff;padding:16px;border-radius:8px;font-weight:600;">
-					✔ Đăng ký thành công! Hệ thống đã ghi nhận yêu cầu và sẽ gửi bộ tài liệu cho bạn ngay lập tức.
+				<div style="background:#1b8a4b;color:#fff;padding:16px 20px;border-radius:8px;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(27,138,75,0.3);">
+					✔ Đăng ký thành công! Hệ thống Kênh BĐS đã ghi nhận yêu cầu và đang chuyển tài liệu cho bạn qua Zalo/Email.
 				</div>
 			<?php else : ?>
-				<form method="post" style="display:grid;grid-template-columns:1fr 1fr 1.2fr auto;gap:12px;align-items:center;">
+				<form method="post" class="kbds-lead-form-grid" style="display:grid;grid-template-columns:1fr 1fr 1.25fr auto;gap:12px;align-items:center;">
 					<?php wp_nonce_field( 'kbds_submit_lead', 'kbds_lead_nonce' ); ?>
 					<input type="hidden" name="kbds_project" value="<?php echo esc_attr( $atts['project'] ); ?>" />
 					<input type="hidden" name="kbds_source_url" class="kbds-source-url-input" value="<?php echo esc_url( $atts['source_url'] ); ?>" />
 					<input type="hidden" name="kbds_source_title" value="<?php echo esc_attr( $atts['source_title'] ); ?>" />
 					<input type="hidden" name="kbds_source_type" value="<?php echo esc_attr( $atts['source_type'] ); ?>" />
-					<input type="text" name="kbds_name" required placeholder="Họ và tên của bạn *" style="height:46px;margin:0;padding:0 14px;border-radius:8px;border:none;color:#111;box-sizing:border-box;" />
-					<input type="tel" name="kbds_phone" required placeholder="Số điện thoại / Zalo nhận file *" style="height:46px;margin:0;padding:0 14px;border-radius:8px;border:none;color:#111;box-sizing:border-box;" />
-					<input type="text" name="kbds_demand" placeholder="Nhu cầu (VD: Căn 2PN, Giỏ hàng cắt lỗ...)" style="height:46px;margin:0;padding:0 14px;border-radius:8px;border:none;color:#111;box-sizing:border-box;" />
-					<button type="submit" name="kbds_lead_submit" value="1" style="height:46px;line-height:46px;margin:0;background:#d99b26;color:#fff;font-weight:700;border:none;padding:0 24px;border-radius:8px;cursor:pointer;font-size:14.5px;white-space:nowrap;box-sizing:border-box;">
-						<?php echo esc_html( ! empty( $atts['button_text'] ) ? $atts['button_text'] : 'NHẬN BẢNG GIÁ NGAY' ); ?>
+					
+					<input type="text" name="kbds_name" required placeholder="Họ và tên của bạn *" style="height:48px;margin:0;padding:0 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:#ffffff;color:#0f172a;box-sizing:border-box;font-size:14px;" />
+					<input type="tel" name="kbds_phone" required placeholder="Số điện thoại / Zalo nhận file *" style="height:48px;margin:0;padding:0 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:#ffffff;color:#0f172a;box-sizing:border-box;font-size:14px;" />
+					
+					<select name="kbds_demand" required style="height:48px;margin:0;padding:0 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);background:#ffffff;color:#0f172a;box-sizing:border-box;font-size:14px;cursor:pointer;">
+						<?php if ( 'thap_tang' === $form_type ) : ?>
+							<option value="" disabled selected>🏡 Chọn loại hình (Liền kề, Biệt thự, Shophouse) *</option>
+							<option value="Liền kề">Liền kề</option>
+							<option value="Biệt thự">Biệt thự</option>
+							<option value="Shophouse">Shophouse</option>
+						<?php elseif ( 'cao_tang' === $form_type ) : ?>
+							<option value="" disabled selected>🏢 Chọn loại căn hộ (Studio, 1PN, 2PN, 3PN) *</option>
+							<option value="Studio">Studio</option>
+							<option value="Căn hộ 1PN">Căn hộ 1PN</option>
+							<option value="Căn hộ 2PN">Căn hộ 2PN</option>
+							<option value="Căn hộ 3PN">Căn hộ 3PN</option>
+						<?php else : ?>
+							<option value="" disabled selected>📌 Chọn nhu cầu quan tâm *</option>
+							<optgroup label="🏢 Dòng sản phẩm Cao tầng">
+								<option value="Studio">Studio</option>
+								<option value="Căn hộ 1PN">Căn hộ 1PN</option>
+								<option value="Căn hộ 2PN">Căn hộ 2PN</option>
+								<option value="Căn hộ 3PN">Căn hộ 3PN</option>
+							</optgroup>
+							<optgroup label="🏡 Dòng sản phẩm Thấp tầng">
+								<option value="Liền kề">Liền kề</option>
+								<option value="Biệt thự">Biệt thự</option>
+								<option value="Shophouse">Shophouse</option>
+							</optgroup>
+						<?php endif; ?>
+					</select>
+
+					<button type="submit" name="kbds_lead_submit" value="1" style="height:48px;line-height:48px;margin:0;background:linear-gradient(135deg,#D4AF37 0%,#AA8010 100%);color:#071931;font-weight:800;border:none;padding:0 24px;border-radius:8px;cursor:pointer;font-size:14px;white-space:nowrap;box-sizing:border-box;letter-spacing:0.3px;box-shadow:0 4px 14px rgba(212,175,55,0.35);">
+						<?php echo esc_html( $btn_text ); ?>
 					</button>
 				</form>
-				<p style="font-size:12px;color:rgba(255,255,255,0.75);text-align:center;margin:12px 0 0;line-height:1.5;">
-					🔒 Bằng việc bấm đăng ký, bạn đồng ý với <a href="<?php echo esc_url( home_url( '/chinh-sach-bao-mat/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Chính sách bảo mật</a> và <a href="<?php echo esc_url( home_url( '/tuyen-bo-mien-tru-trach-nhiem/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Tuyên bố miễn trừ</a> của chúng tôi.
+				<p style="font-size:12px;color:rgba(255,255,255,0.75);text-align:center;margin:14px 0 0;line-height:1.5;">
+					🔒 Cam kết bảo mật thông tin 100% theo <a href="<?php echo esc_url( home_url( '/chinh-sach-bao-mat/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Chính sách bảo mật</a> và <a href="<?php echo esc_url( home_url( '/tuyen-bo-mien-tru-trach-nhiem/' ) ); ?>" target="_blank" style="color:#FDE68A;text-decoration:underline;font-weight:600;">Tuyên bố miễn trừ</a> của Kênh Bất Động Sản.
 				</p>
 				<script>
 				(function(){
@@ -381,14 +536,21 @@ class KBDS_Shortcodes {
 		$default_type    = is_singular( 'du_an' ) ? 'Dự án con' : ( is_singular( 'post' ) ? 'Bài viết tin tức' : ( is_front_page() ? 'Trang chủ' : 'Trang đơn' ) );
 
 		$atts = shortcode_atts( array(
-			'title'        => 'NHẬN TRỌN BỘ TÀI LIỆU GỐC',
-			'subtitle'     => 'Bảng giá dự kiến • Mặt bằng 1/500 • Chính sách Ưu đãi Quý III/2026',
+			'type'         => '',
+			'title'        => '',
+			'subtitle'     => '',
 			'project'      => $default_title,
 			'source_url'   => $default_url,
 			'source_title' => $default_title,
 			'source_type'  => $default_type,
-			'button'       => '📥 TẢI TRỌN BỘ TÀI LIỆU NGAY',
+			'button'       => '',
 		), $atts );
+
+		// Xác định loại sản phẩm
+		$form_type = sanitize_key( $atts['type'] );
+		if ( empty( $form_type ) || ! in_array( $form_type, array( 'cao_tang', 'thap_tang', 'general' ), true ) ) {
+			$form_type = self::detect_property_type( get_the_ID() );
+		}
 
 		$submitted = false;
 		if ( isset( $_POST['kbds_quick_lead_submit'] ) && isset( $_POST['kbds_lead_nonce'] ) ) {
@@ -399,7 +561,7 @@ class KBDS_Shortcodes {
 				$source_url   = sanitize_text_field( wp_unslash( $_POST['kbds_source_url'] ?? $_SERVER['HTTP_REFERER'] ?? '' ) );
 				$source_title = sanitize_text_field( wp_unslash( $_POST['kbds_source_title'] ?? '' ) );
 				$source_type  = sanitize_text_field( wp_unslash( $_POST['kbds_source_type'] ?? '' ) );
-				$demand       = sanitize_textarea_field( wp_unslash( $_POST['kbds_demand'] ?? '' ) );
+				$demand       = sanitize_text_field( wp_unslash( $_POST['kbds_demand'] ?? '' ) );
 				$ip           = sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '' );
 
 				if ( ! $project || 'Tư vấn dự án Kênh BĐS' === $project ) {
@@ -421,6 +583,7 @@ class KBDS_Shortcodes {
 						update_post_meta( $lead_id, '_kbds_lead_demand', $demand );
 						update_post_meta( $lead_id, '_kbds_lead_status', 'new' );
 						update_post_meta( $lead_id, '_kbds_lead_ip', $ip );
+						update_post_meta( $lead_id, '_kbds_lead_product_group', $form_type );
 						$submitted = true;
 
 						// GỬI THÔNG BÁO TỨC THỜI (EMAIL ADMIN + TELEGRAM)
@@ -441,14 +604,30 @@ class KBDS_Shortcodes {
 			}
 		}
 
+		if ( 'thap_tang' === $form_type ) {
+			$badge_label  = '⚡ BẤT ĐỘNG SẢN THẤP TẦNG';
+			$default_h3   = 'NHẬN BẢNG GIÁ THẤP TẦNG';
+			$default_sub  = 'Bảng giá Liền kề, Biệt thự, Shophouse • Mặt bằng 1/500 • Suất đẹp';
+			$default_btn  = '📥 TẢI TRỌN BỘ TÀI LIỆU NGAY';
+		} else {
+			$badge_label  = '⚡ CĂN HỘ CAO TẦNG';
+			$default_h3   = 'NHẬN TRỌN BỘ TÀI LIỆU GỐC';
+			$default_sub  = 'Bảng giá dự kiến • Mặt bằng Studio, 1PN - 3PN • Chính sách Đợt 1';
+			$default_btn  = '📥 TẢI BẢNG GIÁ CĂN HỘ NGAY';
+		}
+
+		$title_text = ! empty( $atts['title'] ) ? $atts['title'] : $default_h3;
+		$sub_text   = ! empty( $atts['subtitle'] ) ? $atts['subtitle'] : $default_sub;
+		$btn_text   = ! empty( $atts['button'] ) ? $atts['button'] : $default_btn;
+
 		ob_start();
 		?>
 		<div class="kbds-quick-lead-card" style="background:#ffffff;border-radius:14px;padding:22px 18px;box-shadow:0 10px 30px rgba(11,44,77,0.14);border:1.5px solid #E5C158;color:#1e293b;text-align:left;box-sizing:border-box;">
 			<div style="display:inline-block;background:#FDF8EC;color:#9A7312;border:1px solid #E5C158;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:8px;letter-spacing:0.3px;">
-				⚡ CẬP NHẬT TRỰC TIẾP TỪ CĐT
+				<?php echo esc_html( $badge_label ); ?>
 			</div>
-			<h3 style="margin:0 0 6px;color:#0B2C4D;font-size:18px;font-weight:800;line-height:1.3;"><?php echo esc_html( $atts['title'] ); ?></h3>
-			<p style="margin:0 0 14px;color:#64748b;font-size:12.5px;line-height:1.45;"><?php echo esc_html( $atts['subtitle'] ); ?></p>
+			<h3 style="margin:0 0 6px;color:#0B2C4D;font-size:18px;font-weight:800;line-height:1.3;font-family:'Playfair Display',Georgia,serif;"><?php echo esc_html( $title_text ); ?></h3>
+			<p style="margin:0 0 14px;color:#64748b;font-size:12.5px;line-height:1.45;"><?php echo esc_html( $sub_text ); ?></p>
 
 			<?php if ( $submitted ) : ?>
 				<div style="background:#0E8A4A;color:#fff;padding:14px;border-radius:8px;font-weight:600;font-size:13.5px;line-height:1.5;">
@@ -468,16 +647,36 @@ class KBDS_Shortcodes {
 						<input type="tel" name="kbds_phone" required placeholder="Số điện thoại / Zalo nhận file *" style="width:100% !important;height:42px;margin:0;padding:0 12px;border-radius:8px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#0f172a;font-size:13.5px;box-sizing:border-box;display:block;" />
 					</div>
 					<div style="margin-bottom:12px;">
-						<select name="kbds_demand" style="width:100% !important;height:42px;margin:0;padding:0 10px;border-radius:8px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#0f172a;font-size:13px;box-sizing:border-box;display:block;">
-							<option value="Quan tâm Bảng giá & Mặt bằng tổng thể">📌 Chọn nhu cầu tư vấn...</option>
-							<option value="Căn hộ Cao tầng (Studio, 1PN, 2PN, 3PN)">🏢 Căn hộ Cao tầng (Studio, 1PN – 3PN)</option>
-							<option value="Biệt thự Đơn lập / Song lập View Sân Golf 90ha">⛳ Biệt thự Đơn lập / Song lập View Sân Golf</option>
-							<option value="Liền kề & Nhà phố thương mại Shophouse">🏬 Liền kề & Nhà phố Shophouse</option>
-							<option value="Tư vấn Đầu tư & Chính sách vay vốn">💰 Tư vấn Đầu tư & Dòng tiền</option>
+						<select name="kbds_demand" required style="width:100% !important;height:42px;margin:0;padding:0 10px;border-radius:8px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#0f172a;font-size:13px;box-sizing:border-box;display:block;cursor:pointer;">
+							<?php if ( 'thap_tang' === $form_type ) : ?>
+								<option value="" disabled selected>🏡 Chọn loại hình (Liền kề, Biệt thự, Shophouse) *</option>
+								<option value="Liền kề">Liền kề</option>
+								<option value="Biệt thự">Biệt thự</option>
+								<option value="Shophouse">Shophouse</option>
+							<?php elseif ( 'cao_tang' === $form_type ) : ?>
+								<option value="" disabled selected>🏢 Chọn loại căn hộ (Studio, 1PN, 2PN, 3PN) *</option>
+								<option value="Studio">Studio</option>
+								<option value="Căn hộ 1PN">Căn hộ 1PN</option>
+								<option value="Căn hộ 2PN">Căn hộ 2PN</option>
+								<option value="Căn hộ 3PN">Căn hộ 3PN</option>
+							<?php else : ?>
+								<option value="" disabled selected>📌 Chọn nhu cầu tư vấn quan tâm *</option>
+								<optgroup label="🏢 Dòng sản phẩm Cao tầng">
+									<option value="Studio">Studio</option>
+									<option value="Căn hộ 1PN">Căn hộ 1PN</option>
+									<option value="Căn hộ 2PN">Căn hộ 2PN</option>
+									<option value="Căn hộ 3PN">Căn hộ 3PN</option>
+								</optgroup>
+								<optgroup label="🏡 Dòng sản phẩm Thấp tầng">
+									<option value="Liền kề">Liền kề</option>
+									<option value="Biệt thự">Biệt thự</option>
+									<option value="Shophouse">Shophouse</option>
+								</optgroup>
+							<?php endif; ?>
 						</select>
 					</div>
 					<button type="submit" name="kbds_quick_lead_submit" value="1" style="width:100% !important;min-height:44px;margin:0;padding:10px 14px;background:linear-gradient(135deg,#C59B27 0%,#9E7812 100%);color:#ffffff;font-weight:800;border:none;border-radius:8px;cursor:pointer;font-size:13.5px;text-transform:uppercase;letter-spacing:0.3px;box-shadow:0 4px 12px rgba(197,155,39,0.3);box-sizing:border-box;white-space:normal;line-height:1.35;text-align:center;">
-						<?php echo esc_html( $atts['button'] ); ?>
+						<?php echo esc_html( $btn_text ); ?>
 					</button>
 					<div style="margin-top:10px;text-align:center;font-size:11px;color:#64748b;line-height:1.45;padding-top:8px;border-top:1px dashed #e2e8f0;">
 						🔒 Bằng việc bấm đăng ký, bạn đồng ý với <a href="<?php echo esc_url( home_url( '/chinh-sach-bao-mat/' ) ); ?>" target="_blank" style="color:#C59B27;text-decoration:underline;font-weight:600;">Chính sách bảo mật</a> của chúng tôi.
@@ -791,7 +990,10 @@ class KBDS_Shortcodes {
 		$overview = has_shortcode( $content, 'kbds_project_overview' ) ? '' : '<div id="tong-quan"></div>' . self::shortcode_project_overview( array( 'id' => get_the_ID() ) );
 		$listings = has_shortcode( $content, 'kbds_project_listings' ) ? '' : '<div id="san-pham"></div>' . self::shortcode_project_listings( array( 'project_id' => get_the_ID() ) );
 		$calc     = has_shortcode( $content, 'kbds_loan_calculator' ) ? '' : self::shortcode_loan_calculator();
-		$form     = has_shortcode( $content, 'kbds_lead_form' ) ? '' : '<div id="nhan-bang-gia"></div>' . self::shortcode_lead_form( array( 'project' => get_the_title() ) );
+		$has_lead_form = has_shortcode( $content, 'kbds_lead_form' )
+			|| has_shortcode( $content, 'kbds_lead_form_cao_tang' )
+			|| has_shortcode( $content, 'kbds_lead_form_thap_tang' );
+		$form = $has_lead_form ? '' : '<div id="nhan-bang-gia"></div>' . self::shortcode_lead_form( array( 'project' => get_the_title() ) );
 
 		$running = false;
 		return $subnav . $overview . $content . $listings . $calc . $form;
