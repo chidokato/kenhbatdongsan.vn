@@ -42,6 +42,9 @@ class KBDS_Post_Types {
 
 		// REST field `kbds_meta`: cho phép đồng bộ meta Dự án / Giỏ hàng từ Localhost lên Live qua API
 		add_action( 'rest_api_init', array( __CLASS__, 'register_rest_meta_field' ) );
+
+		// Tự động kiểm tra & nạp rewrite rules cho du_an và bat_dong_san (mua-ban)
+		add_action( 'wp_loaded', array( __CLASS__, 'ensure_rewrite_rules' ) );
 	}
 
 	/**
@@ -83,6 +86,16 @@ class KBDS_Post_Types {
 
 	private static function is_syncable_meta_key( $key ) {
 		return 0 === strpos( $key, '_kbds_' ) || 0 === strpos( $key, 'rank_math_' );
+	}
+
+	/**
+	 * Đảm bảo các quy tắc rewrite cho du_an và bat_dong_san (mua-ban) luôn tồn tại
+	 */
+	public static function ensure_rewrite_rules() {
+		$rules = get_option( 'rewrite_rules' );
+		if ( ! is_array( $rules ) || ! isset( $rules['mua-ban/([^/]+)/?$'] ) || ! isset( $rules['du-an/([^/]+)/?$'] ) ) {
+			flush_rewrite_rules( false );
+		}
 	}
 
 	/**
