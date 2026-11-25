@@ -1,6 +1,6 @@
 {
     "site": "kenhbatdongsan.vn",
-    "exported_at": "2026-11-25 03:02:45",
+    "exported_at": "2026-11-25 03:48:10",
     "version": "1.0",
     "theme_mods": {
         "0": false,
@@ -721,65 +721,8 @@
                 "rank_math_title": "Chung Cư Lumi Hanoi CapitaLand | Bảng Giá & Mặt Bằng 2026",
                 "rank_math_description": "Đại dự án chung cư Lumi Hanoi CapitaLand mặt đường Đại lộ Thăng Long, Nam Từ Liêm. Cập nhật bảng giá gốc CĐT, mặt bằng 9 tòa tháp & chính sách ưu đãi mới nhất 2026.",
                 "rank_math_focus_keyword": "Lumi Hanoi, chung cư Lumi Hanoi, Lumi Hanoi CapitaLand, dự án Lumi Hanoi",
-                "rank_math_robots": "a:2:{i:0;s:5:\"index\";i:1;s:6:\"follow\";}",
                 "rank_math_seo_score": "96",
-                "rank_math_pillar_content": "on",
-                "rank_math_schema_ApartmentComplex": {
-                    "@context": "https:\/\/schema.org",
-                    "@type": "ApartmentComplex",
-                    "name": "Lumi Hanoi",
-                    "alternateName": [
-                        "Chung cư Lumi Hanoi",
-                        "Lumi Hanoi CapitaLand"
-                    ],
-                    "description": "Tổ hợp căn hộ cao cấp 5.6ha Lumi Hanoi do CapitaLand Development phát triển tại mặt đường Đại lộ Thăng Long, Tây Mỗ, Nam Từ Liêm, Hà Nội.",
-                    "url": "https:\/\/kenhbatdongsan.vn\/du-an\/lumi-hanoi\/",
-                    "telephone": "0942.655.111",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Đại lộ Thăng Long, Phường Tây Mỗ",
-                        "addressLocality": "Quận Nam Từ Liêm",
-                        "addressRegion": "Hà Nội",
-                        "addressCountry": "VN"
-                    },
-                    "geo": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 20.9995,
-                        "longitude": 105.7482
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Bể bơi resort 50m Sole Lap Pool",
-                            "value": true
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Công viên Lá phổi xanh Green Lung 2.4ha",
-                            "value": true
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Cầu dạo bộ trên không kết nối 9 tòa tháp",
-                            "value": true
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Đại sảnh Grand Lobby 5 sao",
-                            "value": true
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Phòng tiệc Party House & BBQ Pavilion",
-                            "value": true
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Khu vui chơi trẻ em Kids Adventure Land",
-                            "value": true
-                        }
-                    ]
-                }
+                "rank_math_pillar_content": "on"
             },
             "terms": {
                 "khu_vuc_bds": [
