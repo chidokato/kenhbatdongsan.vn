@@ -1080,6 +1080,7 @@ class KBDS_Shortcodes {
 			box-sizing: border-box !important;
 		}
 		.kbds-subnav-brand {
+			order: 1 !important;
 			font-weight: 800 !important;
 			font-size: 15px !important;
 			color: #F8FAFC !important;
@@ -1098,16 +1099,18 @@ class KBDS_Shortcodes {
 			box-shadow: 0 0 10px #F59E0B !important;
 		}
 		.kbds-subnav-links {
+			order: 2 !important;
 			display: flex !important;
 			align-items: center !important;
-			gap: 4px !important;
+			gap: 6px !important;
 			overflow-x: auto !important;
 			white-space: nowrap !important;
 			scrollbar-width: none !important;
 			-ms-overflow-style: none !important;
 			-webkit-overflow-scrolling: touch !important;
 			flex: 1 1 auto !important;
-			justify-content: center !important;
+			justify-content: flex-start !important;
+			margin: 0 14px !important;
 		}
 		.kbds-subnav-links::-webkit-scrollbar {
 			display: none !important;
@@ -1119,7 +1122,7 @@ class KBDS_Shortcodes {
 			text-decoration: none !important;
 			font-size: 13px !important;
 			font-weight: 600 !important;
-			padding: 6px 10px !important;
+			padding: 6px 12px !important;
 			border-radius: 6px !important;
 			transition: all 0.2s ease !important;
 			white-space: nowrap !important;
@@ -1133,6 +1136,8 @@ class KBDS_Shortcodes {
 		}
 		.kbds-subnav-cta,
 		.kbds-project-subnav a[href="#dang-ky"] {
+			order: 3 !important;
+			margin-left: auto !important;
 			background: linear-gradient(135deg, #D97706 0%, #B45309 100%) !important;
 			color: #FFFFFF !important;
 			padding: 8px 18px !important;

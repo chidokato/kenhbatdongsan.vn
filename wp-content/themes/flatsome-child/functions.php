@@ -232,9 +232,9 @@ add_action( 'wp_footer', function() {
 
 		// Đo chính xác vị trí đáy Header để triệt tiêu 100% khoảng trống (Zero Gap) trên mọi màn hình
 		function syncSubnavTop() {
-			var header = document.querySelector('.header-wrapper.stuck')
-					  || document.querySelector('#header .header-main')
-					  || document.querySelector('#header');
+			var stuckHeader = document.querySelector('.header-wrapper.stuck')
+						   || document.querySelector('.header.sticky.stuck')
+						   || document.querySelector('#header.stuck');
 
 			var adminBar = document.getElementById('wpadminbar');
 			var adminBarH = 0;
@@ -242,9 +242,12 @@ add_action( 'wp_footer', function() {
 				adminBarH = adminBar.offsetHeight || 0;
 			}
 
-			var headerH = 70;
-			if (header) {
-				headerH = header.offsetHeight || 70;
+			var headerH = 0;
+			if (stuckHeader) {
+				var headerPos = window.getComputedStyle(stuckHeader).position;
+				if (headerPos === 'fixed' || headerPos === 'sticky') {
+					headerH = stuckHeader.offsetHeight || 0;
+				}
 			}
 
 			var totalTop = adminBarH + headerH;
