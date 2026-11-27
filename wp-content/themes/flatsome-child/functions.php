@@ -348,3 +348,53 @@ add_filter( 'theme_mod_blog_show_excerpt', function( $val ) {
 	return 1;
 } );
 
+/**
+ * 9. Tự động loại bỏ hoàn toàn Chuyên mục "Chưa phân loại" (ID 1) cho mọi bài viết
+ * - Tự động phát hiện và phân loại chuẩn theo từ khóa nội dung (Vị trí/Quy hoạch: 3, Review/Mặt bằng: 2, Pháp lý/Tiến độ: 5, Thị trường: 4)
+ * - Đảm bảo các bài viết mới hoặc cập nhật không bao giờ bị rơi vào chuyên mục "Chưa phân loại"
+ * - Chuyển hướng 301 lưu trữ /category/chua-phan-loai/ sang /tin-tuc-thi-truong/
+ */
+add_action( 'save_post', function( $post_id, $post, $update ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	if ( ! $post || $post->post_type !== 'post' ) return;
+
+	$cats = wp_get_post_categories( $post_id );
+
+	if ( empty( $cats ) || in_array( 1, $cats ) ) {
+		// Loại bỏ category 1
+		$cats = array_values( array_diff( $cats, [1] ) );
+
+		if ( empty( $cats ) ) {
+			$text = mb_strtolower( $post->post_title . ' ' . $post->post_name, 'UTF-8' );
+			if ( preg_match( '/(vị trí|vi tri|quy hoạch|quy hoach|hạ tầng|ha tang|kết nối|ket noi|giao thông|giao thong|ở đâu|o dau)/i', $text ) ) {
+				$target_cat = 3; // Quy hoạch & Hạ tầng
+			} elseif ( preg_match( '/(mặt bằng|mat bang|layout|thiết kế|thiet ke|tiện ích|tien ich|đánh giá|danh gia|review|có nên mua|co nen mua)/i', $text ) ) {
+				$target_cat = 2; // Review & Phân tích Dự án
+			} elseif ( preg_match( '/(pháp lý|phap ly|tiến độ|tien do|sổ hồng|so hong|giấy phép|giay phep|hồ sơ|ho so)/i', $text ) ) {
+				$target_cat = 5; // Cẩm nang & Pháp lý
+			} else {
+				$target_cat = 4; // Tin tức Thị trường
+			}
+			$cats = [$target_cat];
+		}
+
+		wp_set_post_categories( $post_id, $cats, false );
+		wp_remove_object_terms( $post_id, 1, 'category' );
+	}
+}, 10, 3 );
+
+// Chuyển hướng 301 nếu người dùng hoặc bot truy cập link chuyên mục Chưa phân loại
+add_action( 'template_redirect', function() {
+	if ( is_category( 1 ) || is_category( 'chua-phan-loai' ) ) {
+		wp_redirect( home_url( '/tin-tuc-thi-truong/' ), 301 );
+		exit;
+	}
+} );
+
+// Ẩn chuyên mục "Chưa phân loại" khỏi danh sách widget / categories
+add_filter( 'widget_categories_args', function( $args ) {
+	$args['exclude'] = ! empty( $args['exclude'] ) ? $args['exclude'] . ',1' : '1';
+	return $args;
+} );
+
+
