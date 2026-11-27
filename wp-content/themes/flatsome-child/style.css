@@ -2814,3 +2814,90 @@ body.admin-bar {
     align-items: center !important;
     justify-content: space-between !important;
 }
+
+/*******************************************************************
+ * 12. TỐI ƯU KHÔNG GIAN BÀI VIẾT (SINGLE POST / BLOG) RỘNG & THOÁNG
+ *******************************************************************/
+.blog-wrapper.blog-single {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 20px 24px 60px !important;
+    box-sizing: border-box !important;
+}
+
+.blog-wrapper.blog-single > .row,
+.blog-wrapper.blog-single .row-large {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+/* Mở rộng cột bài viết chính từ ~800px lên ~1020px */
+.blog-wrapper.blog-single .large-9.col {
+    flex: 0 0 calc(100% - 350px) !important;
+    max-width: calc(100% - 350px) !important;
+    padding-right: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sidebar cố định 350px chuẩn sang trọng */
+.blog-wrapper.blog-single .large-3.col {
+    flex: 0 0 350px !important;
+    max-width: 350px !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1080px) {
+    .blog-wrapper.blog-single .large-9.col,
+    .blog-wrapper.blog-single .large-3.col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding-right: 0 !important;
+    }
+}
+
+.blog-wrapper.blog-single .entry-title {
+    font-size: clamp(24px, 2.8vw, 36px) !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    line-height: 1.35 !important;
+    margin: 15px 0 20px !important;
+}
+
+.blog-wrapper.blog-single .article-inner {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 10px 0 !important;
+}
+
+/* Tối ưu hiển thị Form Đăng ký dàn trải đẹp mắt, không bị ép chữ */
+.kbds-lead-box {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .kbds-lead-form-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 14px !important;
+    }
+    .kbds-lead-form-grid select {
+        grid-column: 1 / 2 !important;
+    }
+    .kbds-lead-form-grid button {
+        grid-column: 2 / 3 !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .kbds-lead-form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    .kbds-lead-form-grid button {
+        width: 100% !important;
+    }
+}
+
