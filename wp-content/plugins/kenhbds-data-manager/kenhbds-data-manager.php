@@ -23,6 +23,7 @@ require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-seo-enhancer.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-homepage-sections.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-notification-service.php';
 require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-chi-can-router.php';
+require_once KBDS_PLUGIN_DIR . 'includes/class-kbds-interactive-floorplan.php';
 
 // Khởi chạy các phân hệ giao diện & dữ liệu
 KBDS_URL_Normalizer::init();
@@ -32,6 +33,7 @@ KBDS_Shortcodes::init();
 KBDS_SEO_Enhancer::init();
 KBDS_Homepage_Sections::init();
 KBDS_Notification_Service::init();
+KBDS_Interactive_Floorplan::init();
 
 /**
  * Tắt hoàn toàn việc WordPress tự động thay Emoji thành thẻ <img> SVG

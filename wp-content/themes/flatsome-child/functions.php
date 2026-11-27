@@ -366,7 +366,9 @@ add_action( 'save_post', function( $post_id, $post, $update ) {
 
 		if ( empty( $cats ) ) {
 			$text = mb_strtolower( $post->post_title . ' ' . $post->post_name, 'UTF-8' );
-			if ( preg_match( '/(vị trí|vi tri|quy hoạch|quy hoach|hạ tầng|ha tang|kết nối|ket noi|giao thông|giao thong|ở đâu|o dau)/i', $text ) ) {
+			if ( preg_match( '/(chuyển nhượng|chuyen nhuong|cho thuê|cho thue|cắt lỗ|cat lo|bán lại|ban lai|ký gửi|ky gui)/i', $text ) ) {
+				$target_cat = 99; // Chuyển Nhượng & Cho Thuê
+			} elseif ( preg_match( '/(vị trí|vi tri|quy hoạch|quy hoach|hạ tầng|ha tang|kết nối|ket noi|giao thông|giao thong|ở đâu|o dau)/i', $text ) ) {
 				$target_cat = 3; // Quy hoạch & Hạ tầng
 			} elseif ( preg_match( '/(mặt bằng|mat bang|layout|thiết kế|thiet ke|tiện ích|tien ich|đánh giá|danh gia|review|có nên mua|co nen mua)/i', $text ) ) {
 				$target_cat = 2; // Review & Phân tích Dự án

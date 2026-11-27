@@ -344,6 +344,7 @@ class KBDS_Homepage_Sections {
 						<p class="kbds-sec-desc"><?php echo esc_html( $atts['desc'] ); ?></p>
 					</div>
 					<div class="kbds-news-pills">
+						<a href="<?php echo esc_url( home_url( '/chuyen-nhuong-cho-thue/' ) ); ?>" style="font-weight:700;color:#DC2626;border-color:#FCA5A5;background:#FEF2F2;">🔥 Chuyển nhượng &amp; Cho thuê</a>
 						<a href="<?php echo esc_url( home_url( '/review-du-an/' ) ); ?>">Review Dự án</a>
 						<a href="<?php echo esc_url( home_url( '/quy-hoach-ha-tang/' ) ); ?>">Quy hoạch & Hạ tầng</a>
 						<a href="<?php echo esc_url( home_url( '/thi-truong-tai-chinh/' ) ); ?>">Tin tức Thị trường</a>
