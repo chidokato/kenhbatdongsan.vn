@@ -27,6 +27,9 @@ class KBDS_Post_Types {
 
 		add_filter( 'manage_bds_lead_posts_columns', array( __CLASS__, 'lead_columns' ) );
 		add_action( 'manage_bds_lead_posts_custom_column', array( __CLASS__, 'lead_column_content' ), 10, 2 );
+		add_filter( 'manage_edit-bds_lead_sortable_columns', array( __CLASS__, 'lead_sortable_columns' ) );
+		add_action( 'init', array( __CLASS__, 'ensure_vietnam_timezone' ), 7 );
+		add_action( 'admin_init', array( __CLASS__, 'ensure_vietnam_timezone' ) );
 
 		add_action( 'restrict_manage_posts', array( __CLASS__, 'admin_taxonomy_filters' ) );
 		add_action( 'pre_get_posts', array( __CLASS__, 'filter_leads_in_admin' ) );
@@ -680,8 +683,32 @@ class KBDS_Post_Types {
 			'lead_project' => 'Dự án & Nguồn đăng ký (Link)',
 			'lead_demand'  => 'Nhu cầu',
 			'lead_status'  => 'Trạng thái chăm sóc',
-			'date'         => 'Thời gian đăng ký',
+			'lead_date'    => 'Thời gian đăng ký (Giờ VN)',
 		);
+	}
+
+	public static function lead_sortable_columns( $columns ) {
+		$columns['lead_date'] = 'date';
+		return $columns;
+	}
+
+	public static function ensure_vietnam_timezone() {
+		if ( 'Asia/Ho_Chi_Minh' !== get_option( 'timezone_string' ) ) {
+			update_option( 'timezone_string', 'Asia/Ho_Chi_Minh' );
+			update_option( 'gmt_offset', 7 );
+			update_option( 'date_format', 'd/m/Y' );
+			update_option( 'time_format', 'H:i' );
+		}
+		if ( ! get_option( 'kbds_leads_tz_fixed_v2' ) ) {
+			global $wpdb;
+			$wpdb->query( "
+				UPDATE {$wpdb->posts} 
+				SET post_date = DATE_ADD(post_date_gmt, INTERVAL 7 HOUR) 
+				WHERE post_type = 'bds_lead' 
+				  AND post_date = post_date_gmt
+			" );
+			update_option( 'kbds_leads_tz_fixed_v2', 1 );
+		}
 	}
 
 	public static function lead_column_content( $column, $post_id ) {
@@ -718,6 +745,13 @@ class KBDS_Post_Types {
 				break;
 			case 'lead_demand':
 				echo esc_html( wp_trim_words( get_post_meta( $post_id, '_kbds_lead_demand', true ), 12 ) );
+				break;
+			case 'lead_date':
+				$post = get_post( $post_id );
+				$date_time = get_the_time( 'd/m/Y \l\ú\c H:i', $post );
+				$diff = human_time_diff( get_post_timestamp( $post ), current_time( 'timestamp' ) );
+				echo '<div style="font-weight:700;color:#0B2C4D;font-size:13px;line-height:1.4;">📅 ' . esc_html( $date_time ) . '</div>';
+				echo '<div style="font-size:11.5px;color:#64748B;margin-top:2px;">(' . esc_html( $diff ) . ' trước)</div>';
 				break;
 			case 'lead_status':
 				$st = get_post_meta( $post_id, '_kbds_lead_status', true ) ?: 'new';

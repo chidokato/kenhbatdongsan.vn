@@ -388,9 +388,11 @@ class KBDS_Shortcodes {
 
 				if ( $name && $phone ) {
 					$lead_id = wp_insert_post( array(
-						'post_type'   => 'bds_lead',
-						'post_status' => 'publish',
-						'post_title'  => $name . ' - ' . $phone,
+						'post_type'     => 'bds_lead',
+						'post_status'   => 'publish',
+						'post_title'    => $name . ' - ' . $phone,
+						'post_date'     => current_time( 'mysql' ),
+						'post_date_gmt' => current_time( 'mysql', 1 ),
 					) );
 					if ( $lead_id && ! is_wp_error( $lead_id ) ) {
 						update_post_meta( $lead_id, '_kbds_lead_phone', $phone );
@@ -570,9 +572,11 @@ class KBDS_Shortcodes {
 
 				if ( $name && $phone ) {
 					$lead_id = wp_insert_post( array(
-						'post_type'   => 'bds_lead',
-						'post_status' => 'publish',
-						'post_title'  => $name . ' - ' . $phone,
+						'post_type'     => 'bds_lead',
+						'post_status'   => 'publish',
+						'post_title'    => $name . ' - ' . $phone,
+						'post_date'     => current_time( 'mysql' ),
+						'post_date_gmt' => current_time( 'mysql', 1 ),
 					) );
 					if ( $lead_id && ! is_wp_error( $lead_id ) ) {
 						update_post_meta( $lead_id, '_kbds_lead_phone', $phone );
